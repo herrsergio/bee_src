@@ -1,0 +1,159 @@
+obj/ROUTER.o: ROUTER.c /usr/include/stdio.h /usr/include/libio.h \
+ /usr/include/features.h /usr/include/sys/cdefs.h \
+ /usr/include/gnu/stubs.h /usr/include/_G_config.h \
+ /usr/include/gnu/types.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stddef.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stdarg.h \
+ /usr/include/stdio_lim.h /usr/include/stdlib.h \
+ /usr/include/sys/types.h /usr/include/time.h /usr/include/endian.h \
+ /usr/include/bytesex.h /usr/include/sys/select.h \
+ /usr/include/selectbits.h /usr/include/alloca.h /usr/include/string.h \
+ /usr/include/sys/ioctl.h /usr/include/ioctls.h \
+ /usr/include/asm/ioctls.h /usr/include/asm/ioctl.h \
+ /usr/include/ioctl-types.h /usr/include/sys/ttydefaults.h \
+ /usr/include/signal.h /usr/include/sigset.h /usr/include/signum.h \
+ /usr/include/sigaction.h /usr/include/sigcontext.h \
+ /usr/include/asm/sigcontext.h /usr/include/sigstack.h \
+ /usr/include/math.h /usr/include/huge_val.h /usr/include/mathcalls.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/float.h \
+ /usr/include/__math.h ../../include/tcx.h /usr/include/netinet/in.h \
+ /usr/include/sys/socket.h /usr/include/socketbits.h \
+ /usr/include/sockaddrcom.h /usr/include/asm/socket.h \
+ /usr/include/asm/sockios.h ../../include/tcxP.h /usr/include/malloc.h \
+ ../../include/Common.h ../../include/libc.h /usr/include/strings.h \
+ /usr/include/sys/time.h /usr/include/timebits.h \
+ /usr/include/sys/timeb.h ../../include/LIB-math.h \
+ ../../include/ROBOT.h ../../include/rwibase_interface.h \
+ ../../include/devUtils.h ../../include/devNames.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/limits.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/syslimits.h \
+ /usr/include/limits.h /usr/include/posix1_lim.h \
+ /usr/include/local_lim.h /usr/include/linux/limits.h \
+ /usr/include/posix2_lim.h ../../include/handlers.h \
+ ../../include/bUtils.h /usr/include/termios.h /usr/include/termbits.h \
+ ../../include/bNetwork.h
+obj/rbase-handlers.o: rbase-handlers.c /usr/include/stdio.h \
+ /usr/include/libio.h /usr/include/features.h /usr/include/sys/cdefs.h \
+ /usr/include/gnu/stubs.h /usr/include/_G_config.h \
+ /usr/include/gnu/types.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stddef.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stdarg.h \
+ /usr/include/stdio_lim.h /usr/include/stdlib.h \
+ /usr/include/sys/types.h /usr/include/time.h /usr/include/endian.h \
+ /usr/include/bytesex.h /usr/include/sys/select.h \
+ /usr/include/selectbits.h /usr/include/alloca.h /usr/include/math.h \
+ /usr/include/huge_val.h /usr/include/mathcalls.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/float.h \
+ /usr/include/__math.h ../../include/tcx.h /usr/include/netinet/in.h \
+ /usr/include/sys/socket.h /usr/include/socketbits.h \
+ /usr/include/sockaddrcom.h /usr/include/asm/socket.h \
+ /usr/include/asm/sockios.h ../../include/tcxP.h /usr/include/malloc.h \
+ ../../include/robot_specifications.h ../../include/sonar_interface.h \
+ ../../include/devUtils.h /usr/include/sys/time.h \
+ /usr/include/timebits.h ../../include/Common.h \
+ ../../include/devNames.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/limits.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/syslimits.h \
+ /usr/include/limits.h /usr/include/posix1_lim.h \
+ /usr/include/local_lim.h /usr/include/linux/limits.h \
+ /usr/include/posix2_lim.h ../../include/handlers.h \
+ ../../include/BASE-messages.h ../../include/SONAR-messages.h \
+ ../../include/COLLI-messages.h ../../include/LASER-messages.h \
+ ../../include/IR-messages.h ../../include/colli-handlers.h \
+ ../../include/base-handlers.h router.h beeSoftVersion.h \
+ ../../include/libezx.h ../../include/librobot.h \
+ ../../include/bUtils.h /usr/include/termios.h /usr/include/termbits.h \
+ /usr/include/sys/ttydefaults.h ../../include/bNetwork.h
+obj/rcolli-handlers.o: rcolli-handlers.c /usr/include/stdio.h \
+ /usr/include/libio.h /usr/include/features.h /usr/include/sys/cdefs.h \
+ /usr/include/gnu/stubs.h /usr/include/_G_config.h \
+ /usr/include/gnu/types.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stddef.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stdarg.h \
+ /usr/include/stdio_lim.h /usr/include/stdlib.h \
+ /usr/include/sys/types.h /usr/include/time.h /usr/include/endian.h \
+ /usr/include/bytesex.h /usr/include/sys/select.h \
+ /usr/include/selectbits.h /usr/include/alloca.h /usr/include/values.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/limits.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/syslimits.h \
+ /usr/include/limits.h /usr/include/posix1_lim.h \
+ /usr/include/local_lim.h /usr/include/linux/limits.h \
+ /usr/include/posix2_lim.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/float.h \
+ ../../include/tcx.h /usr/include/netinet/in.h \
+ /usr/include/sys/socket.h /usr/include/socketbits.h \
+ /usr/include/sockaddrcom.h /usr/include/asm/socket.h \
+ /usr/include/asm/sockios.h ../../include/tcxP.h /usr/include/malloc.h \
+ ../../include/sonar_interface.h ../../include/devUtils.h \
+ /usr/include/sys/time.h /usr/include/timebits.h \
+ ../../include/Common.h ../../include/devNames.h \
+ ../../include/handlers.h ../../include/SONAR-messages.h \
+ ../../include/BASE-messages.h ../../include/COLLI-messages.h \
+ ../../include/LASER-messages.h ../../include/IR-messages.h \
+ ../../include/collision.h ../../include/bUtils.h \
+ /usr/include/termios.h /usr/include/termbits.h \
+ /usr/include/sys/ttydefaults.h ../../include/bNetwork.h \
+ ../../include/base-handlers.h ../../include/colli-handlers.h router.h
+obj/rlaser-handlers.o: rlaser-handlers.c /usr/include/stdio.h \
+ /usr/include/libio.h /usr/include/features.h /usr/include/sys/cdefs.h \
+ /usr/include/gnu/stubs.h /usr/include/_G_config.h \
+ /usr/include/gnu/types.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stddef.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stdarg.h \
+ /usr/include/stdio_lim.h /usr/include/stdlib.h \
+ /usr/include/sys/types.h /usr/include/time.h /usr/include/endian.h \
+ /usr/include/bytesex.h /usr/include/sys/select.h \
+ /usr/include/selectbits.h /usr/include/alloca.h /usr/include/math.h \
+ /usr/include/huge_val.h /usr/include/mathcalls.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/float.h \
+ /usr/include/__math.h ../../include/libc.h /usr/include/strings.h \
+ /usr/include/string.h /usr/include/sys/time.h /usr/include/timebits.h \
+ /usr/include/sys/socket.h /usr/include/socketbits.h \
+ /usr/include/sockaddrcom.h /usr/include/asm/socket.h \
+ /usr/include/asm/sockios.h /usr/include/sys/timeb.h \
+ ../../include/Common.h ../../include/tcx.h /usr/include/netinet/in.h \
+ ../../include/robot_specifications.h ../../include/tcxP.h \
+ /usr/include/malloc.h ../../include/LASER-messages.h router.h
+obj/router.o: router.c /usr/include/stdio.h /usr/include/libio.h \
+ /usr/include/features.h /usr/include/sys/cdefs.h \
+ /usr/include/gnu/stubs.h /usr/include/_G_config.h \
+ /usr/include/gnu/types.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stddef.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stdarg.h \
+ /usr/include/stdio_lim.h /usr/include/stdlib.h \
+ /usr/include/sys/types.h /usr/include/time.h /usr/include/endian.h \
+ /usr/include/bytesex.h /usr/include/sys/select.h \
+ /usr/include/selectbits.h /usr/include/alloca.h /usr/include/malloc.h \
+ /usr/include/sys/time.h /usr/include/timebits.h /usr/include/string.h \
+ ../../include/tcx.h /usr/include/netinet/in.h \
+ /usr/include/sys/socket.h /usr/include/socketbits.h \
+ /usr/include/sockaddrcom.h /usr/include/asm/socket.h \
+ /usr/include/asm/sockios.h ../../include/tcxP.h \
+ ../../include/BASE-messages.h router.h
+obj/rsonar-handlers.o: rsonar-handlers.c /usr/include/stdio.h \
+ /usr/include/libio.h /usr/include/features.h /usr/include/sys/cdefs.h \
+ /usr/include/gnu/stubs.h /usr/include/_G_config.h \
+ /usr/include/gnu/types.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stddef.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stdarg.h \
+ /usr/include/stdio_lim.h /usr/include/stdlib.h \
+ /usr/include/sys/types.h /usr/include/time.h /usr/include/endian.h \
+ /usr/include/bytesex.h /usr/include/sys/select.h \
+ /usr/include/selectbits.h /usr/include/alloca.h /usr/include/math.h \
+ /usr/include/huge_val.h /usr/include/mathcalls.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/float.h \
+ /usr/include/__math.h ../../include/libc.h /usr/include/strings.h \
+ /usr/include/string.h /usr/include/sys/time.h /usr/include/timebits.h \
+ /usr/include/sys/socket.h /usr/include/socketbits.h \
+ /usr/include/sockaddrcom.h /usr/include/asm/socket.h \
+ /usr/include/asm/sockios.h /usr/include/sys/timeb.h \
+ ../../include/Common.h ../../include/tcx.h /usr/include/netinet/in.h \
+ ../../include/robot_specifications.h ../../include/tcxP.h \
+ /usr/include/malloc.h ../../include/sonar_interface.h \
+ ../../include/devUtils.h ../../include/devNames.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/limits.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/syslimits.h \
+ /usr/include/limits.h /usr/include/posix1_lim.h \
+ /usr/include/local_lim.h /usr/include/linux/limits.h \
+ /usr/include/posix2_lim.h ../../include/handlers.h \
+ ../../include/SONAR-messages.h router.h

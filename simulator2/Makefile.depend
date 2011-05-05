@@ -1,0 +1,554 @@
+obj/SIMULATOR_TCX.o: SIMULATOR_TCX.c /usr/include/stdio.h \
+ /usr/include/libio.h /usr/include/features.h /usr/include/sys/cdefs.h \
+ /usr/include/gnu/stubs.h /usr/include/_G_config.h \
+ /usr/include/gnu/types.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stddef.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stdarg.h \
+ /usr/include/stdio_lim.h /usr/include/stdlib.h \
+ /usr/include/sys/types.h /usr/include/time.h /usr/include/endian.h \
+ /usr/include/bytesex.h /usr/include/sys/select.h \
+ /usr/include/selectbits.h /usr/include/alloca.h /usr/include/math.h \
+ /usr/include/huge_val.h /usr/include/nan.h /usr/include/mathcalls.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/float.h \
+ /usr/include/__math.h /usr/include/signal.h /usr/include/sigset.h \
+ /usr/include/signum.h /usr/include/sigaction.h \
+ /usr/include/sigcontext.h /usr/include/asm/sigcontext.h \
+ /usr/include/sigstack.h /usr/include/sys/time.h \
+ /usr/include/timebits.h ../../include/tcx.h /usr/include/netinet/in.h \
+ /usr/include/sys/socket.h /usr/include/socketbits.h \
+ /usr/include/sockaddrcom.h /usr/include/asm/socket.h \
+ /usr/include/asm/sockios.h ../../include/tcxP.h /usr/include/malloc.h \
+ SIMULATOR-messages.h ../../include/BASE-messages.h robot.h \
+ /usr/X11R6/include/X11/Intrinsic.h /usr/X11R6/include/X11/Xlib.h \
+ /usr/X11R6/include/X11/X.h /usr/X11R6/include/X11/Xfuncproto.h \
+ /usr/X11R6/include/X11/Xosdefs.h /usr/X11R6/include/X11/Xutil.h \
+ /usr/X11R6/include/X11/Xresource.h /usr/include/string.h \
+ /usr/X11R6/include/X11/Core.h /usr/X11R6/include/X11/Composite.h \
+ /usr/X11R6/include/X11/Constraint.h /usr/X11R6/include/X11/Object.h \
+ /usr/X11R6/include/X11/RectObj.h beeSoftVersion.h \
+ ../../include/libbUtils.h ../../include/librobot.h
+obj/base.o: base.c /usr/include/math.h /usr/include/features.h \
+ /usr/include/sys/cdefs.h /usr/include/gnu/stubs.h \
+ /usr/include/huge_val.h /usr/include/nan.h /usr/include/endian.h \
+ /usr/include/bytesex.h /usr/include/mathcalls.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/float.h \
+ /usr/include/__math.h /usr/include/stdio.h /usr/include/libio.h \
+ /usr/include/_G_config.h /usr/include/gnu/types.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stddef.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stdarg.h \
+ /usr/include/stdio_lim.h /usr/include/sys/time.h /usr/include/time.h \
+ /usr/include/timebits.h /usr/include/sys/select.h \
+ /usr/include/selectbits.h /usr/include/sys/types.h \
+ /usr/include/netinet/in.h /usr/include/sys/socket.h \
+ /usr/include/socketbits.h /usr/include/sockaddrcom.h \
+ /usr/include/asm/socket.h /usr/include/asm/sockios.h robot.h \
+ /usr/X11R6/include/X11/Intrinsic.h /usr/X11R6/include/X11/Xlib.h \
+ /usr/X11R6/include/X11/X.h /usr/X11R6/include/X11/Xfuncproto.h \
+ /usr/X11R6/include/X11/Xosdefs.h /usr/X11R6/include/X11/Xutil.h \
+ /usr/X11R6/include/X11/Xresource.h /usr/include/string.h \
+ /usr/X11R6/include/X11/Core.h /usr/X11R6/include/X11/Composite.h \
+ /usr/X11R6/include/X11/Constraint.h /usr/X11R6/include/X11/Object.h \
+ /usr/X11R6/include/X11/RectObj.h sonar.h ../../include/bUtils.h \
+ /usr/include/termios.h /usr/include/termbits.h \
+ /usr/include/sys/ttydefaults.h ../../include/bNetwork.h tactile.h \
+ base.h ../../include/tcx.h ../../include/rwibase_interface.h \
+ /usr/include/stdlib.h /usr/include/alloca.h ../../include/Common.h \
+ ../../include/libc.h /usr/include/strings.h /usr/include/sys/timeb.h \
+ ../../include/LIB-math.h ../../include/devUtils.h \
+ ../../include/devNames.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/limits.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/syslimits.h \
+ /usr/include/limits.h /usr/include/posix1_lim.h \
+ /usr/include/local_lim.h /usr/include/linux/limits.h \
+ /usr/include/posix2_lim.h /usr/include/xopen_lim.h \
+ ../../include/handlers.h trigofkt.h surface.hh playground.hh \
+ ../../include/baseOpcodes.h ../../include/mcpIO.h \
+ /usr/include/fcntl.h /usr/include/fcntlbits.h /usr/include/unistd.h \
+ ../../include/utils.h ../../include/rai.h SIMULATOR-messages.h
+obj/ir.o: ir.c ../../include/irClient.h /usr/include/time.h \
+ /usr/include/features.h /usr/include/sys/cdefs.h \
+ /usr/include/gnu/stubs.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stddef.h \
+ /usr/include/timebits.h /usr/include/gnu/types.h \
+ /usr/include/sys/time.h /usr/include/sys/select.h \
+ /usr/include/selectbits.h ../../include/bUtils.h /usr/include/stdio.h \
+ /usr/include/libio.h /usr/include/_G_config.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stdarg.h \
+ /usr/include/stdio_lim.h /usr/include/termios.h \
+ /usr/include/termbits.h /usr/include/sys/ttydefaults.h \
+ ../../include/bNetwork.h /usr/include/sys/types.h \
+ /usr/include/endian.h /usr/include/bytesex.h \
+ /usr/include/netinet/in.h /usr/include/sys/socket.h \
+ /usr/include/socketbits.h /usr/include/sockaddrcom.h \
+ /usr/include/asm/socket.h /usr/include/asm/sockios.h \
+ /usr/include/unistd.h /usr/include/posix_opt.h \
+ /usr/include/confname.h /usr/include/stdlib.h /usr/include/alloca.h \
+ /usr/include/math.h /usr/include/huge_val.h /usr/include/nan.h \
+ /usr/include/mathcalls.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/float.h \
+ /usr/include/__math.h sundefines.h playground.hh \
+ /usr/X11R6/include/X11/Intrinsic.h /usr/X11R6/include/X11/Xlib.h \
+ /usr/X11R6/include/X11/X.h /usr/X11R6/include/X11/Xfuncproto.h \
+ /usr/X11R6/include/X11/Xosdefs.h /usr/X11R6/include/X11/Xutil.h \
+ /usr/X11R6/include/X11/Xresource.h /usr/include/string.h \
+ /usr/X11R6/include/X11/Core.h /usr/X11R6/include/X11/Composite.h \
+ /usr/X11R6/include/X11/Constraint.h /usr/X11R6/include/X11/Object.h \
+ /usr/X11R6/include/X11/RectObj.h robot.h ir.h trigofkt.h surface.hh \
+ SIMULATOR-messages.h ../../include/tcx.h
+obj/laser.o: laser.c /usr/include/signal.h /usr/include/features.h \
+ /usr/include/sys/cdefs.h /usr/include/gnu/stubs.h \
+ /usr/include/gnu/types.h /usr/include/sigset.h /usr/include/signum.h \
+ /usr/include/sigaction.h /usr/include/sigcontext.h \
+ /usr/include/asm/sigcontext.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stddef.h \
+ /usr/include/sigstack.h /usr/include/sys/time.h /usr/include/time.h \
+ /usr/include/timebits.h /usr/include/sys/select.h \
+ /usr/include/selectbits.h /usr/include/unistd.h \
+ /usr/include/posix_opt.h /usr/include/confname.h \
+ /usr/include/stdlib.h /usr/include/sys/types.h /usr/include/endian.h \
+ /usr/include/bytesex.h /usr/include/alloca.h /usr/include/values.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/limits.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/syslimits.h \
+ /usr/include/limits.h /usr/include/posix1_lim.h \
+ /usr/include/local_lim.h /usr/include/linux/limits.h \
+ /usr/include/posix2_lim.h /usr/include/xopen_lim.h \
+ /usr/include/stdio_lim.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/float.h \
+ /usr/include/math.h /usr/include/huge_val.h /usr/include/nan.h \
+ /usr/include/mathcalls.h /usr/include/__math.h /usr/include/stdio.h \
+ /usr/include/libio.h /usr/include/_G_config.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stdarg.h laser.h \
+ trigofkt.h robot.h /usr/X11R6/include/X11/Intrinsic.h \
+ /usr/X11R6/include/X11/Xlib.h /usr/X11R6/include/X11/X.h \
+ /usr/X11R6/include/X11/Xfuncproto.h /usr/X11R6/include/X11/Xosdefs.h \
+ /usr/X11R6/include/X11/Xutil.h /usr/X11R6/include/X11/Xresource.h \
+ /usr/include/string.h /usr/X11R6/include/X11/Core.h \
+ /usr/X11R6/include/X11/Composite.h \
+ /usr/X11R6/include/X11/Constraint.h /usr/X11R6/include/X11/Object.h \
+ /usr/X11R6/include/X11/RectObj.h simxw.h ../../include/Drawing.h \
+ playground.hh surface.hh ../../include/LASER-messages.h \
+ ../../include/tcx.h /usr/include/netinet/in.h \
+ /usr/include/sys/socket.h /usr/include/socketbits.h \
+ /usr/include/sockaddrcom.h /usr/include/asm/socket.h \
+ /usr/include/asm/sockios.h SIMULATOR-messages.h
+obj/linalg.o: linalg.c /usr/X11R6/include/X11/Intrinsic.h \
+ /usr/X11R6/include/X11/Xlib.h /usr/include/sys/types.h \
+ /usr/include/features.h /usr/include/sys/cdefs.h \
+ /usr/include/gnu/stubs.h /usr/include/gnu/types.h /usr/include/time.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stddef.h \
+ /usr/include/endian.h /usr/include/bytesex.h \
+ /usr/include/sys/select.h /usr/include/selectbits.h \
+ /usr/X11R6/include/X11/X.h /usr/X11R6/include/X11/Xfuncproto.h \
+ /usr/X11R6/include/X11/Xosdefs.h /usr/X11R6/include/X11/Xutil.h \
+ /usr/X11R6/include/X11/Xresource.h /usr/include/string.h \
+ /usr/X11R6/include/X11/Core.h /usr/X11R6/include/X11/Composite.h \
+ /usr/X11R6/include/X11/Constraint.h /usr/X11R6/include/X11/Object.h \
+ /usr/X11R6/include/X11/RectObj.h /usr/include/math.h \
+ /usr/include/huge_val.h /usr/include/nan.h /usr/include/mathcalls.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/float.h \
+ /usr/include/__math.h trigofkt.h linalg.h
+obj/reader.o: reader.c /usr/include/stdio.h /usr/include/libio.h \
+ /usr/include/features.h /usr/include/sys/cdefs.h \
+ /usr/include/gnu/stubs.h /usr/include/_G_config.h \
+ /usr/include/gnu/types.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stddef.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stdarg.h \
+ /usr/include/stdio_lim.h /usr/include/stdlib.h \
+ /usr/include/sys/types.h /usr/include/time.h /usr/include/endian.h \
+ /usr/include/bytesex.h /usr/include/sys/select.h \
+ /usr/include/selectbits.h /usr/include/alloca.h surface.hh sonar.h \
+ ../../include/bUtils.h /usr/include/termios.h /usr/include/termbits.h \
+ /usr/include/sys/ttydefaults.h ../../include/bNetwork.h \
+ /usr/include/netinet/in.h /usr/include/sys/socket.h \
+ /usr/include/socketbits.h /usr/include/sockaddrcom.h \
+ /usr/include/asm/socket.h /usr/include/asm/sockios.h
+obj/robot.o: robot.c /usr/include/math.h /usr/include/features.h \
+ /usr/include/sys/cdefs.h /usr/include/gnu/stubs.h \
+ /usr/include/huge_val.h /usr/include/nan.h /usr/include/endian.h \
+ /usr/include/bytesex.h /usr/include/mathcalls.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/float.h \
+ /usr/include/__math.h /usr/include/stdio.h /usr/include/libio.h \
+ /usr/include/_G_config.h /usr/include/gnu/types.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stddef.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stdarg.h \
+ /usr/include/stdio_lim.h ../../include/bUtils.h \
+ /usr/include/termios.h /usr/include/termbits.h \
+ /usr/include/sys/ttydefaults.h ../../include/bNetwork.h \
+ /usr/include/sys/types.h /usr/include/time.h \
+ /usr/include/sys/select.h /usr/include/selectbits.h \
+ /usr/include/netinet/in.h /usr/include/sys/socket.h \
+ /usr/include/socketbits.h /usr/include/sockaddrcom.h \
+ /usr/include/asm/socket.h /usr/include/asm/sockios.h simxw.h \
+ /usr/X11R6/include/X11/Intrinsic.h /usr/X11R6/include/X11/Xlib.h \
+ /usr/X11R6/include/X11/X.h /usr/X11R6/include/X11/Xfuncproto.h \
+ /usr/X11R6/include/X11/Xosdefs.h /usr/X11R6/include/X11/Xutil.h \
+ /usr/X11R6/include/X11/Xresource.h /usr/include/string.h \
+ /usr/X11R6/include/X11/Core.h /usr/X11R6/include/X11/Composite.h \
+ /usr/X11R6/include/X11/Constraint.h /usr/X11R6/include/X11/Object.h \
+ /usr/X11R6/include/X11/RectObj.h ../../include/Drawing.h \
+ playground.hh robot.h base.h ../../include/tcx.h \
+ ../../include/rwibase_interface.h /usr/include/stdlib.h \
+ /usr/include/alloca.h /usr/include/sys/time.h /usr/include/timebits.h \
+ ../../include/Common.h ../../include/libc.h /usr/include/strings.h \
+ /usr/include/sys/timeb.h ../../include/LIB-math.h \
+ ../../include/devUtils.h ../../include/devNames.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/limits.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/syslimits.h \
+ /usr/include/limits.h /usr/include/posix1_lim.h \
+ /usr/include/local_lim.h /usr/include/linux/limits.h \
+ /usr/include/posix2_lim.h /usr/include/xopen_lim.h \
+ ../../include/handlers.h sonar.h trigofkt.h
+obj/simxw.o: simxw.c /usr/include/math.h /usr/include/features.h \
+ /usr/include/sys/cdefs.h /usr/include/gnu/stubs.h \
+ /usr/include/huge_val.h /usr/include/nan.h /usr/include/endian.h \
+ /usr/include/bytesex.h /usr/include/mathcalls.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/float.h \
+ /usr/include/__math.h /usr/include/stdio.h /usr/include/libio.h \
+ /usr/include/_G_config.h /usr/include/gnu/types.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stddef.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stdarg.h \
+ /usr/include/stdio_lim.h /usr/include/sys/time.h /usr/include/time.h \
+ /usr/include/timebits.h /usr/include/sys/select.h \
+ /usr/include/selectbits.h /usr/X11R6/include/X11/Intrinsic.h \
+ /usr/X11R6/include/X11/Xlib.h /usr/include/sys/types.h \
+ /usr/X11R6/include/X11/X.h /usr/X11R6/include/X11/Xfuncproto.h \
+ /usr/X11R6/include/X11/Xosdefs.h /usr/X11R6/include/X11/Xutil.h \
+ /usr/X11R6/include/X11/Xresource.h /usr/include/string.h \
+ /usr/X11R6/include/X11/Core.h /usr/X11R6/include/X11/Composite.h \
+ /usr/X11R6/include/X11/Constraint.h /usr/X11R6/include/X11/Object.h \
+ /usr/X11R6/include/X11/RectObj.h /usr/X11R6/include/X11/StringDefs.h \
+ /usr/X11R6/include/X11/Shell.h /usr/X11R6/include/X11/SM/SMlib.h \
+ /usr/X11R6/include/X11/SM/SM.h /usr/X11R6/include/X11/ICE/ICElib.h \
+ /usr/X11R6/include/X11/ICE/ICE.h /usr/X11R6/include/X11/Xaw/Form.h \
+ /usr/X11R6/include/X11/Xaw/Command.h \
+ /usr/X11R6/include/X11/Xaw/Label.h \
+ /usr/X11R6/include/X11/Xaw/Simple.h \
+ /usr/X11R6/include/X11/Xmu/Converters.h \
+ /usr/X11R6/include/X11/Xaw/Toggle.h \
+ /usr/X11R6/include/X11/Xaw/Dialog.h \
+ /usr/X11R6/include/X11/Xaw/Viewport.h \
+ /usr/X11R6/include/X11/Xaw/Reports.h \
+ /usr/X11R6/include/X11/Xaw/Text.h \
+ /usr/X11R6/include/X11/Xaw/TextSink.h \
+ /usr/X11R6/include/X11/Xaw/TextSrc.h \
+ /usr/X11R6/include/X11/Xaw/AsciiSrc.h \
+ /usr/X11R6/include/X11/Xaw/AsciiSink.h \
+ /usr/X11R6/include/X11/Xaw/AsciiText.h \
+ /usr/X11R6/include/X11/Xaw/MultiSrc.h \
+ /usr/X11R6/include/X11/Xaw/MenuButton.h \
+ /usr/X11R6/include/X11/Xaw/SimpleMenu.h \
+ /usr/X11R6/include/X11/Xaw/SmeBSB.h /usr/X11R6/include/X11/Xaw/Sme.h \
+ ../../include/Drawing.h base.h ../../include/tcx.h \
+ /usr/include/netinet/in.h /usr/include/sys/socket.h \
+ /usr/include/socketbits.h /usr/include/sockaddrcom.h \
+ /usr/include/asm/socket.h /usr/include/asm/sockios.h \
+ ../../include/rwibase_interface.h /usr/include/stdlib.h \
+ /usr/include/alloca.h ../../include/Common.h ../../include/libc.h \
+ /usr/include/strings.h /usr/include/sys/timeb.h \
+ ../../include/LIB-math.h ../../include/devUtils.h \
+ ../../include/devNames.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/limits.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/syslimits.h \
+ /usr/include/limits.h /usr/include/posix1_lim.h \
+ /usr/include/local_lim.h /usr/include/linux/limits.h \
+ /usr/include/posix2_lim.h /usr/include/xopen_lim.h \
+ ../../include/handlers.h trigofkt.h robot.h playground.hh simxw.h \
+ SIMULATOR-messages.h sonar.h ../../include/bUtils.h \
+ /usr/include/termios.h /usr/include/termbits.h \
+ /usr/include/sys/ttydefaults.h ../../include/bNetwork.h
+obj/sonar.o: sonar.c ../../include/sonarClient.h /usr/include/sys/time.h \
+ /usr/include/features.h /usr/include/sys/cdefs.h \
+ /usr/include/gnu/stubs.h /usr/include/time.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stddef.h \
+ /usr/include/timebits.h /usr/include/gnu/types.h \
+ /usr/include/sys/select.h /usr/include/selectbits.h \
+ ../../include/bUtils.h /usr/include/stdio.h /usr/include/libio.h \
+ /usr/include/_G_config.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stdarg.h \
+ /usr/include/stdio_lim.h /usr/include/termios.h \
+ /usr/include/termbits.h /usr/include/sys/ttydefaults.h \
+ ../../include/bNetwork.h /usr/include/sys/types.h \
+ /usr/include/endian.h /usr/include/bytesex.h \
+ /usr/include/netinet/in.h /usr/include/sys/socket.h \
+ /usr/include/socketbits.h /usr/include/sockaddrcom.h \
+ /usr/include/asm/socket.h /usr/include/asm/sockios.h \
+ /usr/include/unistd.h /usr/include/posix_opt.h \
+ /usr/include/confname.h /usr/include/stdlib.h /usr/include/alloca.h \
+ /usr/include/math.h /usr/include/huge_val.h /usr/include/nan.h \
+ /usr/include/mathcalls.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/float.h \
+ /usr/include/__math.h sundefines.h playground.hh \
+ /usr/X11R6/include/X11/Intrinsic.h /usr/X11R6/include/X11/Xlib.h \
+ /usr/X11R6/include/X11/X.h /usr/X11R6/include/X11/Xfuncproto.h \
+ /usr/X11R6/include/X11/Xosdefs.h /usr/X11R6/include/X11/Xutil.h \
+ /usr/X11R6/include/X11/Xresource.h /usr/include/string.h \
+ /usr/X11R6/include/X11/Core.h /usr/X11R6/include/X11/Composite.h \
+ /usr/X11R6/include/X11/Constraint.h /usr/X11R6/include/X11/Object.h \
+ /usr/X11R6/include/X11/RectObj.h robot.h sonar.h trigofkt.h \
+ surface.hh SIMULATOR-messages.h ../../include/tcx.h
+obj/tactile.o: tactile.c ../../include/tactileClient.h /usr/include/time.h \
+ /usr/include/features.h /usr/include/sys/cdefs.h \
+ /usr/include/gnu/stubs.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stddef.h \
+ /usr/include/timebits.h /usr/include/gnu/types.h \
+ /usr/include/sys/time.h /usr/include/sys/select.h \
+ /usr/include/selectbits.h ../../include/bUtils.h /usr/include/stdio.h \
+ /usr/include/libio.h /usr/include/_G_config.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stdarg.h \
+ /usr/include/stdio_lim.h /usr/include/termios.h \
+ /usr/include/termbits.h /usr/include/sys/ttydefaults.h \
+ ../../include/bNetwork.h /usr/include/sys/types.h \
+ /usr/include/endian.h /usr/include/bytesex.h \
+ /usr/include/netinet/in.h /usr/include/sys/socket.h \
+ /usr/include/socketbits.h /usr/include/sockaddrcom.h \
+ /usr/include/asm/socket.h /usr/include/asm/sockios.h \
+ /usr/include/unistd.h /usr/include/posix_opt.h \
+ /usr/include/confname.h /usr/include/stdlib.h /usr/include/alloca.h \
+ /usr/include/math.h /usr/include/huge_val.h /usr/include/nan.h \
+ /usr/include/mathcalls.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/float.h \
+ /usr/include/__math.h sundefines.h playground.hh \
+ /usr/X11R6/include/X11/Intrinsic.h /usr/X11R6/include/X11/Xlib.h \
+ /usr/X11R6/include/X11/X.h /usr/X11R6/include/X11/Xfuncproto.h \
+ /usr/X11R6/include/X11/Xosdefs.h /usr/X11R6/include/X11/Xutil.h \
+ /usr/X11R6/include/X11/Xresource.h /usr/include/string.h \
+ /usr/X11R6/include/X11/Core.h /usr/X11R6/include/X11/Composite.h \
+ /usr/X11R6/include/X11/Constraint.h /usr/X11R6/include/X11/Object.h \
+ /usr/X11R6/include/X11/RectObj.h robot.h tactile.h trigofkt.h \
+ surface.hh SIMULATOR-messages.h ../../include/tcx.h
+obj/trigofkt.o: trigofkt.c /usr/include/math.h /usr/include/features.h \
+ /usr/include/sys/cdefs.h /usr/include/gnu/stubs.h \
+ /usr/include/huge_val.h /usr/include/nan.h /usr/include/endian.h \
+ /usr/include/bytesex.h /usr/include/mathcalls.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/float.h \
+ /usr/include/__math.h
+obj/circle.o: circle.cc /usr/include/math.h /usr/include/features.h \
+ /usr/include/sys/cdefs.h /usr/include/gnu/stubs.h \
+ /usr/include/huge_val.h /usr/include/nan.h /usr/include/endian.h \
+ /usr/include/bytesex.h /usr/include/mathcalls.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/float.h \
+ /usr/include/__math.h circle.hh obstacles.hh \
+ /usr/X11R6/include/X11/Intrinsic.h /usr/X11R6/include/X11/Xlib.h \
+ /usr/include/sys/types.h /usr/include/gnu/types.h /usr/include/time.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stddef.h \
+ /usr/include/sys/select.h /usr/include/selectbits.h \
+ /usr/X11R6/include/X11/X.h /usr/X11R6/include/X11/Xfuncproto.h \
+ /usr/X11R6/include/X11/Xosdefs.h /usr/X11R6/include/X11/Xutil.h \
+ /usr/X11R6/include/X11/Xresource.h /usr/include/string.h \
+ /usr/X11R6/include/X11/Core.h /usr/X11R6/include/X11/Composite.h \
+ /usr/X11R6/include/X11/Constraint.h /usr/X11R6/include/X11/Object.h \
+ /usr/X11R6/include/X11/RectObj.h /usr/include/stdio.h \
+ /usr/include/libio.h /usr/include/_G_config.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stdarg.h \
+ /usr/include/stdio_lim.h /usr/include/sys/time.h \
+ /usr/include/timebits.h ../../include/Drawing.h surface.hh linalg.h \
+ simxw.h
+obj/compound.o: compound.cc /usr/include/math.h /usr/include/features.h \
+ /usr/include/sys/cdefs.h /usr/include/gnu/stubs.h \
+ /usr/include/huge_val.h /usr/include/nan.h /usr/include/endian.h \
+ /usr/include/bytesex.h /usr/include/mathcalls.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/float.h \
+ /usr/include/__math.h compound.hh /usr/X11R6/include/X11/Intrinsic.h \
+ /usr/X11R6/include/X11/Xlib.h /usr/include/sys/types.h \
+ /usr/include/gnu/types.h /usr/include/time.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stddef.h \
+ /usr/include/sys/select.h /usr/include/selectbits.h \
+ /usr/X11R6/include/X11/X.h /usr/X11R6/include/X11/Xfuncproto.h \
+ /usr/X11R6/include/X11/Xosdefs.h /usr/X11R6/include/X11/Xutil.h \
+ /usr/X11R6/include/X11/Xresource.h /usr/include/string.h \
+ /usr/X11R6/include/X11/Core.h /usr/X11R6/include/X11/Composite.h \
+ /usr/X11R6/include/X11/Constraint.h /usr/X11R6/include/X11/Object.h \
+ /usr/X11R6/include/X11/RectObj.h ../../include/Drawing.h
+obj/doors.o: doors.cc /usr/include/math.h /usr/include/features.h \
+ /usr/include/sys/cdefs.h /usr/include/gnu/stubs.h \
+ /usr/include/huge_val.h /usr/include/nan.h /usr/include/endian.h \
+ /usr/include/bytesex.h /usr/include/mathcalls.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/float.h \
+ /usr/include/__math.h doors.hh /usr/X11R6/include/X11/Intrinsic.h \
+ /usr/X11R6/include/X11/Xlib.h /usr/include/sys/types.h \
+ /usr/include/gnu/types.h /usr/include/time.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stddef.h \
+ /usr/include/sys/select.h /usr/include/selectbits.h \
+ /usr/X11R6/include/X11/X.h /usr/X11R6/include/X11/Xfuncproto.h \
+ /usr/X11R6/include/X11/Xosdefs.h /usr/X11R6/include/X11/Xutil.h \
+ /usr/X11R6/include/X11/Xresource.h /usr/include/string.h \
+ /usr/X11R6/include/X11/Core.h /usr/X11R6/include/X11/Composite.h \
+ /usr/X11R6/include/X11/Constraint.h /usr/X11R6/include/X11/Object.h \
+ /usr/X11R6/include/X11/RectObj.h rectangle.hh obstacles.hh \
+ /usr/include/stdio.h /usr/include/libio.h /usr/include/_G_config.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stdarg.h \
+ /usr/include/stdio_lim.h /usr/include/sys/time.h \
+ /usr/include/timebits.h ../../include/Drawing.h surface.hh simxw.h \
+ linalg.h
+obj/human.o: human.cc /usr/include/math.h /usr/include/features.h \
+ /usr/include/sys/cdefs.h /usr/include/gnu/stubs.h \
+ /usr/include/huge_val.h /usr/include/nan.h /usr/include/endian.h \
+ /usr/include/bytesex.h /usr/include/mathcalls.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/float.h \
+ /usr/include/__math.h /usr/include/sys/time.h /usr/include/time.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stddef.h \
+ /usr/include/timebits.h /usr/include/gnu/types.h \
+ /usr/include/sys/select.h /usr/include/selectbits.h simxw.h \
+ /usr/X11R6/include/X11/Intrinsic.h /usr/X11R6/include/X11/Xlib.h \
+ /usr/include/sys/types.h /usr/X11R6/include/X11/X.h \
+ /usr/X11R6/include/X11/Xfuncproto.h /usr/X11R6/include/X11/Xosdefs.h \
+ /usr/X11R6/include/X11/Xutil.h /usr/X11R6/include/X11/Xresource.h \
+ /usr/include/string.h /usr/X11R6/include/X11/Core.h \
+ /usr/X11R6/include/X11/Composite.h \
+ /usr/X11R6/include/X11/Constraint.h /usr/X11R6/include/X11/Object.h \
+ /usr/X11R6/include/X11/RectObj.h ../../include/Drawing.h human.hh \
+ obstacles.hh /usr/include/stdio.h /usr/include/libio.h \
+ /usr/include/_G_config.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stdarg.h \
+ /usr/include/stdio_lim.h surface.hh circle.hh schedule.hh store.hh \
+ playground.hh
+obj/main.o: main.cc /usr/include/sys/time.h /usr/include/features.h \
+ /usr/include/sys/cdefs.h /usr/include/gnu/stubs.h /usr/include/time.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stddef.h \
+ /usr/include/timebits.h /usr/include/gnu/types.h \
+ /usr/include/sys/select.h /usr/include/selectbits.h \
+ ../../include/bUtils.h /usr/include/stdio.h /usr/include/libio.h \
+ /usr/include/_G_config.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stdarg.h \
+ /usr/include/stdio_lim.h /usr/include/termios.h \
+ /usr/include/termbits.h /usr/include/sys/ttydefaults.h \
+ ../../include/bNetwork.h /usr/include/sys/types.h \
+ /usr/include/endian.h /usr/include/bytesex.h \
+ /usr/include/netinet/in.h /usr/include/sys/socket.h \
+ /usr/include/socketbits.h /usr/include/sockaddrcom.h \
+ /usr/include/asm/socket.h /usr/include/asm/sockios.h \
+ ../../include/tcx.h robot.h /usr/X11R6/include/X11/Intrinsic.h \
+ /usr/X11R6/include/X11/Xlib.h /usr/X11R6/include/X11/X.h \
+ /usr/X11R6/include/X11/Xfuncproto.h /usr/X11R6/include/X11/Xosdefs.h \
+ /usr/X11R6/include/X11/Xutil.h /usr/X11R6/include/X11/Xresource.h \
+ /usr/include/string.h /usr/X11R6/include/X11/Core.h \
+ /usr/X11R6/include/X11/Composite.h \
+ /usr/X11R6/include/X11/Constraint.h /usr/X11R6/include/X11/Object.h \
+ /usr/X11R6/include/X11/RectObj.h playground.hh obstacles.hh \
+ ../../include/Drawing.h surface.hh simxw.h sonar.h ir.h tactile.h \
+ laser.h schedule.hh store.hh
+obj/obstacles.o: obstacles.cc simxw.h /usr/X11R6/include/X11/Intrinsic.h \
+ /usr/X11R6/include/X11/Xlib.h /usr/include/sys/types.h \
+ /usr/include/features.h /usr/include/sys/cdefs.h \
+ /usr/include/gnu/stubs.h /usr/include/gnu/types.h /usr/include/time.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stddef.h \
+ /usr/include/endian.h /usr/include/bytesex.h \
+ /usr/include/sys/select.h /usr/include/selectbits.h \
+ /usr/X11R6/include/X11/X.h /usr/X11R6/include/X11/Xfuncproto.h \
+ /usr/X11R6/include/X11/Xosdefs.h /usr/X11R6/include/X11/Xutil.h \
+ /usr/X11R6/include/X11/Xresource.h /usr/include/string.h \
+ /usr/X11R6/include/X11/Core.h /usr/X11R6/include/X11/Composite.h \
+ /usr/X11R6/include/X11/Constraint.h /usr/X11R6/include/X11/Object.h \
+ /usr/X11R6/include/X11/RectObj.h ../../include/Drawing.h obstacles.hh \
+ /usr/include/stdio.h /usr/include/libio.h /usr/include/_G_config.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stdarg.h \
+ /usr/include/stdio_lim.h /usr/include/sys/time.h \
+ /usr/include/timebits.h surface.hh rectangle.hh circle.hh doors.hh \
+ human.hh
+obj/playground.o: playground.cc /usr/include/stdlib.h \
+ /usr/include/features.h /usr/include/sys/cdefs.h \
+ /usr/include/gnu/stubs.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stddef.h \
+ /usr/include/sys/types.h /usr/include/gnu/types.h /usr/include/time.h \
+ /usr/include/endian.h /usr/include/bytesex.h \
+ /usr/include/sys/select.h /usr/include/selectbits.h \
+ /usr/include/alloca.h /usr/include/stdio.h /usr/include/libio.h \
+ /usr/include/_G_config.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stdarg.h \
+ /usr/include/stdio_lim.h /usr/include/math.h /usr/include/huge_val.h \
+ /usr/include/nan.h /usr/include/mathcalls.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/float.h \
+ /usr/include/__math.h playground.hh \
+ /usr/X11R6/include/X11/Intrinsic.h /usr/X11R6/include/X11/Xlib.h \
+ /usr/X11R6/include/X11/X.h /usr/X11R6/include/X11/Xfuncproto.h \
+ /usr/X11R6/include/X11/Xosdefs.h /usr/X11R6/include/X11/Xutil.h \
+ /usr/X11R6/include/X11/Xresource.h /usr/include/string.h \
+ /usr/X11R6/include/X11/Core.h /usr/X11R6/include/X11/Composite.h \
+ /usr/X11R6/include/X11/Constraint.h /usr/X11R6/include/X11/Object.h \
+ /usr/X11R6/include/X11/RectObj.h obstacles.hh /usr/include/sys/time.h \
+ /usr/include/timebits.h ../../include/Drawing.h surface.hh store.hh \
+ robot.h simxw.h
+obj/rectangle.o: rectangle.cc /usr/include/math.h /usr/include/features.h \
+ /usr/include/sys/cdefs.h /usr/include/gnu/stubs.h \
+ /usr/include/huge_val.h /usr/include/nan.h /usr/include/endian.h \
+ /usr/include/bytesex.h /usr/include/mathcalls.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/float.h \
+ /usr/include/__math.h /usr/include/values.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/limits.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/syslimits.h \
+ /usr/include/limits.h /usr/include/posix1_lim.h \
+ /usr/include/local_lim.h /usr/include/linux/limits.h \
+ /usr/include/posix2_lim.h /usr/include/xopen_lim.h \
+ /usr/include/stdio_lim.h rectangle.hh obstacles.hh \
+ /usr/X11R6/include/X11/Intrinsic.h /usr/X11R6/include/X11/Xlib.h \
+ /usr/include/sys/types.h /usr/include/gnu/types.h /usr/include/time.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stddef.h \
+ /usr/include/sys/select.h /usr/include/selectbits.h \
+ /usr/X11R6/include/X11/X.h /usr/X11R6/include/X11/Xfuncproto.h \
+ /usr/X11R6/include/X11/Xosdefs.h /usr/X11R6/include/X11/Xutil.h \
+ /usr/X11R6/include/X11/Xresource.h /usr/include/string.h \
+ /usr/X11R6/include/X11/Core.h /usr/X11R6/include/X11/Composite.h \
+ /usr/X11R6/include/X11/Constraint.h /usr/X11R6/include/X11/Object.h \
+ /usr/X11R6/include/X11/RectObj.h /usr/include/stdio.h \
+ /usr/include/libio.h /usr/include/_G_config.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stdarg.h \
+ /usr/include/sys/time.h /usr/include/timebits.h \
+ ../../include/Drawing.h surface.hh simxw.h linalg.h trigofkt.h
+obj/schedule.o: schedule.cc /usr/include/unistd.h /usr/include/features.h \
+ /usr/include/sys/cdefs.h /usr/include/gnu/stubs.h \
+ /usr/include/posix_opt.h /usr/include/gnu/types.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stddef.h \
+ /usr/include/confname.h /usr/include/sys/time.h /usr/include/time.h \
+ /usr/include/timebits.h /usr/include/sys/select.h \
+ /usr/include/selectbits.h /usr/include/stdio.h /usr/include/libio.h \
+ /usr/include/_G_config.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stdarg.h \
+ /usr/include/stdio_lim.h simxw.h /usr/X11R6/include/X11/Intrinsic.h \
+ /usr/X11R6/include/X11/Xlib.h /usr/include/sys/types.h \
+ /usr/include/endian.h /usr/include/bytesex.h \
+ /usr/X11R6/include/X11/X.h /usr/X11R6/include/X11/Xfuncproto.h \
+ /usr/X11R6/include/X11/Xosdefs.h /usr/X11R6/include/X11/Xutil.h \
+ /usr/X11R6/include/X11/Xresource.h /usr/include/string.h \
+ /usr/X11R6/include/X11/Core.h /usr/X11R6/include/X11/Composite.h \
+ /usr/X11R6/include/X11/Constraint.h /usr/X11R6/include/X11/Object.h \
+ /usr/X11R6/include/X11/RectObj.h ../../include/Drawing.h schedule.hh
+obj/store.o: store.cc /usr/X11R6/include/X11/Intrinsic.h \
+ /usr/X11R6/include/X11/Xlib.h /usr/include/sys/types.h \
+ /usr/include/features.h /usr/include/sys/cdefs.h \
+ /usr/include/gnu/stubs.h /usr/include/gnu/types.h /usr/include/time.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stddef.h \
+ /usr/include/endian.h /usr/include/bytesex.h \
+ /usr/include/sys/select.h /usr/include/selectbits.h \
+ /usr/X11R6/include/X11/X.h /usr/X11R6/include/X11/Xfuncproto.h \
+ /usr/X11R6/include/X11/Xosdefs.h /usr/X11R6/include/X11/Xutil.h \
+ /usr/X11R6/include/X11/Xresource.h /usr/include/string.h \
+ /usr/X11R6/include/X11/Core.h /usr/X11R6/include/X11/Composite.h \
+ /usr/X11R6/include/X11/Constraint.h /usr/X11R6/include/X11/Object.h \
+ /usr/X11R6/include/X11/RectObj.h /usr/include/stdio.h \
+ /usr/include/libio.h /usr/include/_G_config.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stdarg.h \
+ /usr/include/stdio_lim.h /usr/include/math.h /usr/include/huge_val.h \
+ /usr/include/nan.h /usr/include/mathcalls.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/float.h \
+ /usr/include/__math.h sundefines.h store.hh obstacles.hh \
+ /usr/include/sys/time.h /usr/include/timebits.h \
+ ../../include/Drawing.h surface.hh rectangle.hh circle.hh doors.hh \
+ human.hh
+obj/surface.o: surface.cc /usr/include/stdlib.h /usr/include/features.h \
+ /usr/include/sys/cdefs.h /usr/include/gnu/stubs.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stddef.h \
+ /usr/include/sys/types.h /usr/include/gnu/types.h /usr/include/time.h \
+ /usr/include/endian.h /usr/include/bytesex.h \
+ /usr/include/sys/select.h /usr/include/selectbits.h \
+ /usr/include/alloca.h /usr/include/stdio.h /usr/include/libio.h \
+ /usr/include/_G_config.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stdarg.h \
+ /usr/include/stdio_lim.h /usr/include/math.h /usr/include/huge_val.h \
+ /usr/include/nan.h /usr/include/mathcalls.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/float.h \
+ /usr/include/__math.h sundefines.h surface.hh sonar.h \
+ ../../include/bUtils.h /usr/include/termios.h /usr/include/termbits.h \
+ /usr/include/sys/ttydefaults.h ../../include/bNetwork.h \
+ /usr/include/netinet/in.h /usr/include/sys/socket.h \
+ /usr/include/socketbits.h /usr/include/sockaddrcom.h \
+ /usr/include/asm/socket.h /usr/include/asm/sockios.h

@@ -1,0 +1,917 @@
+Welcome to BeeSoft-1.3.x!
+
+BeeSoft 1.3.x are beta releases.  They are believed to be working but 
+have not been tested enough to be considered a standard release.
+
+This README isn't yet fully updated but here is the quick run-down:
+
+cameraServer now supports 2 cameras.  Review the README in the
+cameraSerer directory.
+
+laserServer has been added.  Review the README in the laserServer 
+directory.
+
+console has been added.  This is a Tcl/Tk GUI that manages the starting
+and stopping of BeeSoft processes.  It understands process dependencies
+and will start all processes that a process is dependent on as needed.
+Because the utiliity depends on Tcl, Tk and blt that may not be installed
+on some systems and because we haven't make the Makefiles automatically
+check to see if the resources needed to build console are available on
+the system, this package will not yet compile with the top level 'make'
+command.  After building BeeSoft you must 'cd console; make'.  This package
+depends on blt-2.3.  Redhat-4.2 comes with blt-1.9.  To build this package
+you much install blt-2.3 with the following command:
+
+sudo rpm -ihv --force blt-2.3-1.i386.rpm
+
+The blt rpm package is avilable from www.rwii.com with the BeeSoft-1.3
+package.  The reason for the forced install instead of an upgrade is
+that you may have other appications that are dependent on blt-1.x and
+won't work properly with blt-2.x.
+
+Configuring console requires and understanding of rsh, ssh or other
+remote shell utility.
+
+
+===================================================================
+
+BeeSoft was developed to improve features and ease of use from
+RAI while maintaining a reasonable level of backwards compatibility
+with existing RAI client software.  Most software can be ported from RAI 
+to BeeSoft by creating a new Makefile, changing the names of some header
+files and inserting a small block of code near the beginning of main().
+You can further port your code by taking advantage of some of the new
+functions and features available to your programs.
+
+Please review this entire document before starting any work.  This
+includes the Changes section.
+
+Please send comments to:
+
+	bxx-support@rwii.com
+
+We will do our best to answer your questions relating to BeeSoft and
+upgrading to our current RH 4.2 configuration.  We will also attempt to get
+all those questions and answers into a FAQ that will be combined with
+this information and made available to customers.
+
+Cheers!
+Ty
+
+------------------------------------------------------------------
+
+Contents:
+=========
+
+ 1 - Changes
+ 2 - List of packages
+ 3 - Outline for Installing BeeSoft
+ 4 - Installing Redhat Linux and updates
+ 5 - Installing the RobotSetupStuff package
+ 6 - Installing a new kernel
+ 7 - Serial ports and Comtrol Rocketport driver
+ 8 - Serial Console Information
+ 9 - Installing BeeSoft
+10 - Network Configuration
+11 - Porting RAI clients to BeeSoft
+12 - Known bugs
+
+------------------------------------------------------------------
+
+1 - Changes:
+============
+
+Changes from BeeSoft-1.3.4 to 1.3.8
+-----------------------------------
+
+- Minor fixes and updates to work with RH-5.x.
+
+Changes from BeeSoft-1.2.2 to 1.3.4
+-----------------------------------
+
+- cameraServer supports 2 cameras
+
+- added laserServer
+
+- added console utility
+
+- minor random misc. fixes and changes that might introduce
+	new and improved bugs even though they shoudn't.
+
+Changes from BeeSoft-1.2.1 to 1.2.2
+-----------------------------------
+
+- mostRecent and time fields of sensor data are now complete
+	though the time field is filled when the data is recieved
+	by the client rather then when the sensor data is sampled.
+
+- A problem with the A.bus kernel module (abusk.c) than can cause 
+	kernel corruption is fixed.
+
+- Focus and refresh behavior of the X based applications is improved.
+
+Changes from BeeSoft-1.2.0 to 1.2.1
+-----------------------------------
+
+- Improved installation instructions
+- Fixed a few minor items that prevented compiling on SunOS
+- Fixed (?) unreliable halt events
+- Fixed sensor mapping problem on B14
+
+
+Changes from BeeSoft-1.0.0 to 1.2.0
+-----------------------------------
+
+fixed pantiltClient when setting velocities and flow control problems.
+
+--
+
+armServer supports multiple clients but has no resource locking at 
+this time.
+
+--
+
+Applications that use speechServer will not block when trying to 
+connect to speechServer.  If speechServer can be connected to, the
+client will connect and use speechServer.  If speechServer can not
+be connected to, text that would have been spoken will be printed and
+each time new text is sent to speechServer the client library will attempt
+to connect.
+
+--
+
+Fixed row 1 IR mapping for B21.  There was a mistake in the mapping
+of the outward looking row of IR sensors that put IR number 23 of row
+1 where number 0 should be, number 0 where 1 should be, and so on.
+
+NOTE: This requires changes to your irCal.dat file!
+
+irCal.dat has 6 lines on  a B21.  The first colum indicates which
+IR row the information is for.  The second colum. indicates how 
+many IRs there are on that row.  The third is either a 01 or a 02 
+to indicate if this row contains the minimum or maximum values for
+that row.  The forth column to the end of the line contains the
+calibration data.  You should take the last data elements for row 1
+(the second IR row, the third and forth lines of the irCal.dat file)
+and move them to the first data element (forth entry on the line), thus
+moving all other data elements one to the right.
+
+rr nn mm d0 d1 d2 d3 d4 d5 d6 d7 ... d23
+
+In summary, for both the min line and the max line of row 1, move
+d23 to in front of d0, thus making d23 become d0, d0 become d1 and
+d22 become d23.  'rr' is row, 'nn' is number of IRs, 'mm' is min/max (01/02)
+and d0..d23 are the data elements.
+
+--
+
+It was found that the scaler and offset for converting raw sonar
+timing data to mm and cm was off.  The conversion factors have been
+improved.
+
+--
+
+Removed bRobot.h and all dependencies.  If any of your programs use
+bRobot.h you can still use oldRobot.h.  Compile-time configuration
+is being phased out and use of beeSoft.ini and bUtils is recommended
+instead of and of the *Robot.h files.
+
+--
+
+Moved odometry correction features to baseServer.  This requires requesting
+the odometry lock before making odometry corrections with the following
+function:
+
+void  bRequestOdometryLock(unsigned short priority);
+
+In general you should expect to see most resources recieve locks
+as part of future development.
+
+--
+
+Added empty sonarInit, irInit, irStart and irStop functions to baseClient.c.
+At the moment these functions are not used but they have been
+in the documentation and should be used for completness and compatibility
+with furture updates.
+
+--
+
+Updated consoleInit, libconsole, consoleTest and speechServer
+to use /dev/port.  This requires public rw permission on /dev/port 
+and eliminates the need for root privilages or a patched kernel for 
+I/O operations and no longer requires the I/O permissions patch
+that is part of the 2.0.27 patched kernel.
+
+To set your /dev/port permissions:
+
+sudo chmod a+rw /dev/port
+
+The RobotSetupStuff packages will not yet do this for you.  There are
+other patches in the kernel distributed by RWI that are still needed
+even thought the I/O permissions patch is now uneeded.
+
+--
+
+Combined all the examples into one directory and Makefile under beeExamples
+and made the Makefile smarter about finding the system installation.
+
+
+------------------------------------------------------------------
+
+2 - List of packages:
+=====================
+
+BeeSoft-README-1.2-3          : This file
+
+BeeSoft-manual-1.2-2.html.tgz : The full BeeSoft manual in
+BeeSoft-manual-1.2-2.ps.gz    : HTML, postscript and Adobe Acrobat
+BeeSoft-manual-1.2-2.pdf      : formats
+
+BeeSoft-src-1.2.2.tgz         : BeeSoft source code
+
+RobotSetupStuff-4.0-4.tgz     : Packages that modify the Redhat
+RobotSetupStuff-4.1-2.tgz     : Linux system configuration for use
+RobotSetupStuff-4.2-3.tgz     : on a robot, specific to a particular
+                              : release of Redhat Linux.
+
+Linux-2.0.27-patched.tgz      : The kernel sources used by RWI
+
+Linux-2.0.27-rwi-patches.tgz  : The patches applied to create the
+                              : above kernel source package.  You
+                              : do not need both the pre-patched 
+                              : kernel sources and the patches.
+
+------------------------------------------------------------------
+
+3 - Outline for Installing BeeSoft:
+===================================
+
+******** First **********
+
+Please review this entire document before starting any work.  This
+includes the Changes section above.
+
+******** Second **********
+
+Backup all important information from your system.  We recommend
+regular backups as a good practice.  We especially recommend
+a backup if you are installing an updated OS or installing a new
+kernel and may not be fully familiar and experienced with the 
+procedure.
+
+Next, choose outline a, b, c or d, depending on what your system
+is and what your needs are.  Then read the sections indicated by
+the outline here.
+
+If you are only upgrading BeeSoft then you can optionally apply any
+outstanding updates from Redhat and only need to follow the section
+on installing BeeSoft.
+
+Don't forget to read the full changes section.  It contains some information
+that is not yet well integrated into other documenation.
+
+a) Older than RH 4.0 (Slackware or RH 3.0)  (RH = Redhat Linux)
+
+	Install RH 4.2 from scratch
+	Install all RH 4.2 updates
+	Install RobotSetupStuff for 4.2
+	Install RWI's patched kernel
+	Compile Comtrol RocketPort driver
+	Install BeeSoft
+
+b) RAI or BeeSoft pre-1.0, RH 4.0
+
+	Install all RH 4.0 updates
+	Install RobotSetupStuff for 4.0
+	Install RWI's patched kernel
+	Compile Comtrol RocketPort driver
+	Install BeeSoft
+
+c) BeeSoft, RH 4.x
+
+	Install all RH 4.x updates
+	Install BeeSoft
+
+d) A workstation
+
+	Install BeeSoft
+
+	You may want to do this either to run clients that connect
+	to the robot with a radio link or to use the simulator.
+
+
+If you have any questions with these steps send email to 
+bxx-support@rwii.com and we will do our best to help you.
+
+RWI also offers various upgrade services and kits to update the 
+system software on your hard drive or add hardware such as a 
+multi-port RS-232, 10baseT ethernet, serial console or push-button 
+shutdown features to your robot.
+
+------------------------------------------------------------------
+		
+4 - Installing Redhat Linux and updates:
+========================================
+
+Note:	Do not confuse Redhat's updates to its system with the 
+	RobotSetupStuff package used by RWI or the patches that
+	we used to generate the kernel source code that we use.
+
+	If you system is working fine then installing the updates
+	supplied by Redhat is optional but may improve either stability
+	or security.
+      
+If you already have RH 4.0, 4.1 or 4.2 then you can just apply the RH 
+updates.  It is generally helpful to update to the latest version 
+(presently 4.2) as that is what RWI is using internally and will be 
+the best supported version.
+
+RWI recommends going to http://www.redhat.com/support/mailing-lists/
+and subscribing to the redhat-announce-list so that you will be
+notified of any future updates.
+
+- Install Redhat 4.2 according to the instructions.  RWI recommends
+  buying the CD-ROM with the manual if you do not already have it.
+
+- Get all the updated packages for Redhat 4.2 as documented in the
+  Redhat 4.2 errata sheet.
+
+Information about Redhat Linux, updates and errata for each version is
+available at:
+  
+	http://www.redhat.com/support/docs/rhl/
+
+------------------------------------------------------------------
+		
+5 - Installing the RobotSetupStuff package:
+===========================================
+      
+Note:	Do not confuse the RobotSetupStuff package with Redhat's
+	updates to its system or the patches that we used to 
+	generate the kernel source code that we use.
+
+	If you are not re-installing Linux on a robot then you
+	do _not_ need to re-install the RobotSetupStuff package.
+	It has already been done.
+      
+Systems that where shipped with RH 4.1 or 4.2 will already have an up-to-date
+RobotSetupStuff package.  Others should install the current version
+for their system.
+
+- Get the RobotSetupStuff package and then for your RH version then:
+      
+  tar -C / -zxvf RobotSetupStuff-xxxxxx.tgz
+	  
+  If this is not a new installation you may prefer to untar the package
+  someplace other than / and examine the contents first.
+	      
+This package will:
+
+	- Install files in /etc/ppp
+	- Install some system shell login scripts in /etc/profile.d
+	- Install a new /etc/inittab
+	- Install some updated files in /etc/rc.d
+	- Install a new /etc/conf.modules
+	- Install some config files in /etc/sysconfig
+	- Install a new /etc/lilo.conf
+	- Install a new /etc/sudoers
+	- Install a new /etc/shells
+	- Install a script in /root
+	- Install /sbin/installkernel and /sbin/beep
+	- Install source code for the Matrox Meteor and Comtrol RocketPort 
+		drivers in /usr/src/
+
+- Run the /root/rwi.setup script and then read the notes in the script for
+  items that the script does not do for you.  There are passwords to set
+  and system config files to edit.  These notes are not a manual so read 
+  them carefully and send mail to bxx-support@rwii.com if you need more 
+  information.
+
+  If you are not doing a new install you may want to read the script 
+  before running it.
+    
+This script will:
+
+	- create users rwi, ppp, bee and demo
+	- setup some PPP permissions and details
+	- set some secure ownerships and permissions
+	- create some backup kernel images to go with 
+		the newly installed /etc/lilo.conf
+	- Shutdown some normally uneeded system services
+	- create /dev entries for the ACCESS.bus driver
+	- setup a /dev/console symlink for the serial console setup
+
+- Enter the following command:
+
+	sudo chmod a+rw /dev/port
+
+Note: This package assumes that your system is using /dev/cua0 (/dev/ttyS0)
+as a serial console and /dev/cua1 (/dev/ttyS1) for a "shutdown button"
+using powerd.  
+
+See the Serial Console section for more information.
+
+------------------------------------------------------------------
+		
+6 - Installing a new kernel:
+============================
+
+Note:	Do not confuse the kernel source package or kernel patches
+	 with Redhat's updates to its system or the RobotSetupStuff 
+	package used by RWI to set the system configuration for
+	use on RWI robots.
+
+	If you are not re-installing Linux on a robot then you
+	do _not_ need to re-install a new kernel.  It has already 
+	been done.
+      
+Either install and compile the 2.0.27-patched kernel sources that 
+we use or apply the patches in the patches package to an other source
+code tree.  
+
+Next configure the kernel.  I suggest starting by creating a file 
+named /usr/src/linux/.config from the .config section below.  This
+is the configurion that RWI uses when compiling kernels for robots.
+Now type 'make menuconfig'.  If you created the .config file you will
+get RWI's config settings as the default choice.  Change any settings
+if needed.
+
+Once you have a patched set of kernel sources and have 
+configured the kernel, type:
+
+	cd /usr/src/linux
+	make dep
+	make clean
+	make install
+	make modules
+	make modules_install
+    
+We now install a 4 port 10base-T ethernet hub on B21s and a 10base-T 
+external connector on B21s and B14s.  The kernel sources, as distributed 
+by RWI, are configured to use the 10base-T connector on the PCI ethernet
+card that we now use.  You will need to change this if you will be using
+coax.
+
+---------------- begin .config --------------
+#
+# Automatically generated by make menuconfig: don't edit
+#
+
+#
+# Code maturity level options
+#
+CONFIG_EXPERIMENTAL=y
+
+#
+# Loadable module support
+#
+CONFIG_MODULES=y
+CONFIG_MODVERSIONS=y
+CONFIG_KERNELD=y
+
+#
+# General setup
+#
+# CONFIG_MATH_EMULATION is not set
+CONFIG_NET=y
+# CONFIG_MAX_16M is not set
+CONFIG_PCI=y
+# CONFIG_PCI_OPTIMIZE is not set
+CONFIG_SYSVIPC=y
+CONFIG_BINFMT_AOUT=m
+CONFIG_BINFMT_ELF=y
+CONFIG_BINFMT_JAVA=m
+CONFIG_KERNEL_ELF=y
+CONFIG_M586=y
+CONFIG_BIGPHYS_AREA=y
+
+#
+# Floppy, IDE, and other block devices
+#
+CONFIG_BLK_DEV_FD=y
+CONFIG_BLK_DEV_IDE=y
+# CONFIG_BLK_DEV_HD_IDE is not set
+CONFIG_BLK_DEV_IDECD=y
+# CONFIG_BLK_DEV_IDETAPE is not set
+# CONFIG_BLK_DEV_IDE_PCMCIA is not set
+# CONFIG_BLK_DEV_CMD640 is not set
+# CONFIG_BLK_DEV_RZ1000 is not set
+CONFIG_BLK_DEV_TRITON=y
+# CONFIG_IDE_CHIPSETS is not set
+CONFIG_BLK_DEV_LOOP=m
+# CONFIG_BLK_DEV_MD is not set
+CONFIG_BLK_DEV_RAM=m
+# CONFIG_BLK_DEV_XD is not set
+# CONFIG_BLK_DEV_HD is not set
+
+#
+# Networking options
+#
+# CONFIG_FIREWALL is not set
+CONFIG_NET_ALIAS=y
+CONFIG_INET=y
+CONFIG_IP_FORWARD=y
+# CONFIG_IP_MULTICAST is not set
+# CONFIG_IP_ACCT is not set
+# CONFIG_IP_ROUTER is not set
+# CONFIG_NET_IPIP is not set
+CONFIG_IP_ALIAS=m
+# CONFIG_INET_PCTCP is not set
+# CONFIG_INET_RARP is not set
+# CONFIG_NO_PATH_MTU_DISCOVERY is not set
+CONFIG_IP_NOSR=y
+CONFIG_SKB_LARGE=y
+# CONFIG_IPX is not set
+# CONFIG_ATALK is not set
+# CONFIG_AX25 is not set
+# CONFIG_BRIDGE is not set
+# CONFIG_NETLINK is not set
+
+#
+# SCSI support
+#
+# CONFIG_SCSI is not set
+
+#
+# Network device support
+#
+CONFIG_NETDEVICES=y
+CONFIG_DUMMY=m
+CONFIG_EQUALIZER=m
+# CONFIG_DLCI is not set
+# CONFIG_PLIP is not set
+CONFIG_PPP=m
+# CONFIG_SLIP is not set
+# CONFIG_NET_RADIO is not set
+CONFIG_NET_ETHERNET=y
+# CONFIG_NET_VENDOR_3COM is not set
+# CONFIG_LANCE is not set
+# CONFIG_NET_VENDOR_SMC is not set
+# CONFIG_NET_ISA is not set
+CONFIG_NET_EISA=y
+# CONFIG_AC3200 is not set
+# CONFIG_APRICOT is not set
+# CONFIG_DE4X5 is not set
+CONFIG_DEC_ELCP=m
+# CONFIG_DGRS is not set
+# CONFIG_ZNET is not set
+# CONFIG_NET_POCKET is not set
+# CONFIG_TR is not set
+# CONFIG_FDDI is not set
+# CONFIG_ARCNET is not set
+
+#
+# ISDN subsystem
+#
+# CONFIG_ISDN is not set
+
+#
+# CD-ROM drivers (not for SCSI or IDE/ATAPI drives)
+#
+# CONFIG_CD_NO_IDESCSI is not set
+
+#
+# Filesystems
+#
+# CONFIG_QUOTA is not set
+# CONFIG_LOCK_MANDATORY is not set
+CONFIG_MINIX_FS=m
+# CONFIG_EXT_FS is not set
+CONFIG_EXT2_FS=y
+# CONFIG_XIA_FS is not set
+CONFIG_FAT_FS=m
+CONFIG_MSDOS_FS=m
+CONFIG_VFAT_FS=m
+# CONFIG_UMSDOS_FS is not set
+CONFIG_PROC_FS=y
+CONFIG_NFS_FS=y
+# CONFIG_ROOT_NFS is not set
+CONFIG_SMB_FS=m
+CONFIG_SMB_WIN95=y
+CONFIG_ISO9660_FS=m
+# CONFIG_HPFS_FS is not set
+# CONFIG_SYSV_FS is not set
+# CONFIG_AFFS_FS is not set
+# CONFIG_UFS_FS is not set
+
+#
+# Character devices
+#
+CONFIG_SERIAL=y
+CONFIG_SERIAL_CONSOLE=y
+# CONFIG_DIGI is not set
+# CONFIG_CYCLADES is not set
+# CONFIG_STALDRV is not set
+# CONFIG_RISCOM8 is not set
+# CONFIG_PRINTER is not set
+# CONFIG_MOUSE is not set
+# CONFIG_UMISC is not set
+# CONFIG_QIC02_TAPE is not set
+# CONFIG_FTAPE is not set
+# CONFIG_APM is not set
+CONFIG_WATCHDOG=y
+# CONFIG_WATCHDOG_NOWAYOUT is not set
+# CONFIG_WDT is not set
+CONFIG_SOFT_WATCHDOG=m
+# CONFIG_PCWATCHDOG is not set
+CONFIG_RTC=y
+
+#
+# Sound
+#
+# CONFIG_SOUND is not set
+# CONFIG_PCSP is not set
+
+#
+# Kernel hacking
+#
+# CONFIG_PROFILE is not set
+---------------- end .config --------------
+
+------------------------------------------------------------------
+		
+7 - Serial ports and Comtrol Rocketport driver:
+===============================================
+
+Compile and install the Comtrol Rocketport driver (part of RobotSetupStuff)
+that is located in /usr/src.
+
+RWI now installs a Comtrol Rocket port in all robots and uses the RS-232
+ports as follows:
+
+/dev/cua0 - serial console
+/dev/cua1 - shutdown button that triggers powerd
+/dev/cur0 - mobile base
+/dev/cur1 - pantilt head
+/dev/cur2 - compass
+/dev/cur4 - B21 manipulator mast
+/dev/cur5 - B21 manipulator grip
+
+The /dev/cur? devices are for a RocketPort.  This information might
+prevent some confusion for those that don't have a rocketport.
+
+We now install a button connected to /dev/cua1 on each CPU that allows
+shutdown of the computer without logging in, through the use of powerd.
+We also use /dev/cua0 as a serial console.  See the robotSetupStuff 
+section for more information.
+
+If your system is configured differently you will have to edit the dev
+entries in ~bee/etc/beeSoft.ini to reflect how your devices are connected.
+
+------------------------------------------------------------------
+
+8 - Serial Console Information:
+===============================
+
+For those that have upgraded their systems it may be a good idea
+to restate that we now configure our robots with a serial console. 
+This means that under almost no conditions is it necessary to connect a
+keyboard and monitor directly to the robot.  If you do, you might be
+alarmed to see that there is very little information presented by the
+OS.  The robotSetupStuff package that is recommended as part of beeSoft
+includes several changes to the system configuration in /etc.
+
+To use the serial console instead of a montor/keyboard console, connect
+a straight (no NULL modem) 9 pin sub-D connector/cable to the serial
+port on the top of the B14 or one of the 2 on top of a B21.  The serial
+console will be running at 38400bps, no parity, one stop bit, 8 data
+bits.  At the other end of the cable use a computer with some sort of
+terminal emulation program running such as minicom, kermit, terminal or
+hyperterm.  There are dozens of other alternatives.
+
+If your system has been at RWI for recent updates it may have been
+updated to the serial console configuration to comply with current
+standards.  This is not always the case and you can send email to
+bxx-support@rwii.com if you are unsure.
+
+Note that the cua's are the same devices as the ttyS's.  The difference
+is that the ttS's have different default settings making them
+sometimes better for incoming connections and the cua's sometimes
+better for out going connections.
+
+To disable the serial console:
+
+1)  Comment out the line in /etc/lilo.conf that begins with 'serial='
+2)  Remove the part of the 'append=' line that contains "console=..."
+3)  run 'lilo' to make 1 and 2 take effect.
+4)  Make /dev/console a symlink to /dev/tty0 rather than /dev/ttyS0.
+5)  Comment out the line in /etc/inittab that starts mingetty on ttyS0.
+6)  In /etc/rc.d/rc.sysinit comment out the line that starts powerd.
+7)  'sudo killall -TERM powerd'
+8)  'sudo init q'
+
+Now your serial ports will be free for robot devices.
+
+The serial console and shut-down button (powerd) make the robot
+quite a bit nicer to work with.  We recommend considering adding a
+Comtrol RocketPort to your system if you don't have one so that you will 
+have plenty of high speed, low overhead RS-232 ports and so that you can 
+use the serial console configuration.
+
+------------------------------------------------------------------
+		
+9 - Installing BeeSoft:
+=======================
+
+Create a user named "bee" (this may already be done as part of the
+RobotSetupStuff procedure).  The software expects BeeSoft to be
+installed in ~bee.  Do all BeeSoft installation/administration as 
+the user bee.
+
+If BeeSoft can not be installed in ~bee then you will need to set 
+the environment variable BEEHOME to the directory where BeeSoft is
+installed.
+
+Do not perform the BeeSoft installation as root. If you do, you may 
+prevent other users from doing any work with the robot unless they 
+also have root privileges.
+
+BeeSoft will compile anywhere and will run so long as it can find its
+*.ini files in one of the following locations:
+
+	./
+	./etc/
+	../etc/
+	../../etc/
+	../../../etc/
+	~/bee/etc/
+	~/etc/
+	~/
+	$BEEHOME/etc/
+	~bee/etc/
+
+
+When installing a new version or an upgrade of any software package, 
+it's always prudent to save the old configuration, "just in case." 
+So, before you begin, back up, at the very least, your configuration 
+files: 
+
+	cd ~bee
+	cp -r etc etc.old 
+
+Next, install the distribution package.  Place the BeeSoft tgz package in
+~bee and then type: 
+
+	cd ~bee
+	rm -rf src
+	tar -zxvf BeeSoft-src-x.x.x.tgz 
+
+Now, go to the src subdirectory and compile BeeSoft.  First, we need 
+to clean up. The command make distclean removes everything in the 
+directories ~bee/bin, ~bee/etc and ~bee/lib. Type: 
+
+	cd ~bee/src
+	make distclean 
+
+Now, you'll need to edit the file ~bee/src/Makefile.conf to select a 
+value for ROBOT.  Select one of the values that is listed there.  
+
+Note: All B21 robots are of type B21 here.  Do not use B21b.
+
+You may need edit other parts of Makefile.conf to suit your particular 
+system, but this is not normally needed.
+
+When you call make, the following functions will be performed in sequence: 
+
+ 1. 'make export' places new ~bee/include, ~bee/bin and ~bee/etc 
+    (header files, script files, link files, parameter files) into 
+    the ppropriate directories.
+
+ 2. 'make depend' creates dependency files in each directory in ~bee/src
+
+ 3. 'make build' compiles all libraries and binaries and places all 
+    executables into their proper locations.
+
+To accomplish all this, simply type: 
+
+	make
+
+Then, optionally remove the object files (but not the executables, of course). 
+
+	make clean
+
+Now, you'll need to edit the file ~bee/etc/beeSoft.ini.  Check the values 
+in the section [robot] and the value for TCXHOST. 
+
+The difference between a B21 and a B21b is that a B21b as a slightly
+taller gear ratio on the translate axis.  This makes it a little faster.
+To determine which type you have look at the large drive pulley that is
+above each leg of the B21.  If it is all black plastic then you have a B21b.
+If the main disc of the pulley is aluminum with black plastic teeth then
+you have a B21.
+
+Note: BeeSoft software now uses the parameter structures in 
+      beeSoft.ini, and robot.h has been phased out.  Use oldRobot.h 
+      to compile old code, but use beeSoft.ini for all new development 
+      and updates. When your code uses only beeSoft.ini, the 
+      compile-time editing of Makefile.conf will become unnecessary.
+
+Summary:
+
+	cd ~bee
+	cp -r etc etc.old
+	rm -rf src
+	tar -zxvf BeeSoft-src-x.x.x.tgz 
+	cd ~bee/src
+		(edit ~bee/src/Makefile.conf)
+	make distclean
+	make
+	make clean
+		(edit ~bee/etc/beeSoft.ini)
+
+------------------------------------------------------------------
+
+10 - Network Configuration:
+===========================
+
+Configuring networking using a text console under Redhat 4.x
+
+you will need to edit the
+following files:
+
+/etc/HOSTNAME
+/etc/hosts
+/etc/resolv.conf
+/etc/sysconfig/network
+/etc/sysconfig/network-scripts/ifcfg-eth0
+
+For someone with a basic understanding of IP networking, it should be
+fairly easy to understand what needs to be changed in the files for your
+network. 
+
+You will likely use emacs, jed (an emacs clone with somewhat better 
+on-line help for beginners) or vi to do edit these files.
+
+Contact bxx-support@rwii.com for more details if needed.
+
+------------------------------------------------------------------
+		
+11 - Porting RAI clients to BeeSoft:
+====================================
+
+I have been hoping/planning to put together a better porting guide than
+this, but since it is way overdue, this should be better than nothing.
+
+Below is a diff from one particular RAI client that was ported to
+BeeSoft.  For a minimal port you will also need to add '#include
+<oldRobot.h>'.  For a more complete port you will want to check the
+manual for details on implementing changes like these:
+
+-  for(index=0;index<MAX_IRS_PER_ROW;index++)
++  for(index=0;index<bRobot.ir_cols[row];index++)
+
+
+------------ begin RAI -> BeeSoft diff ------------
+@@ -1,13 +1,11 @@
+ #include <stdio.h>
+ #include <math.h>
+ #include <unistd.h> 
+-#include <rai/baseClient.h>
+-#include <rai/speechClient.h>
+-#include <rai/baseMessages.h>
+-#include <rai/StatusKeeper.h>
+-#include <rai/Rai.h>
+ #include <stdlib.h>
+ #include <string.h>
+ 
+-/* definition */
++#include <baseClient.h>
++#include <speechClient.h>
++#include <rai.h>
++#include <bUtils.h>
+ 
+@@ -238,8 +236,22 @@
+ 
+ 
+ 
+-void main()
++void main(int argc, char** argv)
+ {
++  struct bParamList * params = NULL;
++
++  /* add some parameter files */
++  params = bParametersAddFile(params, "etc/beeSoft.ini");
++
++  /* add some enviroment variables */
++  params = bParametersAddEnv(params, "", "TCXHOST");
++
++  /* add command line arguements */
++  params = bParametersAddArray(params, "", argc, argv);
++
++  /* Fill the global parameter structure */
++  bParametersFillParams(params);
++
+   printf("registering\n");
+   registerSpeechClient();
+   registerBaseClient();
+------------ end RAI -> BeeSoft diff ------------
+
+------------------------------------------------------------------
+		
+12 - Known bugs:
+================
+
+Someone reported double halt events on the robot when the simulator 
+worked fine for them.
+
+colliClient still has some problems.

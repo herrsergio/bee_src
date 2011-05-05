@@ -1,0 +1,21 @@
+CC	= gcc
+CFLAGS	= $(XINC)
+LIB	= libXdw.a
+LIBS	= -L. $(XLIB) -lXdw -lXaw -lXmu -lXt -lXext -lX11 -lm
+OBJS	= Cache.o Drawing.o Figure.o Public.o
+PROG	= demo
+RM	= rm -f
+#XINC	= -I/usr/X11R5/include
+#XLIB	= -L/usr/X11R5/lib
+
+all:		$(LIB)
+
+$(PROG):	$(LIB) demo.o
+		$(CC) -o $(PROG) $(LDOPTS) demo.o $(LIBS)
+
+$(LIB):		$(OBJS)
+		$(RM) $(LIB)
+		$(AR) cq $(LIB) $(OBJS)
+		ranlib $(LIB) || true
+
+clean:;		$(RM) $(PROG) $(LIB) *.o

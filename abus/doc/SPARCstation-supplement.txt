@@ -1,0 +1,141 @@
+ACCESS.bus Device Driver Interface
+SPARCstation Supplement
+
+The ACCESS.bus protocol is described in the "ACCESS.bus Device Driver
+Interface," which is oriented toward DOS/Windows.  This document
+describes issues relevant for Solaris 2.x developers.
+
+Protocol overview
+There are two kinds of information passed between an application (or
+STREAMS module) and the device driver:  control and data (message from
+device). A message from a device may contain data for non-ACCESS.bus
+control information (e.g. printer out of paper).
+
+Normally in a Unix driver, control would be handled by ioctl() calls
+and data would be passed using read and write.  There are some ACCESS.bus
+control messages, however, that are generated asynchronously by the driver
+(e.g. when  a device is "hot-plugged").  Therefore, *all* messages are
+passed via reads & writes.  A program should sit in a polling loop using
+the poll() system call, Open Windows application can use a notifier
+callback which does the same thing.  Look at the sample cursor.c for
+an example.
+
+Here is the normal sequence for attaching a device to your program:
+
+	from application		from driver
+
+	D2M_LINK_REQUEST
+					M2D_LINK_REPLY
+	D2M_LINK_APPROVE
+					M2D_LINK_APPROVE_ACK
+
+Note:  the final message M2D_LINK_APPROVE_ACK is not part of the
+DOS/Windows spec (see below).
+
+So a typical program flow might be:
+
+	send D2M_LINK_REQUEST
+
+	while(forever) {
+	  poll(fd)
+	  read(fd, message)
+	  switch(message->major) {
+	    case: M2D_LINK_REPLY
+	        send D2M_LINK_APPROVE
+	        break
+	    case: M2D_LINK_APPROVE_ACK  /* This is a bit weak! Can't use */
+	        break                   /* this dev until this msg. TDS */
+	    case: M2D_MSG_TO_DRIVER
+	        handle the data
+                break
+	  }
+	}
+
+Note: reguarding M2D_MSG_TO_DRIVER, in ACCESS.bus terminalogy a "driver"
+is an application or a STREAMS module that is talking to the device driver.
+
+Opening the ACCESS.bus
+The ACCESS.bus SBus device driver implements clone opens.  This means
+that everyone opens the same /dev entry, but each open produces a
+different STREAM, so there is no conflict between two programs that open
+the same device name.  Once you open the ACCESS.bus you can ask for device
+configuration information (see the "ACCESS.bus Device Driver Interface") or
+you can immediately start sending link requests.  You can also push
+STREAMS modules.
+
+Each ACCESS.bus SBus card has two names, e.g.:
+
+	/dev/acb0
+	/dev/acbmouse0
+
+The only difference is that if you open acbmouse0, then the acbms STREAMS
+module is automatically pushed for you.
+
+If there are more than one SBus cards, they will have different names:
+
+	/dev/acb0	/dev/acb1	/dev/acb2	etc...
+	/dev/acbmouse0	/dev/acbmouse1	/dev/acbmouse2	etc...
+
+Finally, the following links exist by default:
+
+	/dev/acb -> /dev/acb0
+	/dev/acbmouse -> /dev/acbmouse0
+
+
+
+Development issues
+
+Include files
+
+All the #defines for messages and the data structures for most applications
+are found in:
+
+	/usr/local/include/acb/global.h
+
+If youare writing a STREAMS module (see the sample acbms.c) the following
+may also be useful:
+
+	/usr/local/include/acb/acb.h
+	/usr/local/include/acb/acbmsio.h
+
+
+Sending and receiving messages
+
+Messages are send & received via write() & read().  Even though an
+ACCESS.bus message has a length wich is specified in the message header,
+you should always read and write an entire ABMSG:
+
+	ABMSG msg;
+
+	if (read(fd, msg, sizeof(ABMSG)) != sizeof(ABMSG)) {
+	  fprintf(stderr, "%s: short read\n", argv[0]);
+
+
+Link requests & M2D_LINK_APPROVE_ACK
+
+If you send a D2M_LINK_REQUEST, the driver eventually responds with a
+M2D_LINK_REPLY.  Depending on the minor opcode, there either is or
+isn't a device available that meets you specifications.
+
+If there is a device available (minor = 0x00), and if you reply with a
+D2M_LINK_APPROVE, then the driver will eventually reply with a
+M2D_LINK_APPROVE_ACK.  If the M2D_LINK_APPROVE_ACK = 0x00 (the minor), you
+got the device, if the minor = 0xFF then either someone else got the device
+first (between the M2D_LINK_REPLY and the D2M_LINK_APPROVE) or the device
+got unplugged.
+
+
+Pending requests
+
+If you send D2M_LINK_APPROVE in response to M2D_LINK_REPLY where minor =
+0xFF, or if you receive an M2D_LINK_APPROVE_ACK where minor = 0xFF, or if
+your device is unplugged (in which case you would recieve D2M_DISCONNECT),
+then the driver considers you to have a pending request.  Should a new
+device that meets your specifications be plugged in (or be freed?), you
+will be notified with M2D_LONG_ID.  Your program should be prepared to
+handle this message.
+
+All processes that have pending requests are notified of new devices that
+meet their specifications, so if you receive an M2D_LONG_ID, and if you
+want that device, you need to go through the link approve cycle again,
+begining with D2M_LINK_APPROVE.

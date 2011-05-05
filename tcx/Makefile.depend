@@ -1,0 +1,399 @@
+obj/a1.o: a1.c /usr/include/stdio.h /usr/include/libio.h \
+ /usr/include/features.h /usr/include/sys/cdefs.h \
+ /usr/include/gnu/stubs.h /usr/include/_G_config.h \
+ /usr/include/gnu/types.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stddef.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stdarg.h \
+ /usr/include/stdio_lim.h /usr/include/signal.h /usr/include/sigset.h \
+ /usr/include/signum.h /usr/include/sigaction.h \
+ /usr/include/sigcontext.h /usr/include/asm/sigcontext.h \
+ /usr/include/sigstack.h tcx.h /usr/include/sys/types.h \
+ /usr/include/time.h /usr/include/endian.h /usr/include/bytesex.h \
+ /usr/include/sys/select.h /usr/include/selectbits.h \
+ /usr/include/netinet/in.h /usr/include/sys/socket.h \
+ /usr/include/socketbits.h /usr/include/sockaddrcom.h \
+ /usr/include/asm/socket.h /usr/include/asm/sockios.h sampleTest.h \
+ tcaMatrix.h
+obj/b1.o: b1.c /usr/include/stdio.h /usr/include/libio.h \
+ /usr/include/features.h /usr/include/sys/cdefs.h \
+ /usr/include/gnu/stubs.h /usr/include/_G_config.h \
+ /usr/include/gnu/types.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stddef.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stdarg.h \
+ /usr/include/stdio_lim.h /usr/include/sys/types.h /usr/include/time.h \
+ /usr/include/endian.h /usr/include/bytesex.h \
+ /usr/include/sys/select.h /usr/include/selectbits.h \
+ /usr/include/sys/time.h /usr/include/timebits.h /usr/include/signal.h \
+ /usr/include/sigset.h /usr/include/signum.h /usr/include/sigaction.h \
+ /usr/include/sigcontext.h /usr/include/asm/sigcontext.h \
+ /usr/include/sigstack.h tcx.h /usr/include/netinet/in.h \
+ /usr/include/sys/socket.h /usr/include/socketbits.h \
+ /usr/include/sockaddrcom.h /usr/include/asm/socket.h \
+ /usr/include/asm/sockios.h sampleTest.h tcaMatrix.h
+obj/com.o: com.c /usr/include/stdio.h /usr/include/libio.h \
+ /usr/include/features.h /usr/include/sys/cdefs.h \
+ /usr/include/gnu/stubs.h /usr/include/_G_config.h \
+ /usr/include/gnu/types.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stddef.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stdarg.h \
+ /usr/include/stdio_lim.h /usr/include/ctype.h /usr/include/endian.h \
+ /usr/include/bytesex.h /usr/include/signal.h /usr/include/sigset.h \
+ /usr/include/signum.h /usr/include/sigaction.h \
+ /usr/include/sigcontext.h /usr/include/asm/sigcontext.h \
+ /usr/include/sigstack.h /usr/include/sys/time.h /usr/include/time.h \
+ /usr/include/timebits.h /usr/include/sys/select.h \
+ /usr/include/selectbits.h /usr/include/sys/types.h \
+ /usr/include/sys/socket.h /usr/include/socketbits.h \
+ /usr/include/sockaddrcom.h /usr/include/asm/socket.h \
+ /usr/include/asm/sockios.h /usr/include/netinet/in.h \
+ /usr/include/netinet/tcp.h /usr/include/netdb.h \
+ /usr/include/rpc/netdb.h /usr/include/errno.h /usr/include/errnos.h \
+ /usr/include/linux/errno.h /usr/include/asm/errno.h tcx.h tcxP.h \
+ /usr/include/malloc.h list.h hash.h key.h formatters.h msg.h com.h \
+ module.h global.h /usr/include/sys/timeb.h lex.h
+obj/comA.o: comA.c /usr/include/fcntl.h /usr/include/features.h \
+ /usr/include/sys/cdefs.h /usr/include/gnu/stubs.h \
+ /usr/include/fcntlbits.h /usr/include/sys/types.h \
+ /usr/include/gnu/types.h /usr/include/time.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stddef.h \
+ /usr/include/endian.h /usr/include/bytesex.h \
+ /usr/include/sys/select.h /usr/include/selectbits.h \
+ /usr/include/stdio.h /usr/include/libio.h /usr/include/_G_config.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stdarg.h \
+ /usr/include/stdio_lim.h /usr/include/ctype.h /usr/include/signal.h \
+ /usr/include/sigset.h /usr/include/signum.h /usr/include/sigaction.h \
+ /usr/include/sigcontext.h /usr/include/asm/sigcontext.h \
+ /usr/include/sigstack.h /usr/include/sys/time.h \
+ /usr/include/timebits.h /usr/include/sys/socket.h \
+ /usr/include/socketbits.h /usr/include/sockaddrcom.h \
+ /usr/include/asm/socket.h /usr/include/asm/sockios.h \
+ /usr/include/netinet/in.h /usr/include/netinet/tcp.h \
+ /usr/include/netdb.h /usr/include/rpc/netdb.h /usr/include/errno.h \
+ /usr/include/errnos.h /usr/include/linux/errno.h \
+ /usr/include/asm/errno.h tcx.h tcxP.h /usr/include/malloc.h com.h \
+ list.h msg.h module.h global.h /usr/include/sys/timeb.h hash.h lex.h \
+ formatters.h
+obj/d1.o: d1.c /usr/include/stdio.h /usr/include/libio.h \
+ /usr/include/features.h /usr/include/sys/cdefs.h \
+ /usr/include/gnu/stubs.h /usr/include/_G_config.h \
+ /usr/include/gnu/types.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stddef.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stdarg.h \
+ /usr/include/stdio_lim.h tcx.h /usr/include/sys/types.h \
+ /usr/include/time.h /usr/include/endian.h /usr/include/bytesex.h \
+ /usr/include/sys/select.h /usr/include/selectbits.h \
+ /usr/include/netinet/in.h /usr/include/sys/socket.h \
+ /usr/include/socketbits.h /usr/include/sockaddrcom.h \
+ /usr/include/asm/socket.h /usr/include/asm/sockios.h sampleTest.h \
+ tcaMatrix.h
+obj/data.o: data.c /usr/include/stdio.h /usr/include/libio.h \
+ /usr/include/features.h /usr/include/sys/cdefs.h \
+ /usr/include/gnu/stubs.h /usr/include/_G_config.h \
+ /usr/include/gnu/types.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stddef.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stdarg.h \
+ /usr/include/stdio_lim.h /usr/include/signal.h /usr/include/sigset.h \
+ /usr/include/signum.h /usr/include/sigaction.h \
+ /usr/include/sigcontext.h /usr/include/asm/sigcontext.h \
+ /usr/include/sigstack.h /usr/include/sys/time.h /usr/include/time.h \
+ /usr/include/timebits.h /usr/include/sys/select.h \
+ /usr/include/selectbits.h /usr/include/sys/types.h \
+ /usr/include/endian.h /usr/include/bytesex.h \
+ /usr/include/sys/socket.h /usr/include/socketbits.h \
+ /usr/include/sockaddrcom.h /usr/include/asm/socket.h \
+ /usr/include/asm/sockios.h /usr/include/netinet/in.h \
+ /usr/include/netinet/tcp.h /usr/include/netdb.h \
+ /usr/include/rpc/netdb.h /usr/include/errno.h /usr/include/errnos.h \
+ /usr/include/linux/errno.h /usr/include/asm/errno.h \
+ /usr/include/string.h tcx.h tcxP.h /usr/include/malloc.h list.h \
+ hash.h key.h formatters.h msg.h module.h global.h \
+ /usr/include/ctype.h /usr/include/sys/timeb.h lex.h
+obj/formatters.o: formatters.c /usr/include/stdio.h /usr/include/libio.h \
+ /usr/include/features.h /usr/include/sys/cdefs.h \
+ /usr/include/gnu/stubs.h /usr/include/_G_config.h \
+ /usr/include/gnu/types.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stddef.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stdarg.h \
+ /usr/include/stdio_lim.h hash.h formatters.h global.h \
+ /usr/include/ctype.h /usr/include/endian.h /usr/include/bytesex.h \
+ /usr/include/signal.h /usr/include/sigset.h /usr/include/signum.h \
+ /usr/include/sigaction.h /usr/include/sigcontext.h \
+ /usr/include/asm/sigcontext.h /usr/include/sigstack.h \
+ /usr/include/sys/time.h /usr/include/time.h /usr/include/timebits.h \
+ /usr/include/sys/select.h /usr/include/selectbits.h \
+ /usr/include/sys/timeb.h /usr/include/sys/types.h \
+ /usr/include/sys/socket.h /usr/include/socketbits.h \
+ /usr/include/sockaddrcom.h /usr/include/asm/socket.h \
+ /usr/include/asm/sockios.h /usr/include/netinet/in.h \
+ /usr/include/netinet/tcp.h /usr/include/netdb.h \
+ /usr/include/rpc/netdb.h /usr/include/errno.h /usr/include/errnos.h \
+ /usr/include/linux/errno.h /usr/include/asm/errno.h \
+ /usr/include/malloc.h tcx.h tcxP.h lex.h list.h
+obj/global.o: global.c global.h /usr/include/stdio.h /usr/include/libio.h \
+ /usr/include/features.h /usr/include/sys/cdefs.h \
+ /usr/include/gnu/stubs.h /usr/include/_G_config.h \
+ /usr/include/gnu/types.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stddef.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stdarg.h \
+ /usr/include/stdio_lim.h /usr/include/ctype.h /usr/include/endian.h \
+ /usr/include/bytesex.h /usr/include/signal.h /usr/include/sigset.h \
+ /usr/include/signum.h /usr/include/sigaction.h \
+ /usr/include/sigcontext.h /usr/include/asm/sigcontext.h \
+ /usr/include/sigstack.h /usr/include/sys/time.h /usr/include/time.h \
+ /usr/include/timebits.h /usr/include/sys/select.h \
+ /usr/include/selectbits.h /usr/include/sys/timeb.h \
+ /usr/include/sys/types.h /usr/include/sys/socket.h \
+ /usr/include/socketbits.h /usr/include/sockaddrcom.h \
+ /usr/include/asm/socket.h /usr/include/asm/sockios.h \
+ /usr/include/netinet/in.h /usr/include/netinet/tcp.h \
+ /usr/include/netdb.h /usr/include/rpc/netdb.h /usr/include/errno.h \
+ /usr/include/errnos.h /usr/include/linux/errno.h \
+ /usr/include/asm/errno.h /usr/include/malloc.h tcx.h tcxP.h hash.h \
+ lex.h list.h formatters.h
+obj/hash.o: hash.c /usr/include/stdio.h /usr/include/libio.h \
+ /usr/include/features.h /usr/include/sys/cdefs.h \
+ /usr/include/gnu/stubs.h /usr/include/_G_config.h \
+ /usr/include/gnu/types.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stddef.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stdarg.h \
+ /usr/include/stdio_lim.h hash.h
+obj/lex.o: lex.c /usr/include/stdio.h /usr/include/libio.h \
+ /usr/include/features.h /usr/include/sys/cdefs.h \
+ /usr/include/gnu/stubs.h /usr/include/_G_config.h \
+ /usr/include/gnu/types.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stddef.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stdarg.h \
+ /usr/include/stdio_lim.h /usr/include/string.h /usr/include/ctype.h \
+ /usr/include/endian.h /usr/include/bytesex.h lex.h global.h \
+ /usr/include/signal.h /usr/include/sigset.h /usr/include/signum.h \
+ /usr/include/sigaction.h /usr/include/sigcontext.h \
+ /usr/include/asm/sigcontext.h /usr/include/sigstack.h \
+ /usr/include/sys/time.h /usr/include/time.h /usr/include/timebits.h \
+ /usr/include/sys/select.h /usr/include/selectbits.h \
+ /usr/include/sys/timeb.h /usr/include/sys/types.h \
+ /usr/include/sys/socket.h /usr/include/socketbits.h \
+ /usr/include/sockaddrcom.h /usr/include/asm/socket.h \
+ /usr/include/asm/sockios.h /usr/include/netinet/in.h \
+ /usr/include/netinet/tcp.h /usr/include/netdb.h \
+ /usr/include/rpc/netdb.h /usr/include/errno.h /usr/include/errnos.h \
+ /usr/include/linux/errno.h /usr/include/asm/errno.h \
+ /usr/include/malloc.h tcx.h tcxP.h hash.h list.h formatters.h
+obj/list.o: list.c /usr/include/stdio.h /usr/include/libio.h \
+ /usr/include/features.h /usr/include/sys/cdefs.h \
+ /usr/include/gnu/stubs.h /usr/include/_G_config.h \
+ /usr/include/gnu/types.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stddef.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stdarg.h \
+ /usr/include/stdio_lim.h list.h global.h /usr/include/ctype.h \
+ /usr/include/endian.h /usr/include/bytesex.h /usr/include/signal.h \
+ /usr/include/sigset.h /usr/include/signum.h /usr/include/sigaction.h \
+ /usr/include/sigcontext.h /usr/include/asm/sigcontext.h \
+ /usr/include/sigstack.h /usr/include/sys/time.h /usr/include/time.h \
+ /usr/include/timebits.h /usr/include/sys/select.h \
+ /usr/include/selectbits.h /usr/include/sys/timeb.h \
+ /usr/include/sys/types.h /usr/include/sys/socket.h \
+ /usr/include/socketbits.h /usr/include/sockaddrcom.h \
+ /usr/include/asm/socket.h /usr/include/asm/sockios.h \
+ /usr/include/netinet/in.h /usr/include/netinet/tcp.h \
+ /usr/include/netdb.h /usr/include/rpc/netdb.h /usr/include/errno.h \
+ /usr/include/errnos.h /usr/include/linux/errno.h \
+ /usr/include/asm/errno.h /usr/include/malloc.h tcx.h tcxP.h hash.h \
+ lex.h formatters.h
+obj/module.o: module.c /usr/include/stdio.h /usr/include/libio.h \
+ /usr/include/features.h /usr/include/sys/cdefs.h \
+ /usr/include/gnu/stubs.h /usr/include/_G_config.h \
+ /usr/include/gnu/types.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stddef.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stdarg.h \
+ /usr/include/stdio_lim.h /usr/include/sys/types.h /usr/include/time.h \
+ /usr/include/endian.h /usr/include/bytesex.h \
+ /usr/include/sys/select.h /usr/include/selectbits.h tcx.h \
+ /usr/include/netinet/in.h /usr/include/sys/socket.h \
+ /usr/include/socketbits.h /usr/include/sockaddrcom.h \
+ /usr/include/asm/socket.h /usr/include/asm/sockios.h tcxP.h \
+ /usr/include/malloc.h list.h module.h hash.h global.h \
+ /usr/include/ctype.h /usr/include/signal.h /usr/include/sigset.h \
+ /usr/include/signum.h /usr/include/sigaction.h \
+ /usr/include/sigcontext.h /usr/include/asm/sigcontext.h \
+ /usr/include/sigstack.h /usr/include/sys/time.h \
+ /usr/include/timebits.h /usr/include/sys/timeb.h \
+ /usr/include/netinet/tcp.h /usr/include/netdb.h \
+ /usr/include/rpc/netdb.h /usr/include/errno.h /usr/include/errnos.h \
+ /usr/include/linux/errno.h /usr/include/asm/errno.h lex.h \
+ formatters.h beeSoftVersion.h
+obj/msg.o: msg.c /usr/include/stdio.h /usr/include/libio.h \
+ /usr/include/features.h /usr/include/sys/cdefs.h \
+ /usr/include/gnu/stubs.h /usr/include/_G_config.h \
+ /usr/include/gnu/types.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stddef.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stdarg.h \
+ /usr/include/stdio_lim.h /usr/include/ctype.h /usr/include/endian.h \
+ /usr/include/bytesex.h /usr/include/string.h formatters.h tcx.h \
+ /usr/include/sys/types.h /usr/include/time.h \
+ /usr/include/sys/select.h /usr/include/selectbits.h \
+ /usr/include/netinet/in.h /usr/include/sys/socket.h \
+ /usr/include/socketbits.h /usr/include/sockaddrcom.h \
+ /usr/include/asm/socket.h /usr/include/asm/sockios.h tcxP.h \
+ /usr/include/malloc.h list.h hash.h msg.h global.h \
+ /usr/include/signal.h /usr/include/sigset.h /usr/include/signum.h \
+ /usr/include/sigaction.h /usr/include/sigcontext.h \
+ /usr/include/asm/sigcontext.h /usr/include/sigstack.h \
+ /usr/include/sys/time.h /usr/include/timebits.h \
+ /usr/include/sys/timeb.h /usr/include/netinet/tcp.h \
+ /usr/include/netdb.h /usr/include/rpc/netdb.h /usr/include/errno.h \
+ /usr/include/errnos.h /usr/include/linux/errno.h \
+ /usr/include/asm/errno.h lex.h
+obj/parseFmttrs.o: parseFmttrs.c /usr/include/stdio.h /usr/include/libio.h \
+ /usr/include/features.h /usr/include/sys/cdefs.h \
+ /usr/include/gnu/stubs.h /usr/include/_G_config.h \
+ /usr/include/gnu/types.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stddef.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stdarg.h \
+ /usr/include/stdio_lim.h formatters.h hash.h lex.h list.h global.h \
+ /usr/include/ctype.h /usr/include/endian.h /usr/include/bytesex.h \
+ /usr/include/signal.h /usr/include/sigset.h /usr/include/signum.h \
+ /usr/include/sigaction.h /usr/include/sigcontext.h \
+ /usr/include/asm/sigcontext.h /usr/include/sigstack.h \
+ /usr/include/sys/time.h /usr/include/time.h /usr/include/timebits.h \
+ /usr/include/sys/select.h /usr/include/selectbits.h \
+ /usr/include/sys/timeb.h /usr/include/sys/types.h \
+ /usr/include/sys/socket.h /usr/include/socketbits.h \
+ /usr/include/sockaddrcom.h /usr/include/asm/socket.h \
+ /usr/include/asm/sockios.h /usr/include/netinet/in.h \
+ /usr/include/netinet/tcp.h /usr/include/netdb.h \
+ /usr/include/rpc/netdb.h /usr/include/errno.h /usr/include/errnos.h \
+ /usr/include/linux/errno.h /usr/include/asm/errno.h \
+ /usr/include/malloc.h tcx.h tcxP.h
+obj/primFmttrs.o: primFmttrs.c /usr/include/stdio.h /usr/include/libio.h \
+ /usr/include/features.h /usr/include/sys/cdefs.h \
+ /usr/include/gnu/stubs.h /usr/include/_G_config.h \
+ /usr/include/gnu/types.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stddef.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stdarg.h \
+ /usr/include/stdio_lim.h tcx.h /usr/include/sys/types.h \
+ /usr/include/time.h /usr/include/endian.h /usr/include/bytesex.h \
+ /usr/include/sys/select.h /usr/include/selectbits.h \
+ /usr/include/netinet/in.h /usr/include/sys/socket.h \
+ /usr/include/socketbits.h /usr/include/sockaddrcom.h \
+ /usr/include/asm/socket.h /usr/include/asm/sockios.h formatters.h \
+ printData.h tcaMatrix.h
+obj/reg.o: reg.c /usr/include/stdio.h /usr/include/libio.h \
+ /usr/include/features.h /usr/include/sys/cdefs.h \
+ /usr/include/gnu/stubs.h /usr/include/_G_config.h \
+ /usr/include/gnu/types.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stddef.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stdarg.h \
+ /usr/include/stdio_lim.h tcx.h /usr/include/sys/types.h \
+ /usr/include/time.h /usr/include/endian.h /usr/include/bytesex.h \
+ /usr/include/sys/select.h /usr/include/selectbits.h \
+ /usr/include/netinet/in.h /usr/include/sys/socket.h \
+ /usr/include/socketbits.h /usr/include/sockaddrcom.h \
+ /usr/include/asm/socket.h /usr/include/asm/sockios.h tcxP.h \
+ /usr/include/malloc.h list.h msg.h hash.h global.h \
+ /usr/include/ctype.h /usr/include/signal.h /usr/include/sigset.h \
+ /usr/include/signum.h /usr/include/sigaction.h \
+ /usr/include/sigcontext.h /usr/include/asm/sigcontext.h \
+ /usr/include/sigstack.h /usr/include/sys/time.h \
+ /usr/include/timebits.h /usr/include/sys/timeb.h \
+ /usr/include/netinet/tcp.h /usr/include/netdb.h \
+ /usr/include/rpc/netdb.h /usr/include/errno.h /usr/include/errnos.h \
+ /usr/include/linux/errno.h /usr/include/asm/errno.h lex.h \
+ formatters.h
+obj/tcaMatrix.o: tcaMatrix.c tcaMatrix.h
+obj/tcaMem.o: tcaMem.c /usr/include/stdio.h /usr/include/libio.h \
+ /usr/include/features.h /usr/include/sys/cdefs.h \
+ /usr/include/gnu/stubs.h /usr/include/_G_config.h \
+ /usr/include/gnu/types.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stddef.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stdarg.h \
+ /usr/include/stdio_lim.h global.h /usr/include/ctype.h \
+ /usr/include/endian.h /usr/include/bytesex.h /usr/include/signal.h \
+ /usr/include/sigset.h /usr/include/signum.h /usr/include/sigaction.h \
+ /usr/include/sigcontext.h /usr/include/asm/sigcontext.h \
+ /usr/include/sigstack.h /usr/include/sys/time.h /usr/include/time.h \
+ /usr/include/timebits.h /usr/include/sys/select.h \
+ /usr/include/selectbits.h /usr/include/sys/timeb.h \
+ /usr/include/sys/types.h /usr/include/sys/socket.h \
+ /usr/include/socketbits.h /usr/include/sockaddrcom.h \
+ /usr/include/asm/socket.h /usr/include/asm/sockios.h \
+ /usr/include/netinet/in.h /usr/include/netinet/tcp.h \
+ /usr/include/netdb.h /usr/include/rpc/netdb.h /usr/include/errno.h \
+ /usr/include/errnos.h /usr/include/linux/errno.h \
+ /usr/include/asm/errno.h /usr/include/malloc.h tcx.h tcxP.h hash.h \
+ lex.h list.h formatters.h
+obj/tcxServer.o: tcxServer.c /usr/include/stdio.h /usr/include/libio.h \
+ /usr/include/features.h /usr/include/sys/cdefs.h \
+ /usr/include/gnu/stubs.h /usr/include/_G_config.h \
+ /usr/include/gnu/types.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stddef.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stdarg.h \
+ /usr/include/stdio_lim.h /usr/include/ctype.h /usr/include/endian.h \
+ /usr/include/bytesex.h /usr/include/signal.h /usr/include/sigset.h \
+ /usr/include/signum.h /usr/include/sigaction.h \
+ /usr/include/sigcontext.h /usr/include/asm/sigcontext.h \
+ /usr/include/sigstack.h /usr/include/sys/time.h /usr/include/time.h \
+ /usr/include/timebits.h /usr/include/sys/select.h \
+ /usr/include/selectbits.h /usr/include/sys/types.h \
+ /usr/include/sys/socket.h /usr/include/socketbits.h \
+ /usr/include/sockaddrcom.h /usr/include/asm/socket.h \
+ /usr/include/asm/sockios.h /usr/include/netinet/in.h \
+ /usr/include/netinet/tcp.h /usr/include/netdb.h \
+ /usr/include/rpc/netdb.h /usr/include/errno.h /usr/include/errnos.h \
+ /usr/include/linux/errno.h /usr/include/asm/errno.h \
+ ../../include/bUtils.h /usr/include/termios.h /usr/include/termbits.h \
+ /usr/include/sys/ttydefaults.h ../../include/bNetwork.h global.h \
+ /usr/include/sys/timeb.h /usr/include/malloc.h tcx.h tcxP.h hash.h \
+ lex.h list.h formatters.h key.h msg.h com.h module.h beeSoftVersion.h
+obj/tcxcheck.o: tcxcheck.c /usr/include/ctype.h /usr/include/features.h \
+ /usr/include/sys/cdefs.h /usr/include/gnu/stubs.h \
+ /usr/include/endian.h /usr/include/bytesex.h /usr/include/math.h \
+ /usr/include/huge_val.h /usr/include/mathcalls.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/float.h \
+ /usr/include/__math.h /usr/include/stdio.h /usr/include/libio.h \
+ /usr/include/_G_config.h /usr/include/gnu/types.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stddef.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stdarg.h \
+ /usr/include/stdio_lim.h /usr/include/stdlib.h \
+ /usr/include/sys/types.h /usr/include/time.h \
+ /usr/include/sys/select.h /usr/include/selectbits.h \
+ /usr/include/alloca.h /usr/include/sys/time.h /usr/include/timebits.h \
+ /usr/include/signal.h /usr/include/sigset.h /usr/include/signum.h \
+ /usr/include/sigaction.h /usr/include/sigcontext.h \
+ /usr/include/asm/sigcontext.h /usr/include/sigstack.h tcx.h \
+ /usr/include/netinet/in.h /usr/include/sys/socket.h \
+ /usr/include/socketbits.h /usr/include/sockaddrcom.h \
+ /usr/include/asm/socket.h /usr/include/asm/sockios.h tcxP.h \
+ /usr/include/malloc.h global.h /usr/include/sys/timeb.h \
+ /usr/include/netinet/tcp.h /usr/include/netdb.h \
+ /usr/include/rpc/netdb.h /usr/include/errno.h /usr/include/errnos.h \
+ /usr/include/linux/errno.h /usr/include/asm/errno.h hash.h lex.h \
+ list.h formatters.h
+obj/version.o: version.c /usr/include/stdio.h /usr/include/libio.h \
+ /usr/include/features.h /usr/include/sys/cdefs.h \
+ /usr/include/gnu/stubs.h /usr/include/_G_config.h \
+ /usr/include/gnu/types.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stddef.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stdarg.h \
+ /usr/include/stdio_lim.h /usr/include/ctype.h /usr/include/endian.h \
+ /usr/include/bytesex.h /usr/include/signal.h /usr/include/sigset.h \
+ /usr/include/signum.h /usr/include/sigaction.h \
+ /usr/include/sigcontext.h /usr/include/asm/sigcontext.h \
+ /usr/include/sigstack.h /usr/include/sys/time.h /usr/include/time.h \
+ /usr/include/timebits.h /usr/include/sys/select.h \
+ /usr/include/selectbits.h /usr/include/sys/types.h \
+ /usr/include/sys/socket.h /usr/include/socketbits.h \
+ /usr/include/sockaddrcom.h /usr/include/asm/socket.h \
+ /usr/include/asm/sockios.h /usr/include/errno.h /usr/include/errnos.h \
+ /usr/include/linux/errno.h /usr/include/asm/errno.h tcx.h \
+ /usr/include/netinet/in.h tcxP.h /usr/include/malloc.h global.h \
+ /usr/include/sys/timeb.h /usr/include/netinet/tcp.h \
+ /usr/include/netdb.h /usr/include/rpc/netdb.h hash.h lex.h list.h \
+ formatters.h beeSoftVersion.h
+obj/ws_gethostname.o: ws_gethostname.c /usr/include/netdb.h \
+ /usr/include/features.h /usr/include/sys/cdefs.h \
+ /usr/include/gnu/stubs.h /usr/include/rpc/netdb.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stddef.h \
+ /usr/include/stdio.h /usr/include/libio.h /usr/include/_G_config.h \
+ /usr/include/gnu/types.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stdarg.h \
+ /usr/include/stdio_lim.h

@@ -1,0 +1,121 @@
+
+/***************************************************************************
+ ***************************************************************************
+ ***************************************************************************
+ *****
+ *****
+ ***** Welcome!
+ *****
+ ***** This is the BeeSoft robot control software,
+ ***** known as the BEESOFT SOFTWARE PACKAGE, provided by Real
+ ***** World Interface, Inc. The version number is:
+ *****
+ *****                  v1.0   (released April 18, 1997)
+ *****
+ ***** All copyrights in and to the BeeSoft Software Package are
+ ***** owned by Real World Interface Inc.; Carnegie Mellon
+ ***** University; the University of Bonn, Germany; and Brown
+ ***** University; unless otherwise noted below.  Removing the
+ ***** copyright information is illegal. BeeSoft is free software
+ ***** and distributed free of charge. The BeeSoft software package
+ ***** may under no circumstances be distributed without the
+ ***** written permission of Real World Interface, Inc.  Please
+ ***** read and make sure you understand the disclaimer below.
+ *****
+ ***** Please send e-mail to support@rwii.com if you have questions
+ ***** or would like to obtain further information.  Or, call
+ ***** 603-532-6900.
+ *****
+ ***** We hope you enjoy working with this software package.
+ *****
+ *****      Tyson D. Sawyer               Real World Interface, Inc.
+ *****                                    "Robots for the Real World" (TM)
+ *****                                    http://www.rwii.com             
+ *****
+ *****      Sebastian Thrun               Carnegie Mellon University
+ *****      Stefan Waldherr
+ *****
+ *****      James Kurien, Jason Lango     Brown University
+ *****      Bill Smart
+ *****
+ *****      Wolfram Burgard, Dieter Fox,  University of Bonn
+ *****      Dirk Schulz, Dirk Haehnel
+ *****
+ ***************************************************************************
+ ***************************************************************************
+ ***************************************************************************
+ *****
+ *****
+ ***** THIS SOFTWARE IS FREE SOFTWARE. USE THE SOFTWARE AT YOUR OWN
+ ***** RISK.  THERE IS NO WARRANTY FOR THE BEESOFT SOFTWARE
+ ***** PACKAGE, TO THE EXTENT PERMITTED BY APPLICABLE LAW.  EXCEPT
+ ***** WHEN OTHERWISE STATED IN WRITING, THE COPYRIGHT HOLDERS
+ ***** AND/OR OTHER PARTIES PROVIDE THE BEESOFT SOFTWARE PACKAGE
+ ***** "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR
+ ***** IMPLIED, INCLUDING, BUT NOT LIMITED, TO, THE IMPLIED
+ ***** WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR
+ ***** PURPOSE.
+ *****
+ ***** BY USING THE BEESOFT SOFTWARE PACKAGE, THE USER ASSUMES ALL
+ ***** RISKS AND ALL RESPONSIBILITIES FOR ANY AND ALL NECESSARY
+ ***** SERVICING, REPAIR AND/OR CORRECTION(S) BOTH TO THE SOFTWARE
+ ***** COMPONENTS AND TO ANY HARDWARE USED IN CONJUNCTION WITH,
+ ***** AND/OR UNDER THE CONTROL OF, THIS SOFTWARE.
+ *****
+ ***** IN NO EVENT, UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO
+ ***** IN WRITING, SHALL ANY COPYRIGHT HOLDER, OR ANY OTHER PARTY
+ ***** WHO MAY MODIFY AND/OR REDISTRIBUTE THE BEESOFT SOFTWARE
+ ***** PACKAGE AND/OR ANY COMPONENT THEREOF, AS PERMITTED ABOVE, BE
+ ***** LIABLE FOR DAMAGES, INCLUDING ANY GENERAL, SPECIAL,
+ ***** INCIDENTAL OR CONSEQUENTIAL DAMAGES ARISING OUT OF THE USE
+ ***** OF, OR INABILITY TO USE, THE BEESOFT SOFTWARE PACKAGE
+ ***** (INCLUDING BUT NOT LIMITED TO LOSS OF DATA OR DATA BEING
+ ***** RENDERED INACCURATE, OR LOSSES SUSTAINED BY YOU OR THIRD
+ ***** PARTIES, OR A FAILURE OF THE BEESOFT SOFTWARE PACKAGE AND/OR
+ ***** ANY COMPONENT THEREOF TO OPERATE WITH ANY OTHER PROGRAMS, OR
+ ***** FAILURE TO CONTROL A PHYSICAL DEVICE OF ANY TYPE), EVEN IF
+ ***** SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE
+ ***** POSSIBILITY OF SUCH DAMAGES.
+ *****
+ ***** BY USING THE BEESOFT SOFTWARE PACKAGE, THE USER PERSONALLY
+ ***** ASSUMES ALL RESPONSIBILITY FOR INSURING THAT MOBILE ROBOTS
+ ***** AND/OR ANY OTHER EQUIPMENT USED IN CONJUNCTION WITH, OR
+ ***** UNDER THE CONTROL OF, THE BEESOFT SOFTWARE PACKAGE, ARE
+ ***** NEVER USED AND/OR OPERATED CLOSE TO PERSONS, ANIMALS,
+ ***** FURNITURE, EQUIPMENT OR ANY OTHER PROPERTY WHICH MAY BE
+ ***** ENDANGERED BY SUCH USE OR OPERATION. THE BEESOFT SOFTWARE
+ ***** PACKAGE IS NOT DESIGNED TO PREVENT UNSAFE, IRRESPONSIBLE OR
+ ***** OTHER UNAUTHORIZED OPERATION OF ANY HARDWARE OR
+ ***** EQUIPMENT. THE SOFTWARE PACKAGE WILL NOT PROTECT, NOR IS IT
+ ***** DESIGNED TO PROTECT, AGAINST SUCH MISUSE.  NEITHER REAL
+ ***** WORLD INTERFACE, INC, NOR ANY OTHER COPYRIGHT HOLDERS,
+ ***** CONTRIBUTORS, THIRD PARTIES OR OTHER ENTITIES SHALL BE
+ ***** LIABLE IN ANY MANNER FOR ANY DAMAGE(S) AND/OR INJURY(IES) TO
+ ***** PERSONS, ANIMALS, FURNITURE, EQUIPMENT OR OTHER
+ ***** PROPERTY. THE USER ASSUMES ALL LIABILITY FOR SAFE AND PROPER
+ ***** OPERATION OF ALL SOFTWARE, AND OF ANY HARDWARE OR EQUIPMENT
+ ***** USED IN CONJUNCTION WITH, OR UNDER THE CONTROL OF, THIS
+ ***** SOFTWARE.
+ *****
+ ***** REAL WORLD INTERFACE, INC. DISTRIBUTES THE BEESOFT SOFTWARE
+ ***** PACKAGE FREE OF CHARGE.  SOME PARTS OF THE SOFTWARE ARE
+ ***** BASED ON SOFTWARE DEVELOPED AT THE UNIVERSITY OF BONN,
+ ***** GERMANY, BROWN UNIVERSITY, AND CARNEGIE MELLON
+ ***** UNIVERSITY. REAL WORLD INTERFACE, INC., HAS MODIFIED THIS
+ ***** SOFTWARE, THEREBY RELEASING THE CONTRIBUTORS FROM ANY
+ ***** POSSIBLE LIABILITY, TO THE EXTENT PERMITTED BY APPLICABLE
+ ***** LAW.  IT IS ILLEGAL TO DISTRIBUTE THE BEESOFT SOFTWARE OR
+ ***** COMPONENTS THEREOF WITHOUT WRITTEN PERMISSION BY REAL WORLD
+ ***** INTERFACE, INC.
+ *****
+ ***** MAKE SURE YOU FULLY UNDERSTAND THIS DISCLAIMER. IF YOU HAVE
+ ***** ANY DOUBTS THAT YOU FULLY UNDERSTAND THE IMPLICATIONS OF THE
+ ***** DISCLAIMER, DO NOT USE THIS SOFTWARE AND CONTACT REAL WORLD
+ ***** INTERFACE, INC., INSTEAD.  BY USING THIS SOFTWARE, YOU
+ ***** ACKNOWLEDGE THAT YOU UNDERSTAND THIS DISCLAIMER.
+ *****
+ *****
+ ***************************************************************************
+ ***************************************************************************
+ ***************************************************************************/
+

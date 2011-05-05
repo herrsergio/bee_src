@@ -1,0 +1,99 @@
+DESCRIPTION
+
+The Drawing Widget is a general-purpose drawing widget that is a subclass
+of the Athena Simple Widget.  (It should probably have been called a CAD
+widget, but it's too late now!)  The widget provides a scalable
+two-dimensional drawing area with a cartesian coordinate system and an
+optional background grid with pointer snap.  The widget is intended to
+provide mechanisms and not policies.  For example, there is no "select
+rectangular area with mouse" feature.  Instead, the application writer can
+specify callbacks and actions associated with pointer movement and button
+presses.
+
+The widget operations allow the creation, removal, and dynamic
+configuration of figures.  The figures are maintained on a display list by
+the drawing widget and are referenced through the opaque type Figure.  The
+current figure types include lines, polygons, rectangles, arcs, text,
+pixmaps, bitmaps, and groups.  The properties associated with figures
+include grouping, scaling, line width, line style, visibility, color, size,
+and position.
+
+More information can be found in the manual page and via the World Wide Web
+at http://www-cse.ucsd.edu/users/atkinson/Drawing/drawing.html.
+
+
+COMPILATION
+
+To compile, simply run ``xmkmf'' in the directory that contains the
+Imakefile and then run ``make''.  If you have problems, you can use a
+simple Makefile that is provided.  This will build libXdw.a; to build the
+demonstration program, run ``make demo''.
+
+The widget compiles under SunOS 4.1.3 and SunOS 5.3 (Solaris 2.3) using
+both gcc and cc, and Linux 1.0.
+
+
+DEMO
+
+The demo program consists of a small C file and shell script designed to
+show off some of the capabilities of the Drawing widget.  Simply type
+``run'' (or ``sh run'' if necessary) to run it.  The following commands are
+available:
+
+Button-1:		raise a figure
+Shift-Button-1:		lower a figure
+Control-Button-1:	delete a figure
+
+Button-2-Down:		begin moving a figure
+Button-2-Up:		end moving a figure
+Button-2-Motion:	move a figure
+
+r:			draw a medium red rectangle
+Shift-r:		draw a large blue rectangle
+Control-r:		draw a small green rectangle
+
+c:			draw a medium red circle (unscaled)
+Shift-c:		draw a large blue circle (unscaled)
+Control-c:		draw a small green circle (unscaled)
+
+f:			draw a medium red rectangle (filled)
+Shift-f:		draw a large blue rectangle (filled)
+Control-f:		draw a small green rectangle (filled)
+
+z:			zoom out
+Shift-z:		zoom in
+
+g:			toggle grid
+s:			toggle snap
+q:			quit the demo
+
+
+Try drawing a few figures and explore zooming in and out.  You'll notice
+that the rectangles scale as the widget scales, but that the circles stay
+the same size.  That's because the circles were drawn as unscaled figures.
+You can play around with the commands by editing the application defaults
+file and then rerunning the demo.  The ``demo.c'' file contains the simple
+code for the actions.  The vast majority of the work is done by the widget
+itself.  The actions are just there to provide a customizable interface for
+the demo.
+
+
+ATHENA VS. MOTIF
+
+Right now, the Drawing widget is a subclass of the Athena Simple Widget, so
+you need the Athena widget libraries and include files.  In theory, this
+should not be a problem since these are publicly available.  In practice,
+however, some companies don't distribute them.  For example, HP distributes
+Motif with HP-UX and doesn't provide the Athena libraries or include files
+since, after all, if you have Motif, why would you want to need them?  TO
+COMPILE ATHENA-BASED APPLICATIONS OF COURSE!
+
+I'm working on porting the Drawing widget to Motif.  The only Simple
+resources that are used are for the cursors.  I'll shortly provide a
+version that will compile as a subclass of Simple, XmPrimitive, or Core.
+The hard part will be getting access to a machine that has Motif.
+
+
+Darren Atkinson
+atkinson@cs.ucsd.edu
+http://www-cse.ucsd.edu/users/atkinson

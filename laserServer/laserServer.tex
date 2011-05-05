@@ -1,0 +1,132 @@
+%
+% $Id: laserServer.tex,v 1.5 1998/02/03 18:06:29 swa Exp $
+%
+\NeedsTeXFormat{LaTeX2e}
+
+\documentclass{article}
+
+\addtolength{\parskip}{1ex plus0.5ex minus0.2ex}
+
+\addtolength{\textwidth}{2cm}
+
+\begin{document}
+
+\section{The laser server}
+
+Version of this document is
+\begin{verbatim}
+$Id: laserServer.tex,v 1.5 1998/02/03 18:06:29 swa Exp $
+\end{verbatim}
+
+\subsection{How the laser server works} 
+ 
+A program dealing with the laser server typically has four steps (take a look at
+\begin{center} 
+  \texttt{\~{}bee/src/laserServer/laserExample.c}
+\end{center}
+for an example):
+
+\begin{enumerate}
+  
+\item \texttt{laserRegister( );} 
+  
+  Registers all new commands that we need for dealing with the laser server.
+  
+\item \texttt{laserConnect( 1 );} 
+  
+  Waits until we have connected to the laser server.
+  
+\item \texttt{registerLaserSweepCallback( myLaserSweepCallback );} 
+  
+  Registers the function \texttt{myLaserSweepCallback}, which is called once
+  the laser has finished a full sweep.
+
+\item \texttt{laserSubscribeSweep( 0, 1 );}
+  
+  We subscribe to every sweep of the first laser (the first laser is
+  \texttt{0}). Every time the first laser has finished a full sweep, the laser
+  server calls the function \texttt{myLaserSweepCallback}.
+
+\end{enumerate}
+ 
+If you want to use the laser server, follow the above four steps, include
+\texttt{laserClient.h} in your source and link with \texttt{-llaserClient}.
+
+\subsection{Commands for the laser server}
+
+\begin{description}
+  
+\item \texttt{void laserRegister( );}
+
+  Registers the laser server.
+ 
+\item \texttt{int laserConnect( int wait\_till\_established );} 
+  
+  Connects to the laser server. If \texttt{wait\_till\_established} is
+  \texttt{1}, we wait until connection with the laser server has been
+  established. Otherwise we proceed.
+ 
+\item \texttt{void registerLaserSweepCallback( laserSweepCallbackType fcn );}
+  
+  Registers a function \texttt{fcn}. The laser server calls this function
+  every time it has received a new sweep from the laser.
+
+\item \texttt{void laserRequestSweep( int numLaser );}
+  
+  Requests a laser sweep from laser \texttt{numlaser}. The laser server calls
+  the function \texttt{fcn} that was previously registered with
+  \texttt{registerLaserSweepCallback(\dots)}.
+
+\item \texttt{void laserSubscribeSweep( int numLaser, int number );}
+  
+  If \texttt{number} is not zero, subscribe to the every \texttt{number}-th
+  sweep of the laser \texttt{numlaser}. If \texttt{number} is zero,
+  unsubscribe. Every time the laser finishes a sweep, the laser server calls
+  the function \texttt{fcn} that was previously registered with
+  \texttt{registerLaserSweepCallback(\dots)}.
+
+\end{description}
+
+\subsection{Parameters for the laser server}
+
+\begin{description}
+
+\item \texttt{-display=0}
+  
+  Do not display the laser sweep. This is the default.
+
+\item \texttt{-display=1}
+  
+  Open a window and display the current laser sweep.
+
+\end{description}
+
+\subsection{\texttt{beeSoft.ini} and the laser server}
+
+The file \texttt{beeSoft.ini} contains some configuration for the laser
+server.  In the section \texttt{[robot]} you find an entry \texttt{laser}
+which should either say \texttt{SICK} or \texttt{none}. Currently, the
+SICK laser is the only supported laser.
+
+If you have a SICK laser, specify `\texttt{laser SICK}' and look at the
+section \texttt{[SICK.laser]}. The \texttt{type} entry should say
+\texttt{SICK PLS101}.
+
+The laser server does not currently use the \texttt{host} entry. \texttt{dev}
+specifies the device, which the laser server uses to communicate with the
+laser (typically \texttt{/dev/cur6}). The only supported baudrate \texttt{bps}
+at this time is \texttt{9600}.
+
+\subsection{The example program \texttt{laserExample}}
+ 
+Start \texttt{tcxServer} and \texttt{laserServer} (the laser server of
+course on the machine that has control over the laser). Now start the program
+\texttt{laserExample}.
+
+The program will connect to the laser server, register a callback function and
+subscribe to every laser reading. Upon receiving the sweep in
+\texttt{myLaserSweepCallback}, it will print out the reading. You can kill and
+restart both the server (laserServer) and the client (laserExample), they will
+reconnect to each other.
+
+\end{document}

@@ -1,0 +1,350 @@
+%
+% $Id: cameraServer.tex,v 1.9 1998/01/13 00:35:13 swa Exp $
+%
+\NeedsTeXFormat{LaTeX2e}
+
+\documentclass{article}
+
+\addtolength{\parskip}{1ex plus0.5ex minus0.2ex}
+
+\addtolength{\textwidth}{2cm}
+
+\begin{document}
+
+\section{The camera server}
+
+Version of this document is
+\begin{verbatim}
+$Id: cameraServer.tex,v 1.9 1998/01/13 00:35:13 swa Exp $
+\end{verbatim}
+ 
+\subsection{How the camera server works} 
+
+We assume that you have at least one Matrox Meteor frame grabber and a working
+driver for this card. If the driver is not installed, read the latest
+BeeSoft-README file for installing the driver.
+ 
+Once you start the camera server, it will open one or more devices as
+specified in \texttt{beeSoft.ini}. You will find out more about
+\texttt{beeSoft.ini} in a later section.
+ 
+The size of the frame (\texttt{ROWS} and \texttt{COLS}) is set in
+\texttt{\~{}bee/src/cameraServer/imagesize.h}, by default 240 rows by 320
+columns. We set the frame size at compile time for performance and simplicity
+reasons. Each frame consists of \texttt{ROWS*COLS} pixel, each pixel of 4
+bytes (B, G, R -- the 4th byte per pixel is only used to obey word boundaries
+and can be omitted).
+
+The camera server will store the frame in a shared memory segment. To access
+the frame from your program, you have two options.
+
+\begin{enumerate}
+  
+\item Thru TCX, which means that the images are sent (maybe sub-sampled) over
+  the network to whatever machine you like. This method has the advantage,
+  that you know exactly \emph{when} the frame grabber has finished grabbing an
+  image.  However, the camera server sends the images over the network, which
+  is very slow.
+  
+\item Thru a shared memory segment. This requires that you program runs on the
+  same computer (we have to share the same memory, that's why it's called
+  shared memory). The shared memory segment is identified by an ID, which your
+  program needs to access this segment. The major advantage of this method is
+  it's speed. The catch however is, that you don't know when the frame grabber
+  has finished grabbing a particular frame. The camera server keeps updating
+  the shared memory segment at roughly 30 frames per second. Is is highly
+  unlikely, that your program will also process frames 30 times per second.
+
+\end{enumerate}
+ 
+In the following section we will give a brief overview over the
+shared-memory-segment method. The other method is left as an exercise to the
+reader (it's too simple and too slow anyway).
+ 
+A program dealing with the camera server typically has six steps (take a look at
+\begin{center} 
+  \texttt{\~{}bee/src/cameraServer/mainatt.c}
+\end{center}
+for an example):
+
+\begin{enumerate}
+  
+\item \texttt{cameraRegister( );} 
+  
+  Registers all new commands that we need for dealing with the camera server.
+  
+\item \texttt{cameraConnect( 1 );} 
+  
+  Waits until we have connected to the camera server.
+  
+\item \texttt{registerCameraShmIdCallback( myCameraShmIdCallback );} 
+  
+  Registers the function \texttt{myCameraShmIdCallback}, which is called once
+  we receive the ID of the shared memory segment. Remember, we cannot access
+  the shared memory segment and thus the image without the ID.
+  
+\item \texttt{cameraRequestShmId( int numGrabber );} 
+  
+  Requests the ID for frame grabber \texttt{numGrabber}. The camera server
+  (once it has connected to that frame grabber and established the shared
+  memory segment) will call \texttt{myCameraShmIdCallback} with the ID and the
+  number of the frame grabber as parameters.
+  
+\item We wait until \texttt{myCameraShmIdCallback} is called and if it is
+  called, attach to the shared memory segment.
+
+\item Process the shared memory segment.
+
+\end{enumerate}
+ 
+If you want to use the camera server, follow the above six steps, include
+\texttt{cameraClient.h} in your source and link with \texttt{-lcameraClient}.
+
+\subsection{Commands for the camera server}
+
+\begin{description}
+  
+\item \texttt{void cameraRegister( );}
+
+  Registers the camera server.
+ 
+\item \texttt{int cameraConnect( int wait\_till\_established );} 
+  
+  Connects to the camera server. If \texttt{wait\_till\_established} is
+  \texttt{1}, we wait until connection with the camera server has been
+  established. Otherwise we proceed.
+ 
+\item \texttt{void registerCameraImageCallback( cameraImageCallbackType fcn
+    );} 
+  
+  Registers a function \texttt{fcn}. The camera server calls this function
+  every time it receives a new frame from one of the frame grabbers. Keep in
+  mind that these frames are sent to the requesting program via TCX.
+ 
+\item \texttt{void registerCameraShmIdCallback( cameraShmIdCallbackType fcn
+    );} 
+  
+  Registers a function \texttt{fcn}. The camera server calls this function
+  once it has established it's shared memory segment with one or more of
+  the frame grabbers.
+ 
+\item \texttt{void registerCameraFileCallback( cameraFileCallbackType fcn );}
+  
+  Registers a function \texttt{fcn}. The camera server calls this function
+  every time it has finished a file operation. Not yet implemented.
+ 
+\item \texttt{void cameraRequestShmId( int numGrabber );} 
+  
+  Requests the ID of the shared memory segment for frame grabber
+  \texttt{numGrabber}.
+ 
+\item \texttt{void cameraRequestImage( int numGrabber, int xsize, int ysize
+    );}
+  
+  Requests a frame of size \texttt{xsize} times \texttt{ysize} pixel from
+  frame grabber \texttt{numGrabber}. The size may not exceed \texttt{ROWS} and
+  \texttt{COLS} as defined in \texttt{\~{}bee/src/cameraServer/imagesize.h.}
+  This frame will be sent to the requesting module via TCX, i. e. the camera
+  server calls the function, that you have registered with
+  \texttt{registerCameraImageCallback}.
+ 
+\item \texttt{void cameraSubscribeImage( int numGrabber, int number, int
+    xsize, int ysize );}
+  
+  If \texttt{number} is not zero, subscribe to every \texttt{number}-th frame
+  from the the camera server. If \texttt{number} is zero, unsubscribe. This
+  frame from frame grabber \texttt{numGrabber} will be sent to the requesting
+  module via TCX, i. e. the camera server calls the function, that you have
+  registered with \texttt{registerCameraImageCallback}.
+ 
+\item \texttt{void cameraStartSaving( int numGrabber, char *filename );} 
+  
+  Start saving continuously to file \texttt{filename} from frame grabber
+  \texttt{numGrabber}. The file will be written on the machine that runs the
+  camera server.
+ 
+\item \texttt{void cameraStopSaving( int numGrabber );} 
+  
+  Stop the saving process of frame grabber \texttt{numGrabber}.
+ 
+\item \texttt{void cameraSaveFile( int numGrabber, char *filename, int num );} 
+  
+  Start saving \texttt{num} frames from frame grabber \texttt{numGrabber} to
+  file \texttt{filename}. The file will be written on the machine that runs
+  the camera server.
+ 
+\item \texttt{void cameraLoadFile( int numGrabber, char *filename );} 
+  
+  Loads file \texttt{filename} on the machine that runs the camera server.
+  The camera server treats the images from the file as if they were received
+  by frame grabber \texttt{numGrabber}.
+
+\item \texttt{void cameraRestartGrabber( int numGrabber );} 
+  
+  Restarts frame grabber \texttt{numGrabber} after a stop.
+
+\item \texttt{void cameraStopGrabber( int numGrabber );} 
+  
+  Stops frame grabber \texttt{numGrabber} from continously grabbing images.
+
+\end{description}
+
+\subsection{Parameters for the camera server}
+
+The parameters \texttt{display} and \texttt{color} work for one and two frame
+grabbers.
+
+\begin{description}
+
+\item \texttt{-display=0}
+  
+  Do not display the camera image. This is the default.
+
+\item \texttt{-display=1}
+  
+  Open a window and display the current image. If you use more than one frame
+  grabber, setting \texttt{-display=1} can have strange effects. Your X server
+  is probably not able to display the images as fast as they come in. It's not
+  a bad idea, to set \texttt{-display=0} when using more than one frame grabber.
+
+\item \texttt{-tcx=1}
+  
+  Use TCX. This is the default.
+
+\item \texttt{-tcx=0}
+  
+  Do not use TCX. Used only for testing the frame grabber.
+
+\item \texttt{-color=0}
+  
+  Display the image in gray scale on an 8 bit display. This is the default.
+
+\item \texttt{-color=1}
+  
+  Display the image in color on an 8 bit display. Although we grab images at
+  24 bit depth, we display them in 8 bit depth. Thus the colors in the image
+  are only approximations of the `real' colors.
+
+\end{description}
+
+\subsection{\texttt{beeSoft.ini} and the camera server}
+
+The file \texttt{beeSoft.ini} contains some configuration for the camera
+server.  In the section \texttt{[robot]} you find an entry
+\texttt{framegrabber} which should either say \texttt{matrox} or
+\texttt{none}. Currently, the Matrox Meteor is the only supported frame
+grabber.  
+
+In case you want to use the camera server on a machine which does not have a
+frame grabber, say \texttt{none}. However, you can still use the camera server
+to load images from disk.
+
+If you have a Matrox Meteor, specify `\texttt{framegrabber matrox}' and look
+at the section \texttt{[matrox.framegrabber]}. The \texttt{type} entry should
+say \texttt{matrox-meteor}.
+
+The entry \texttt{usegrabber} specifies which frame grabber the camera server
+will use. If you say \texttt{0}, no frame grabber will be used --- however,
+you can still use the camera server to load images from disk. \texttt{1} uses
+the first frame grabber, \texttt{2} uses the second frame grabber and
+\texttt{3} uses both frame grabbers.
+
+Last but not least, you can specify, which devices the camera server should
+use to access the frame grabbers. Typically \texttt{dev1} is
+\texttt{/dev/mmetfgrab0} and \texttt{dev2} is \texttt{/dev/mmetfgrab1}.
+
+\subsection{The example program \texttt{cameraAttachExample}}
+ 
+Start \texttt{tcxServer} and \texttt{cameraServer} (the camera server of
+course on the machine that has the frame grabber). Now start the program
+\texttt{cameraAttachExample} on the same machine (we share the same memory) as
+the camera server.
+
+If you run your X server in 8 bit mode, the program should simply display a
+window with the current camera image. In case you told the camera server to
+use more than one frame grabber (in \texttt{beeSoft.ini}), it will display
+both camera images.
+
+If you press the left mouse button within that window, the program will write
+the current camera image to a file \texttt{image-00.ppm} or
+\texttt{image-01.ppm}, depending on the source. You can use for example
+\texttt{xv} to display \texttt{image-\{00|01\}.ppm} (or use \texttt{xv} to
+convert \texttt{image\{00|01\}.ppm} into whatever format you like).
+ 
+\subsection{The program \texttt{cameraControl}}
+ 
+Start \texttt{tcxServer} and \texttt{cameraServer} (the camera server of
+course on the machine that has the frame grabber or grabbers). Now start the
+program \texttt{cameraControl}.
+
+\texttt{cameraControl} is a C program with a Tcl/Tk user interface that
+remotely controls the camera server. You can use \texttt{cameraControl} to
+save or load frames to and from hard disk. You can easily access more than one
+frame grabber. The program should be self-explanatory.
+
+\texttt{cameraControl} requires Tcl/Tk libraries. If you don't have Tcl/Tk
+libraries installed, you will get errors while compiling
+\texttt{cameraControl}.  However, this has no effect on the camera server.
+ 
+\subsection{MPEG support}
+ 
+MPEG is a standard (not to say \emph{the} standard) for recording video data. Read
+more about MPEG at \texttt{http://www/mpeg.org/}.
+ 
+Recording videos involves three steps: 
+
+\begin{enumerate}
+  
+\item Save the frames either with \texttt{cameraControl} or
+  \texttt{cameraSaveFile( )} to a file. Let's assume this file is called
+  \texttt{frames.raw}.
+  
+\item Extract each frame from \texttt{frames.raw} into a separate file, say
+  \texttt{frame-0.raw} to \texttt{frame-N.raw}. The little script
+  \texttt{\~{}bee/src/cameraServer/raw2ppm} takes care of extracting each
+  frame from \texttt{frames.raw}. You have to edit \texttt{raw2ppm} to suit
+  your task.
+  
+\item Encode frames \texttt{frame-0.raw} to \texttt{frame-N.raw} with an MPEG
+  encoder to an mpeg video file. Get the MPEG encoder/decoder
+  \texttt{mpeg2v12.zip} from 
+  \begin{center}
+    \texttt{ftp://ftp.mpeg.org/pub/mpeg/mssg/}
+  \end{center}
+  and install it. A simple \texttt{make} should do.  You will also need a
+  parameter file. Copy one of the supplied parameter files, e. g.
+  \texttt{MPEG-1.par} and modify it to your needs. Usually, you change
+
+  \begin{itemize}
+  \item the comment in the MPEG file (first line in the .par file)
+  \item the name of the source file
+  \item the number of frames
+  \item the image size (width and height)
+  \end{itemize}
+  
+  Take a look at \texttt{MPEG-example.par} and/or read the manual in mpeg's
+  \texttt{doc/} directory.
+
+\end{enumerate}
+ 
+Then use 
+\begin{center}
+  \texttt{mpeg2encode my-parameter-file.par video.mpeg}  
+\end{center}
+
+to encode the frames. There are certain requirements: 
+
+\begin{enumerate}
+  
+\item A lot of disk space. Remember that you have one .raw file and the same
+  equivalent in \texttt{frame-i.raw} files. Plus: you need some temporary
+  space for the MPEG encoding. Example: raw file is about 200 MB, you need an
+  additional 200 MB for each extracted frame and roughly 50 MB for encoding.
+
+\item The MPEG encoder (see above).
+
+\item \texttt{xanim} or Netscape to display the .mpeg videos. 
+
+\end{enumerate}
+
+\end{document}

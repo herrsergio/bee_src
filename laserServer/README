@@ -1,0 +1,111 @@
+
+                               The laser server
+                                       
+   Version of this document is
+$Id: README,v 1.2 1998/02/03 18:06:29 swa Exp $
+
+How the laser server works
+
+   A program dealing with the laser server typically has four steps (take
+   a look at
+   
+                    ~bee/src/laserServer/laserExample.c
+                                      
+   for an example):
+   
+    1. laserRegister( );
+       Registers all new commands that we need for dealing with the laser
+       server.
+    2. laserConnect( 1 );
+       Waits until we have connected to the laser server.
+    3. registerLaserSweepCallback( myLaserSweepCallback );
+       Registers the function myLaserSweepCallback, which is called once
+       the laser has finished a full sweep.
+    4. laserSubscribeSweep( 0, 1 );
+       We subscribe to every sweep of the first laser (the first laser is
+       0). Every time the first laser has finished a full sweep, the
+       laser server calls the function myLaserSweepCallback.
+       
+   If you want to use the laser server, follow the above four steps,
+   include laserClient.h in your source and link with -llaserClient.
+   
+Commands for the laser server
+
+   
+          void laserRegister( );
+          
+          Registers the laser server.
+          
+   
+          int laserConnect( int wait_till_established );
+          
+          Connects to the laser server. If wait_till_established is 1, we
+          wait until connection with the laser server has been
+          established. Otherwise we proceed.
+          
+   
+          void registerLaserSweepCallback( laserSweepCallbackType fcn );
+          
+          Registers a function fcn. The laser server calls this function
+          every time it has received a new sweep from the laser.
+          
+   
+          void laserRequestSweep( int numLaser );
+          
+          Requests a laser sweep from laser numlaser. The laser server
+          calls the function fcn that was previously registered with
+          registerLaserSweepCallback(...).
+          
+   
+          void laserSubscribeSweep( int numLaser, int number );
+          
+          If number is not zero, subscribe to the every number-th sweep
+          of the laser numlaser. If number is zero, unsubscribe. Every
+          time the laser finishes a sweep, the laser server calls the
+          function fcn that was previously registered with
+          registerLaserSweepCallback(...).
+          
+Parameters for the laser server
+
+   
+          -display=0
+          
+          Do not display the laser sweep. This is the default.
+          
+   
+          -display=1
+          
+          Open a window and display the current laser sweep.
+          
+beeSoft.ini and the laser server
+
+   The file beeSoft.ini contains some configuration for the laser server.
+   In the section [robot] you find an entry laser which should either say
+   SICK or none. Currently, the SICK laser is the only supported laser.
+   
+   If you have a SICK laser, specify `laser SICK' and look at the section
+   [SICK.laser]. The type entry should say SICK PLS101.
+   
+   The laser server does not currently use the host entry. dev specifies
+   the device, which the laser server uses to communicate with the laser
+   (typically /dev/cur6). The only supported baudrate bps at this time is
+   9600.
+   
+The example program laserExample
+
+   Start tcxServer and laserServer (the laser server of course on the
+   machine that has control over the laser). Now start the program
+   laserExample.
+   
+   The program will connect to the laser server, register a callback
+   function and subscribe to every laser reading. Upon receiving the
+   sweep in myLaserSweepCallback, it will print out the reading. You can
+   kill and restart both the server (laserServer) and the client
+   (laserExample), they will reconnect to each other.
+   
+   
+     _________________________________________________________________
+                                      
+   
+    _Stefan Waldherr
+    Tue Feb 3 13:04:08 EST 1998_

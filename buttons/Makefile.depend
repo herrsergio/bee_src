@@ -1,0 +1,105 @@
+obj/button.o: button.c /usr/include/stdio.h /usr/include/libio.h \
+ /usr/include/features.h /usr/include/sys/cdefs.h \
+ /usr/include/gnu/stubs.h /usr/include/_G_config.h \
+ /usr/include/gnu/types.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stddef.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stdarg.h \
+ /usr/include/stdio_lim.h /usr/include/signal.h /usr/include/sigset.h \
+ /usr/include/signum.h /usr/include/sigaction.h \
+ /usr/include/sigcontext.h /usr/include/asm/sigcontext.h \
+ /usr/include/sigstack.h /usr/include/sys/time.h /usr/include/time.h \
+ /usr/include/timebits.h /usr/include/sys/select.h \
+ /usr/include/selectbits.h /usr/include/unistd.h \
+ /usr/include/posix_opt.h /usr/include/confname.h \
+ /usr/include/stdlib.h /usr/include/sys/types.h /usr/include/endian.h \
+ /usr/include/bytesex.h /usr/include/alloca.h /usr/include/fcntl.h \
+ /usr/include/fcntlbits.h ../../include/bUtils.h \
+ /usr/include/termios.h /usr/include/termbits.h \
+ /usr/include/sys/ttydefaults.h ../../include/bNetwork.h \
+ /usr/include/netinet/in.h /usr/include/sys/socket.h \
+ /usr/include/socketbits.h /usr/include/sockaddrcom.h \
+ /usr/include/asm/socket.h /usr/include/asm/sockios.h \
+ ../../include/robot_specifications.h ../../include/tcx.h \
+ ../../include/tcxP.h /usr/include/malloc.h ../../include/raiClient.h \
+ BUTTONS-messages.h buttonClient.h buttonHandlers.h beeSoftVersion.h \
+ ../../include/librobot.h ../../include/libezx.h button.h
+obj/buttonClient.o: buttonClient.c /usr/include/stdio.h \
+ /usr/include/libio.h /usr/include/features.h /usr/include/sys/cdefs.h \
+ /usr/include/gnu/stubs.h /usr/include/_G_config.h \
+ /usr/include/gnu/types.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stddef.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stdarg.h \
+ /usr/include/stdio_lim.h /usr/include/stdlib.h \
+ /usr/include/sys/types.h /usr/include/time.h /usr/include/endian.h \
+ /usr/include/bytesex.h /usr/include/sys/select.h \
+ /usr/include/selectbits.h /usr/include/alloca.h /usr/include/unistd.h \
+ /usr/include/posix_opt.h /usr/include/confname.h /usr/include/math.h \
+ /usr/include/huge_val.h /usr/include/mathcalls.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/float.h \
+ /usr/include/__math.h /usr/include/ctype.h /usr/include/sys/time.h \
+ /usr/include/timebits.h ../../include/tcx.h /usr/include/netinet/in.h \
+ /usr/include/sys/socket.h /usr/include/socketbits.h \
+ /usr/include/sockaddrcom.h /usr/include/asm/socket.h \
+ /usr/include/asm/sockios.h ../../include/tcxP.h /usr/include/malloc.h \
+ ../../include/rai.h /usr/include/fcntl.h /usr/include/fcntlbits.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/limits.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/syslimits.h \
+ /usr/include/limits.h /usr/include/posix1_lim.h \
+ /usr/include/local_lim.h /usr/include/linux/limits.h \
+ /usr/include/posix2_lim.h BUTTONS-messages.h buttonClient.h \
+ ../../include/raiClient.h
+obj/buttonHandlers.o: buttonHandlers.c /usr/include/stdlib.h \
+ /usr/include/features.h /usr/include/sys/cdefs.h \
+ /usr/include/gnu/stubs.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stddef.h \
+ /usr/include/sys/types.h /usr/include/gnu/types.h /usr/include/time.h \
+ /usr/include/endian.h /usr/include/bytesex.h \
+ /usr/include/sys/select.h /usr/include/selectbits.h \
+ /usr/include/alloca.h /usr/include/stdio.h /usr/include/libio.h \
+ /usr/include/_G_config.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stdarg.h \
+ /usr/include/stdio_lim.h ../../include/rai.h /usr/include/unistd.h \
+ /usr/include/posix_opt.h /usr/include/confname.h \
+ /usr/include/sys/time.h /usr/include/timebits.h /usr/include/fcntl.h \
+ /usr/include/fcntlbits.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/limits.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/syslimits.h \
+ /usr/include/limits.h /usr/include/posix1_lim.h \
+ /usr/include/local_lim.h /usr/include/linux/limits.h \
+ /usr/include/posix2_lim.h ../../include/bUtils.h \
+ /usr/include/termios.h /usr/include/termbits.h \
+ /usr/include/sys/ttydefaults.h ../../include/bNetwork.h \
+ /usr/include/netinet/in.h /usr/include/sys/socket.h \
+ /usr/include/socketbits.h /usr/include/sockaddrcom.h \
+ /usr/include/asm/socket.h /usr/include/asm/sockios.h \
+ ../../include/tcx.h ../../include/tcxP.h /usr/include/malloc.h \
+ BUTTONS-messages.h buttonHandlers.h button.h buttonClient.h \
+ beeSoftVersion.h ../../include/raiClient.h
+obj/example.o: example.c /usr/include/stdlib.h /usr/include/features.h \
+ /usr/include/sys/cdefs.h /usr/include/gnu/stubs.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stddef.h \
+ /usr/include/sys/types.h /usr/include/gnu/types.h /usr/include/time.h \
+ /usr/include/endian.h /usr/include/bytesex.h \
+ /usr/include/sys/select.h /usr/include/selectbits.h \
+ /usr/include/alloca.h ../../include/tcx.h /usr/include/netinet/in.h \
+ /usr/include/sys/socket.h /usr/include/socketbits.h \
+ /usr/include/sockaddrcom.h /usr/include/asm/socket.h \
+ /usr/include/asm/sockios.h ../../include/tcxP.h /usr/include/malloc.h \
+ ../../include/rai.h /usr/include/unistd.h /usr/include/posix_opt.h \
+ /usr/include/confname.h /usr/include/sys/time.h \
+ /usr/include/timebits.h /usr/include/stdio.h /usr/include/libio.h \
+ /usr/include/_G_config.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stdarg.h \
+ /usr/include/stdio_lim.h /usr/include/fcntl.h \
+ /usr/include/fcntlbits.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/limits.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/syslimits.h \
+ /usr/include/limits.h /usr/include/posix1_lim.h \
+ /usr/include/local_lim.h /usr/include/linux/limits.h \
+ /usr/include/posix2_lim.h ../../include/raiClient.h \
+ ../../include/bUtils.h /usr/include/termios.h /usr/include/termbits.h \
+ /usr/include/sys/ttydefaults.h ../../include/bNetwork.h \
+ /usr/include/signal.h /usr/include/sigset.h /usr/include/signum.h \
+ /usr/include/sigaction.h /usr/include/sigcontext.h \
+ /usr/include/asm/sigcontext.h /usr/include/sigstack.h buttonClient.h \
+ ../../include/Common.h

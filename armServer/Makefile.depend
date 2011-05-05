@@ -1,0 +1,105 @@
+obj/arm.o: arm.c /usr/include/stdio.h /usr/include/libio.h \
+ /usr/include/features.h /usr/include/sys/cdefs.h \
+ /usr/include/gnu/stubs.h /usr/include/_G_config.h \
+ /usr/include/gnu/types.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stddef.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stdarg.h \
+ /usr/include/stdio_lim.h /usr/include/stdlib.h \
+ /usr/include/sys/types.h /usr/include/time.h /usr/include/endian.h \
+ /usr/include/bytesex.h /usr/include/sys/select.h \
+ /usr/include/selectbits.h /usr/include/alloca.h \
+ ../../include/lockNames.h ../../include/rai.h /usr/include/unistd.h \
+ /usr/include/posix_opt.h /usr/include/confname.h \
+ /usr/include/sys/time.h /usr/include/timebits.h /usr/include/fcntl.h \
+ /usr/include/fcntlbits.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/limits.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/syslimits.h \
+ /usr/include/limits.h /usr/include/posix1_lim.h \
+ /usr/include/local_lim.h /usr/include/linux/limits.h \
+ /usr/include/posix2_lim.h arm.h /usr/include/termios.h \
+ /usr/include/termbits.h /usr/include/sys/ttydefaults.h armMessages.h \
+ ../../include/bUtils.h ../../include/bNetwork.h \
+ /usr/include/netinet/in.h /usr/include/sys/socket.h \
+ /usr/include/socketbits.h /usr/include/sockaddrcom.h \
+ /usr/include/asm/socket.h /usr/include/asm/sockios.h \
+ ../../include/mcpIO.h ../../include/utils.h ../../include/mcpStatus.h \
+ statusReport.h armOpcodes.h
+obj/armClient.o: armClient.c /usr/include/stdio.h /usr/include/libio.h \
+ /usr/include/features.h /usr/include/sys/cdefs.h \
+ /usr/include/gnu/stubs.h /usr/include/_G_config.h \
+ /usr/include/gnu/types.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stddef.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stdarg.h \
+ /usr/include/stdio_lim.h /usr/include/stdlib.h \
+ /usr/include/sys/types.h /usr/include/time.h /usr/include/endian.h \
+ /usr/include/bytesex.h /usr/include/sys/select.h \
+ /usr/include/selectbits.h /usr/include/alloca.h /usr/include/unistd.h \
+ /usr/include/posix_opt.h /usr/include/confname.h armServer.h \
+ ../../include/raiServer.h ../../include/tcx.h \
+ /usr/include/netinet/in.h /usr/include/sys/socket.h \
+ /usr/include/socketbits.h /usr/include/sockaddrcom.h \
+ /usr/include/asm/socket.h /usr/include/asm/sockios.h \
+ ../../include/tcxP.h /usr/include/malloc.h armMessages.h \
+ ../../include/rai.h /usr/include/sys/time.h /usr/include/timebits.h \
+ /usr/include/fcntl.h /usr/include/fcntlbits.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/limits.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/syslimits.h \
+ /usr/include/limits.h /usr/include/posix1_lim.h \
+ /usr/include/local_lim.h /usr/include/linux/limits.h \
+ /usr/include/posix2_lim.h armClient.h ../../include/raiClient.h
+obj/armServer.o: armServer.c /usr/include/signal.h /usr/include/features.h \
+ /usr/include/sys/cdefs.h /usr/include/gnu/stubs.h \
+ /usr/include/gnu/types.h /usr/include/sigset.h /usr/include/signum.h \
+ /usr/include/sigaction.h /usr/include/sigcontext.h \
+ /usr/include/asm/sigcontext.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stddef.h \
+ /usr/include/sigstack.h ../../include/rai.h /usr/include/unistd.h \
+ /usr/include/posix_opt.h /usr/include/confname.h \
+ /usr/include/sys/time.h /usr/include/time.h /usr/include/timebits.h \
+ /usr/include/sys/select.h /usr/include/selectbits.h \
+ /usr/include/stdio.h /usr/include/libio.h /usr/include/_G_config.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stdarg.h \
+ /usr/include/stdio_lim.h /usr/include/fcntl.h \
+ /usr/include/fcntlbits.h /usr/include/sys/types.h \
+ /usr/include/endian.h /usr/include/bytesex.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/limits.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/syslimits.h \
+ /usr/include/limits.h /usr/include/posix1_lim.h \
+ /usr/include/local_lim.h /usr/include/linux/limits.h \
+ /usr/include/posix2_lim.h arm.h /usr/include/termios.h \
+ /usr/include/termbits.h /usr/include/sys/ttydefaults.h armMessages.h \
+ ../../include/bUtils.h ../../include/bNetwork.h \
+ /usr/include/netinet/in.h /usr/include/sys/socket.h \
+ /usr/include/socketbits.h /usr/include/sockaddrcom.h \
+ /usr/include/asm/socket.h /usr/include/asm/sockios.h \
+ ../../include/utils.h ../../include/lockNames.h armServer.h \
+ ../../include/raiServer.h ../../include/tcx.h ../../include/tcxP.h \
+ /usr/include/malloc.h /usr/include/stdlib.h /usr/include/alloca.h \
+ beeSoftVersion.h ../../include/libbUtils.h ../../include/libutils.h \
+ ../../include/libmcp.h ../../include/librai.h
+obj/libarmClient.o: libarmClient.c beeSoftVersion.h
+obj/statusReport.o: statusReport.c ../../include/rai.h \
+ /usr/include/unistd.h /usr/include/features.h \
+ /usr/include/sys/cdefs.h /usr/include/gnu/stubs.h \
+ /usr/include/posix_opt.h /usr/include/gnu/types.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stddef.h \
+ /usr/include/confname.h /usr/include/sys/time.h /usr/include/time.h \
+ /usr/include/timebits.h /usr/include/sys/select.h \
+ /usr/include/selectbits.h /usr/include/stdio.h /usr/include/libio.h \
+ /usr/include/_G_config.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stdarg.h \
+ /usr/include/stdio_lim.h /usr/include/fcntl.h \
+ /usr/include/fcntlbits.h /usr/include/sys/types.h \
+ /usr/include/endian.h /usr/include/bytesex.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/limits.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/syslimits.h \
+ /usr/include/limits.h /usr/include/posix1_lim.h \
+ /usr/include/local_lim.h /usr/include/linux/limits.h \
+ /usr/include/posix2_lim.h ../../include/mcpStatus.h \
+ /usr/include/stdlib.h /usr/include/alloca.h /usr/include/netinet/in.h \
+ /usr/include/sys/socket.h /usr/include/socketbits.h \
+ /usr/include/sockaddrcom.h /usr/include/asm/socket.h \
+ /usr/include/asm/sockios.h ../../include/bUtils.h \
+ /usr/include/termios.h /usr/include/termbits.h \
+ /usr/include/sys/ttydefaults.h ../../include/bNetwork.h arm.h \
+ armMessages.h

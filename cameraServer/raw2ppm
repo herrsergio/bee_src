@@ -1,0 +1,30 @@
+#!/usr/bin/perl
+#
+# $Id: raw2ppm,v 1.2 1997/07/25 03:26:07 swa Exp $
+#
+# this little script will extract each frame from the file frames.raw
+# and put it into /tmp/frames-xxx.ppm
+#
+$source       = "frames.raw";
+
+$targetprefix = "/tmp/frames";
+
+$maxframenum  = 600;
+
+#
+# -------------------------------------------------------------------
+#
+for ( $num=0; $num<$maxframenum; $num++) {
+
+    $target = sprintf( "$targetprefix-%03d.ppm", $num );
+
+    printf "Extracting to $target\n";
+
+    exec `extractFrame -i $source -o $target -n $num`
+	
+    }
+
+# $Log: raw2ppm,v $
+# Revision 1.2  1997/07/25 03:26:07  swa
+# Misc stuff.
+#

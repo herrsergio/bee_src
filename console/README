@@ -1,0 +1,227 @@
+
+                              The console program
+                                       
+   Version of this document is
+$Id: README,v 1.5 1998/02/09 22:59:28 swa Exp $
+
+What is console?
+
+   Suppose you want to run a couple of programs on several machines. You
+   would then log into one machine, start one program, log into another
+   machine, start another program and so forth. You would start various
+   xterms and clobber your screen with a lot of windows. Well, this is
+   very time consuming and there is a solution. With console you can
+   start multiple programs on remote machines and display the output in
+   one window. Console can even take care of dependencies between these
+   programs. For example, if program A must be started before program B,
+   console will automatically launch program A, once you started program
+   B.
+   
+Requirements
+
+   Console is a C program that has a Tcl/Tk front end. Thus you need to
+   install Tcl/Tk and some additional software to run the console
+   program. Fortunately, installing has become quite easy these days, so
+   it shouldn't be too difficult. Console was developed and tested with
+   the following RedHat packages:
+   
+    1. tcl-7.6pl2-3.i386.rpm
+    2. tk-4.2pl2-3.i386.rpm
+    3. tix-4.1.0rel-3.i386.rpm
+    4. blt-2.3-1.i386.rpm
+       
+   If you don't have a RedHat system, get the stuff from these locations:
+   
+    1. http://sunscript.sun.com/
+    2. http://www.xpi.com/tix/
+    3. http://www.tcltk.com/blt/index.html
+       
+   Make sure, that you download the appropriate versions corresponding to
+   the RedHat packages I used.
+   
+   Console starts programs on remote hosts. One way to do this (there are
+   other ways, e.g. rsh) is with ssh, which I use in the example. Both
+   rsh and ssh typically don't require the user to enter his username and
+   password; they use different means for authentication. For that to
+   work, check out ssh's or rsh's man page; in particular you need for
+   rsh
+   
+     * on every remote host a file ~/.rhosts, which lists the machines
+       (one per line) that have access to the remote host thru rsh.
+     * ~/.rhosts must be world-readable.
+       
+   and for ssh (which I highly recommend)
+   
+     * Get it and install it as root with
+       
+                                  rpm -Uvh
+   ftp://ftp.replay.com/pub/replay/pub/redhat/i386/ssh-1.2.20-4i.i386.rpm
+                                      
+       and
+       
+                                  rpm -Uvh
+   ftp://ftp.replay.com/pub/replay/pub/redhat/i386/ssh-clients-1.2.20-4i.
+                                 i386.rpm.
+                                      
+       Or retrieve the latest version that can be found at
+       
+                       http://www.replay.com/redhat/
+                                      
+     * Read the documentation at
+       
+                         http://www.cs.hut.fi/ssh/
+                                      
+       in particular
+       
+                     http://www.tac.nyc.ny.us/~kim/ssh/
+                                      
+How the console program works
+
+   Initially, the program parses the file beeSoft.ini which defines
+   various parameters and dependencies among beeSoft's modules. If you
+   have written your own program that interacts with these modules, you
+   would define it's parameters and dependencies in the file console.ini.
+   
+   Once you started console, it will display all programs that you
+   defined with the variable myPrograms in console.ini. Console will also
+   include all the other programs that might be required to run the
+   programs defined by myPrograms.
+   
+   Clicking on one button will start the program and all it's dependent
+   programs. Once the program is running, the button changes to a `Stop'
+   button. If you click the `Stop' button it will kill only this program
+   and _none_ of it's dependent programs. However, killing for example
+   the tcxServer will likely bring down all other programs.
+   
+   There are some menu points, that you might want to try out.
+   Options|Display parsed data... shows the data, that console got from
+   beeSoft.ini and console.ini. Help|About... and File|Quit do what they
+   promise.
+   
+How to use console
+
+   First of all, you have to modify beeSoft.ini to reflect your setup of
+   machines.
+   
+    1. Check on a shell, if you can use ssh/rsh to execute programs on a
+       remote machine.
+    2. For each program in beeSoft.ini, change the entry programOnHost to
+       the appropriate machine. If console finds a *** in programOnHost,
+       it will try to pick the host entry from the hardware device.
+       Example: you want to configure the camera server: its
+       programOnHost contains *** -- so far so good. Now look for
+       framegrabber in the [robot] section. It should say matrox. To find
+       the host on which console would run the camera server, look at the
+       host entry in the section [matrox.framegrabber]. I'm sure you get
+       the point.
+    3. Do not change anything else. It took me a fairly long and painful
+       time to figure out the right combination of commands, pipes and
+       ampersands.
+       
+   Now for your own program (let's call it gestureServer), write a
+   console.ini file. If console cannot find a console.ini, it will exit.
+   To be precise: If console cannot find the entry pathToMyPrograms which
+   it is supposed to find in console.ini, it will exit. Here is the
+   syntax of the file:
+   
+   
+          [bParamFile]
+          
+          This must be the first line of the file, so that console can
+          identify the file as an initialization file.
+          
+   
+          myPrograms
+          
+          Is a comma separated list of programs that the console program
+          will use. For each item in this list, it will also use it's
+          dependent programs. Example:
+          
+               myPrograms { gestureServer, recognizeServer }
+                                      
+          will use gestureServer and recognizeServer.
+          
+   
+          pathToMyPrograms
+          
+          Is a list of paths where the console program looks for
+          beeSoft's and your programs. Example:
+          
+              pathToMyPrograms /home/swa/bee/bin:/home/bee/bin
+                                      
+          will look for programs first in /home/swa/bee/bin and then in
+          /home/bee/bin. Listing two entries here comes in handy if you
+          prefer your local binary over the global one.
+          
+   
+          scrollauto
+          
+          If set to 1 will automatically scroll to the end of each log
+          window.
+          
+   
+          [gestureServer]
+          
+          Is the start of gestureServer's definition.
+          
+   
+          name
+          
+          Is a symbolic name of the program. In this case we use gesture,
+          simply because it's shorter and more convenient than
+          gestureServer.
+          
+   
+          programOnHost
+          
+          Defines the host, on which we run the program gestureServer.
+          Don't use *** here, because console will likely not find a
+          definition in beeSoft.ini.
+          
+   
+          howStart1, howStart2, howStart3
+          
+          Defines how to start the program on the remote machine. In the
+          case of the gesture server, we use
+          
+howStart1       /usr/bin/ssh
+howStart2       -n
+howStart3       gestureServer
+
+          It's generally not a good idea to change these parameters.
+          There are a lot of ways in which stdout or stderr might not get
+          transmitted back to our machine, etc. Just change gestureServer
+          to the name of your program. The program will be picked out of
+          pathToMyPrograms and started with
+          
+    /bin/sh -c 'PATH=/home/swa/bee/bin:/home/bee/bin gestureServer 2>&1'
+                                      
+   
+          howKill1, howKill2, howKill3
+          
+          Defines how to kill the program on the remote machine. In the
+          case of the gesture server, we use
+          
+howKill1        /usr/bin/ssh
+howKill2        -n
+howKill3        /bin/sh -c 'killall gestureServer 2>&1'
+
+          Again, don't change these parameters, just change gestureServer
+          to the name of your program.
+          
+   
+          dep
+          
+          Is a comma separated list of programs that must be started
+          before this program can proceed. Example:
+          
+                      dep { tcxServer, cameraServer }
+                                      
+          will use the definition of tcxServer and cameraServer.
+          
+   
+     _________________________________________________________________
+                                      
+   
+    _Stefan Waldherr
+    Mon Feb 9 17:57:44 EST 1998_

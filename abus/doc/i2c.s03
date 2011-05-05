@@ -1,0 +1,243 @@
+;
+;global entry points
+;
+		public	Xmit_I2C_String
+		public	Rec_I2C_String
+		public	Xmit_I2C_Byte
+		public	Rec_I2C_Byte
+
+;I2C I/O...
+
+SCL		equ	p0.0
+SDA		equ	p0.1
+ 
+;Macros...
+
+;Bit Delay
+    		MACRO	%Bit_Delay
+		nop
+		nop
+		ENDMAC
+
+;Set SCL
+		MACRO	%Set_SCL
+      		setb	SCL
+		jnb	SCL,$
+		%Bit_Delay
+		ENDMAC
+
+;Clear SCL
+		MACRO	%Clr_SCL
+		clr	SCL
+		%Bit_Delay
+		ENDMAC
+
+;Pulse SCL
+		MACRO	%Emit_Clock
+		%Set_SCL
+		%Clr_SCL
+		ENDMAC
+
+;Start Sequence
+		MACRO	%Start
+		setb	SDA 
+		%Set_SCL    
+
+		clr	SDA
+		%Bit_Delay
+		%Clr_SCL
+		ENDMAC
+
+;Stop Sequence
+		MACRO	%Stop
+		clr	SDA
+		%Set_SCL
+		setb	SDA
+		%Bit_Delay
+		ENDMAC
+
+;start of executable code
+
+		RSEG	CODE
+
+;Subroutines...
+
+;
+;Transmit a byte over the I2C bus
+;input: acc contains byte to transmit
+;output: cy = 0 if sequence completes
+;        cy = 1 if unable to transmit
+;
+Xmit_Byte:
+		mov	r1,#8		;8 bits to send
+xb1:
+		rlc	a
+		mov	SDA,c		;put bit on pin
+		%Emit_Clock		;emit clock pulse
+		djnz	r1,xb1		;more bits to transmit?
+
+;setup to accept ACK from slave device		
+		setb	SDA		;release SDA
+		%Set_SCL     		;set SCL
+		jnb	SDA,xb2		;jump if ACK seen
+		%Clr_SCL  		;drop SCL
+       		setb	c		;set error code
+		ret
+xb2:
+		%Clr_SCL		;drop SCL
+		clr	c  		;set complete code
+		ret
+
+;Receive a byte over the I2C bus
+;output: acc contains received byte
+;	 cy is dummied up with a 0
+;
+Rec_Byte:
+		mov	r1,#8		;8 bits to receive
+rb1:
+		%Set_SCL		;set SCL
+		mov	c,SDA		;pick up data bit
+		rlc	a		
+		%Clr_SCL		;drop SCL
+		djnz	r1,rb1		;more bits to receive?
+		clr	c		;must complete ok!
+		ret			
+
+;Public routines...
+
+;
+;Transmit address and data bytes over I2C bus
+;input: acc contains slave address
+;	b contains register address
+;	dptr points to source buffer
+;	r0 contains byte count
+;output: cy = 0 if sequence completes
+;        cy = 1 if unable to transmit
+;
+xd_fault:	 			;bus fault
+		setb	c		;set error code
+		ret
+Xmit_I2C_String:
+		jnb	SCL,xd_fault
+		jnb	SDA,xd_fault	;jump if bus fault
+		%Start	       		;set start condition
+		call	Xmit_Byte	;send slave address
+		jc 	xd2		;jump on error
+		mov 	a,b	
+		call	Xmit_Byte	;send register address
+		jc	xd2		;jump on error
+xd1:
+		movx	a,@dptr	       	;pick up data byte
+		inc	dptr
+		call	Xmit_Byte	;send data byte
+		jc	xd2		;jump on error
+		djnz	r0,xd1		;more bytes to send?
+
+;set stop condition, return code is already in cy
+xd2:
+		%Stop			;set stop condition
+		ret
+;	
+;Transmit address and receive data bytes over I2C bus
+;input:	acc contains slave address
+;	b contains register address
+;	dptr points to destination buffer
+;       r0 contains number of bytes to receive
+;output: cy = 0 if sequence completes
+;        cy = 1 if unable to receive
+;
+rd_fault:				;bus fault
+		setb	c  		;set error code
+		ret
+Rec_I2C_String:
+		jnb	SCL,rd_fault
+		jnb	SDA,rd_fault	;jump if bus fault
+
+		%Start	      		;set start condition
+		push	acc
+		call	Xmit_Byte	;send slave address
+		pop	acc
+		jc	rd3		;jump on error
+		xch	a,b		
+		call	Xmit_Byte 	;send register address
+		jc	rd3		;jump on error
+		%Start			;set repeated start
+		mov  	a,b
+		setb	acc.0		;indicate read operation
+		call	Xmit_Byte	;send slave address again
+		jc	rd3		;jump on error
+rd1:
+		call	Rec_Byte	;receive data byte
+		movx	@dptr,a		;store data byte
+		inc	dptr
+
+;Send ACK on all but last byte
+		djnz	r0,rd4		;jump if not last byte
+
+;sequence complete, return code is already in cy
+rd2:
+		setb	SDA		;set SDA (no ACK)
+		%Emit_Clock		;emit clock pulse
+rd3:
+		%Stop		       	;set stop condition
+		ret
+
+;send ACK and continue receiving
+rd4:
+		clr	SDA		;drop the Ack bit
+		%Emit_Clock		;emit clock pulse
+		setb	SDA	       
+		sjmp	rd1		;keep receiving
+;
+;Transmit address and a data byte over I2C bus
+;input: acc contains slave address
+;	b contains data byte
+;output: cy = 0 if sequence completes
+;        cy = 1 if unable to transmit
+;
+xdb_fault:	 			;bus fault
+		setb	c		;set error code
+		ret
+Xmit_I2C_Byte:
+		jnb	SCL,xdb_fault
+		jnb	SDA,xdb_fault	;jump if bus fault
+		%Start	       		;set start condition
+		call	Xmit_Byte	;send slave address
+		jc 	xdb1		;jump on error
+		mov 	a,b	
+		call	Xmit_Byte	;send data byte
+
+;set stop condition, return code is already in cy
+xdb1:
+		%Stop			;set stop condition
+		ret
+;	
+;Transmit address and receive a data byte over I2C bus
+;input:	acc contains slave address
+;output: b contains received byte
+;        cy = 0 if sequence completes
+;        cy = 1 if unable to receive
+;
+rdb_fault:				;bus fault
+		setb	c  		;set error code
+		ret
+Rec_I2C_Byte:
+		jnb	SCL,rdb_fault
+		jnb	SDA,rdb_fault	;jump if bus fault
+
+		%Start	      		;set start condition
+		setb	acc.0		;indicate read operation
+		call	Xmit_Byte	;send slave address
+		jc	rdb1		;jump on error
+		call	Rec_Byte	;receive data byte
+		mov	b,a		;store data byte
+
+
+;sequence complete, return code is already in cy
+		setb	SDA		;set SDA (no ACK)
+		%Emit_Clock		;emit clock pulse
+rdb1:
+		%Stop		       	;set stop condition
+		ret
+
+		end

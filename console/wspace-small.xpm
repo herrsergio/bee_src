@@ -1,0 +1,25 @@
+/* XPM */
+static char * wspace_xpm[] = {
+/* width height num_colors chars_per_pixel */
+"16 16 3 1",
+/* colors */
+" 	c #c4c4c4",
+".	c #979797",
+"X	c #eeeeee",
+/* pixels */
+"    .X    .X    ",
+"    .X    .X    ",
+"    .X    .X    ",
+"    .X    .X    ",
+"................",
+"XXXX.XXXXX.XXXXX",
+"    .X    .X    ",
+"    .X    .X    ",
+"    .X    .X    ",
+"    .X    .X    ",
+"................",
+"XXXX.XXXXX.XXXXX",
+"    .X    .X    ",
+"    .X    .X    ",
+"    .X    .X    ",
+"    .X    .X    "};

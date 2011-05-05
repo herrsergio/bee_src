@@ -1,0 +1,21 @@
+Demo*translations:	#override \
+Shift<Btn1Down>:	ChangeFigure(lower)\n\
+Ctrl<Btn1Down>:		ChangeFigure(remove)\n\
+None<Btn1Down>:		ChangeFigure(raise)\n\
+<Btn2Down>:		MoveFigure(begin)\n\
+<Btn2Motion>:		MoveFigure(move)\n\
+<Btn2Up>:		MoveFigure(end)\n\
+Shift<Key>r:		DrawFigure(rectangle,large,scaled,blue)\n\
+Ctrl<Key>r:		DrawFigure(rectangle,small,scaled,green)\n\
+None<Key>r:		DrawFigure(rectangle,medium,scaled,red)\n\
+Shift<Key>c:		DrawFigure(circle,large,unscaled,blue)\n\
+Ctrl<Key>c:		DrawFigure(circle,small,unscaled,green)\n\
+None<Key>c:		DrawFigure(circle,medium,unscaled,red)\n\
+Shift<Key>f:		FillFigure(rectangle,large,scaled,blue)\n\
+Ctrl<Key>f:		FillFigure(rectangle,small,scaled,green)\n\
+None<Key>f:		FillFigure(rectangle,medium,scaled,red)\n\
+Shift<Key>z:		Zoom(out)\n\
+None<Key>z:		Zoom(in)\n\
+<Key>s:			ToggleResource(snap)\n\
+<Key>g:			ToggleResource(grid)\n\
+<Key>q:			Quit()

@@ -1,0 +1,299 @@
+obj/action.o: action.c /usr/include/ctype.h /usr/include/features.h \
+ /usr/include/sys/cdefs.h /usr/include/gnu/stubs.h \
+ /usr/include/endian.h /usr/include/bytesex.h /usr/include/stdio.h \
+ /usr/include/libio.h /usr/include/_G_config.h \
+ /usr/include/gnu/types.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stddef.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stdarg.h \
+ /usr/include/stdio_lim.h /usr/include/math.h /usr/include/huge_val.h \
+ /usr/include/mathcalls.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/float.h \
+ /usr/include/__math.h /usr/include/sys/time.h /usr/include/time.h \
+ /usr/include/timebits.h /usr/include/sys/select.h \
+ /usr/include/selectbits.h all.h ../../include/tcx.h \
+ /usr/include/sys/types.h /usr/include/netinet/in.h \
+ /usr/include/sys/socket.h /usr/include/socketbits.h \
+ /usr/include/sockaddrcom.h /usr/include/asm/socket.h \
+ /usr/include/asm/sockios.h ../../include/tcxP.h /usr/include/malloc.h \
+ ../../include/robot_specifications.h ../../include/imagesize.h \
+ ../../include/BASE-messages.h ../../include/SONAR-messages.h \
+ ../../include/LASER-messages.h ../../include/IR-messages.h \
+ ../../include/COLLI-messages.h ../../include/PANTILT-messages.h \
+ ../../include/pantiltClient.h ../../include/MAP-messages.h \
+ ../../include/PLAN-messages.h ../../include/CAMERA-messages.h \
+ ../../include/SIMULATOR-messages.h ../../include/BUTTONS-messages.h \
+ ../../include/bUtils.h /usr/include/termios.h /usr/include/termbits.h \
+ /usr/include/sys/ttydefaults.h ../../include/bNetwork.h main.h \
+ ../../include/o-graphics.h ../../include/EZX11.h \
+ /usr/include/stdlib.h /usr/include/alloca.h /usr/include/strings.h \
+ /usr/include/string.h /usr/X11R6/include/X11/Xlib.h \
+ /usr/X11R6/include/X11/X.h /usr/X11R6/include/X11/Xfuncproto.h \
+ /usr/X11R6/include/X11/Xosdefs.h /usr/X11R6/include/X11/Xatom.h \
+ /usr/X11R6/include/X11/Xutil.h graphics.h mouse.h init.h action.h \
+ corr.h file.h tour.h
+obj/corr.o: corr.c /usr/include/ctype.h /usr/include/features.h \
+ /usr/include/sys/cdefs.h /usr/include/gnu/stubs.h \
+ /usr/include/endian.h /usr/include/bytesex.h /usr/include/stdio.h \
+ /usr/include/libio.h /usr/include/_G_config.h \
+ /usr/include/gnu/types.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stddef.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stdarg.h \
+ /usr/include/stdio_lim.h /usr/include/math.h /usr/include/huge_val.h \
+ /usr/include/mathcalls.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/float.h \
+ /usr/include/__math.h /usr/include/sys/time.h /usr/include/time.h \
+ /usr/include/timebits.h /usr/include/sys/select.h \
+ /usr/include/selectbits.h all.h ../../include/tcx.h \
+ /usr/include/sys/types.h /usr/include/netinet/in.h \
+ /usr/include/sys/socket.h /usr/include/socketbits.h \
+ /usr/include/sockaddrcom.h /usr/include/asm/socket.h \
+ /usr/include/asm/sockios.h ../../include/tcxP.h /usr/include/malloc.h \
+ ../../include/robot_specifications.h ../../include/imagesize.h \
+ ../../include/BASE-messages.h ../../include/SONAR-messages.h \
+ ../../include/LASER-messages.h ../../include/IR-messages.h \
+ ../../include/COLLI-messages.h ../../include/PANTILT-messages.h \
+ ../../include/pantiltClient.h ../../include/MAP-messages.h \
+ ../../include/PLAN-messages.h ../../include/CAMERA-messages.h \
+ ../../include/SIMULATOR-messages.h ../../include/BUTTONS-messages.h \
+ ../../include/bUtils.h /usr/include/termios.h /usr/include/termbits.h \
+ /usr/include/sys/ttydefaults.h ../../include/bNetwork.h main.h \
+ ../../include/o-graphics.h ../../include/EZX11.h \
+ /usr/include/stdlib.h /usr/include/alloca.h /usr/include/strings.h \
+ /usr/include/string.h /usr/X11R6/include/X11/Xlib.h \
+ /usr/X11R6/include/X11/X.h /usr/X11R6/include/X11/Xfuncproto.h \
+ /usr/X11R6/include/X11/Xosdefs.h /usr/X11R6/include/X11/Xatom.h \
+ /usr/X11R6/include/X11/Xutil.h graphics.h mouse.h init.h action.h \
+ corr.h file.h tour.h
+obj/file.o: file.c /usr/include/ctype.h /usr/include/features.h \
+ /usr/include/sys/cdefs.h /usr/include/gnu/stubs.h \
+ /usr/include/endian.h /usr/include/bytesex.h /usr/include/math.h \
+ /usr/include/huge_val.h /usr/include/mathcalls.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/float.h \
+ /usr/include/__math.h /usr/include/stdio.h /usr/include/libio.h \
+ /usr/include/_G_config.h /usr/include/gnu/types.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stddef.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stdarg.h \
+ /usr/include/stdio_lim.h /usr/include/sys/time.h /usr/include/time.h \
+ /usr/include/timebits.h /usr/include/sys/select.h \
+ /usr/include/selectbits.h all.h ../../include/tcx.h \
+ /usr/include/sys/types.h /usr/include/netinet/in.h \
+ /usr/include/sys/socket.h /usr/include/socketbits.h \
+ /usr/include/sockaddrcom.h /usr/include/asm/socket.h \
+ /usr/include/asm/sockios.h ../../include/tcxP.h /usr/include/malloc.h \
+ ../../include/robot_specifications.h ../../include/imagesize.h \
+ ../../include/BASE-messages.h ../../include/SONAR-messages.h \
+ ../../include/LASER-messages.h ../../include/IR-messages.h \
+ ../../include/COLLI-messages.h ../../include/PANTILT-messages.h \
+ ../../include/pantiltClient.h ../../include/MAP-messages.h \
+ ../../include/PLAN-messages.h ../../include/CAMERA-messages.h \
+ ../../include/SIMULATOR-messages.h ../../include/BUTTONS-messages.h \
+ ../../include/bUtils.h /usr/include/termios.h /usr/include/termbits.h \
+ /usr/include/sys/ttydefaults.h ../../include/bNetwork.h main.h \
+ ../../include/o-graphics.h ../../include/EZX11.h \
+ /usr/include/stdlib.h /usr/include/alloca.h /usr/include/strings.h \
+ /usr/include/string.h /usr/X11R6/include/X11/Xlib.h \
+ /usr/X11R6/include/X11/X.h /usr/X11R6/include/X11/Xfuncproto.h \
+ /usr/X11R6/include/X11/Xosdefs.h /usr/X11R6/include/X11/Xatom.h \
+ /usr/X11R6/include/X11/Xutil.h graphics.h mouse.h init.h action.h \
+ corr.h file.h tour.h
+obj/graphics.o: graphics.c /usr/include/ctype.h /usr/include/features.h \
+ /usr/include/sys/cdefs.h /usr/include/gnu/stubs.h \
+ /usr/include/endian.h /usr/include/bytesex.h /usr/include/math.h \
+ /usr/include/huge_val.h /usr/include/mathcalls.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/float.h \
+ /usr/include/__math.h /usr/include/stdio.h /usr/include/libio.h \
+ /usr/include/_G_config.h /usr/include/gnu/types.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stddef.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stdarg.h \
+ /usr/include/stdio_lim.h /usr/include/sys/time.h /usr/include/time.h \
+ /usr/include/timebits.h /usr/include/sys/select.h \
+ /usr/include/selectbits.h all.h ../../include/tcx.h \
+ /usr/include/sys/types.h /usr/include/netinet/in.h \
+ /usr/include/sys/socket.h /usr/include/socketbits.h \
+ /usr/include/sockaddrcom.h /usr/include/asm/socket.h \
+ /usr/include/asm/sockios.h ../../include/tcxP.h /usr/include/malloc.h \
+ ../../include/robot_specifications.h ../../include/imagesize.h \
+ ../../include/BASE-messages.h ../../include/SONAR-messages.h \
+ ../../include/LASER-messages.h ../../include/IR-messages.h \
+ ../../include/COLLI-messages.h ../../include/PANTILT-messages.h \
+ ../../include/pantiltClient.h ../../include/MAP-messages.h \
+ ../../include/PLAN-messages.h ../../include/CAMERA-messages.h \
+ ../../include/SIMULATOR-messages.h ../../include/BUTTONS-messages.h \
+ ../../include/bUtils.h /usr/include/termios.h /usr/include/termbits.h \
+ /usr/include/sys/ttydefaults.h ../../include/bNetwork.h main.h \
+ ../../include/o-graphics.h ../../include/EZX11.h \
+ /usr/include/stdlib.h /usr/include/alloca.h /usr/include/strings.h \
+ /usr/include/string.h /usr/X11R6/include/X11/Xlib.h \
+ /usr/X11R6/include/X11/X.h /usr/X11R6/include/X11/Xfuncproto.h \
+ /usr/X11R6/include/X11/Xosdefs.h /usr/X11R6/include/X11/Xatom.h \
+ /usr/X11R6/include/X11/Xutil.h graphics.h mouse.h init.h action.h \
+ corr.h file.h tour.h
+obj/init.o: init.c /usr/include/ctype.h /usr/include/features.h \
+ /usr/include/sys/cdefs.h /usr/include/gnu/stubs.h \
+ /usr/include/endian.h /usr/include/bytesex.h /usr/include/math.h \
+ /usr/include/huge_val.h /usr/include/mathcalls.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/float.h \
+ /usr/include/__math.h /usr/include/stdio.h /usr/include/libio.h \
+ /usr/include/_G_config.h /usr/include/gnu/types.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stddef.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stdarg.h \
+ /usr/include/stdio_lim.h /usr/include/stdlib.h \
+ /usr/include/sys/types.h /usr/include/time.h \
+ /usr/include/sys/select.h /usr/include/selectbits.h \
+ /usr/include/alloca.h /usr/include/sys/time.h /usr/include/timebits.h \
+ /usr/include/signal.h /usr/include/sigset.h /usr/include/signum.h \
+ /usr/include/sigaction.h /usr/include/sigcontext.h \
+ /usr/include/asm/sigcontext.h /usr/include/sigstack.h all.h \
+ ../../include/tcx.h /usr/include/netinet/in.h \
+ /usr/include/sys/socket.h /usr/include/socketbits.h \
+ /usr/include/sockaddrcom.h /usr/include/asm/socket.h \
+ /usr/include/asm/sockios.h ../../include/tcxP.h /usr/include/malloc.h \
+ ../../include/robot_specifications.h ../../include/imagesize.h \
+ ../../include/BASE-messages.h ../../include/SONAR-messages.h \
+ ../../include/LASER-messages.h ../../include/IR-messages.h \
+ ../../include/COLLI-messages.h ../../include/PANTILT-messages.h \
+ ../../include/pantiltClient.h ../../include/MAP-messages.h \
+ ../../include/PLAN-messages.h ../../include/CAMERA-messages.h \
+ ../../include/SIMULATOR-messages.h ../../include/BUTTONS-messages.h \
+ ../../include/bUtils.h /usr/include/termios.h /usr/include/termbits.h \
+ /usr/include/sys/ttydefaults.h ../../include/bNetwork.h main.h \
+ ../../include/o-graphics.h ../../include/EZX11.h \
+ /usr/include/strings.h /usr/include/string.h \
+ /usr/X11R6/include/X11/Xlib.h /usr/X11R6/include/X11/X.h \
+ /usr/X11R6/include/X11/Xfuncproto.h /usr/X11R6/include/X11/Xosdefs.h \
+ /usr/X11R6/include/X11/Xatom.h /usr/X11R6/include/X11/Xutil.h \
+ graphics.h mouse.h init.h action.h corr.h file.h tour.h \
+ beeSoftVersion.h ../../include/libbUtils.h ../../include/librobot.h \
+ ../../include/libezx.h
+obj/main.o: main.c /usr/include/ctype.h /usr/include/features.h \
+ /usr/include/sys/cdefs.h /usr/include/gnu/stubs.h \
+ /usr/include/endian.h /usr/include/bytesex.h /usr/include/stdio.h \
+ /usr/include/libio.h /usr/include/_G_config.h \
+ /usr/include/gnu/types.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stddef.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stdarg.h \
+ /usr/include/stdio_lim.h /usr/include/math.h /usr/include/huge_val.h \
+ /usr/include/mathcalls.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/float.h \
+ /usr/include/__math.h /usr/include/sys/time.h /usr/include/time.h \
+ /usr/include/timebits.h /usr/include/sys/select.h \
+ /usr/include/selectbits.h /usr/include/signal.h /usr/include/sigset.h \
+ /usr/include/signum.h /usr/include/sigaction.h \
+ /usr/include/sigcontext.h /usr/include/asm/sigcontext.h \
+ /usr/include/sigstack.h all.h ../../include/tcx.h \
+ /usr/include/sys/types.h /usr/include/netinet/in.h \
+ /usr/include/sys/socket.h /usr/include/socketbits.h \
+ /usr/include/sockaddrcom.h /usr/include/asm/socket.h \
+ /usr/include/asm/sockios.h ../../include/tcxP.h /usr/include/malloc.h \
+ ../../include/robot_specifications.h ../../include/imagesize.h \
+ ../../include/BASE-messages.h ../../include/SONAR-messages.h \
+ ../../include/LASER-messages.h ../../include/IR-messages.h \
+ ../../include/COLLI-messages.h ../../include/PANTILT-messages.h \
+ ../../include/pantiltClient.h ../../include/MAP-messages.h \
+ ../../include/PLAN-messages.h ../../include/CAMERA-messages.h \
+ ../../include/SIMULATOR-messages.h ../../include/BUTTONS-messages.h \
+ ../../include/bUtils.h /usr/include/termios.h /usr/include/termbits.h \
+ /usr/include/sys/ttydefaults.h ../../include/bNetwork.h main.h \
+ ../../include/o-graphics.h ../../include/EZX11.h \
+ /usr/include/stdlib.h /usr/include/alloca.h /usr/include/strings.h \
+ /usr/include/string.h /usr/X11R6/include/X11/Xlib.h \
+ /usr/X11R6/include/X11/X.h /usr/X11R6/include/X11/Xfuncproto.h \
+ /usr/X11R6/include/X11/Xosdefs.h /usr/X11R6/include/X11/Xatom.h \
+ /usr/X11R6/include/X11/Xutil.h graphics.h mouse.h init.h action.h \
+ corr.h file.h tour.h
+obj/mouse.o: mouse.c /usr/include/ctype.h /usr/include/features.h \
+ /usr/include/sys/cdefs.h /usr/include/gnu/stubs.h \
+ /usr/include/endian.h /usr/include/bytesex.h /usr/include/math.h \
+ /usr/include/huge_val.h /usr/include/mathcalls.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/float.h \
+ /usr/include/__math.h /usr/include/stdio.h /usr/include/libio.h \
+ /usr/include/_G_config.h /usr/include/gnu/types.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stddef.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stdarg.h \
+ /usr/include/stdio_lim.h /usr/include/sys/time.h /usr/include/time.h \
+ /usr/include/timebits.h /usr/include/sys/select.h \
+ /usr/include/selectbits.h all.h ../../include/tcx.h \
+ /usr/include/sys/types.h /usr/include/netinet/in.h \
+ /usr/include/sys/socket.h /usr/include/socketbits.h \
+ /usr/include/sockaddrcom.h /usr/include/asm/socket.h \
+ /usr/include/asm/sockios.h ../../include/tcxP.h /usr/include/malloc.h \
+ ../../include/robot_specifications.h ../../include/imagesize.h \
+ ../../include/BASE-messages.h ../../include/SONAR-messages.h \
+ ../../include/LASER-messages.h ../../include/IR-messages.h \
+ ../../include/COLLI-messages.h ../../include/PANTILT-messages.h \
+ ../../include/pantiltClient.h ../../include/MAP-messages.h \
+ ../../include/PLAN-messages.h ../../include/CAMERA-messages.h \
+ ../../include/SIMULATOR-messages.h ../../include/BUTTONS-messages.h \
+ ../../include/bUtils.h /usr/include/termios.h /usr/include/termbits.h \
+ /usr/include/sys/ttydefaults.h ../../include/bNetwork.h main.h \
+ ../../include/o-graphics.h ../../include/EZX11.h \
+ /usr/include/stdlib.h /usr/include/alloca.h /usr/include/strings.h \
+ /usr/include/string.h /usr/X11R6/include/X11/Xlib.h \
+ /usr/X11R6/include/X11/X.h /usr/X11R6/include/X11/Xfuncproto.h \
+ /usr/X11R6/include/X11/Xosdefs.h /usr/X11R6/include/X11/Xatom.h \
+ /usr/X11R6/include/X11/Xutil.h graphics.h mouse.h init.h action.h \
+ corr.h file.h tour.h
+obj/task.o: task.c /usr/include/ctype.h /usr/include/features.h \
+ /usr/include/sys/cdefs.h /usr/include/gnu/stubs.h \
+ /usr/include/endian.h /usr/include/bytesex.h /usr/include/math.h \
+ /usr/include/huge_val.h /usr/include/mathcalls.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/float.h \
+ /usr/include/__math.h /usr/include/stdio.h /usr/include/libio.h \
+ /usr/include/_G_config.h /usr/include/gnu/types.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stddef.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stdarg.h \
+ /usr/include/stdio_lim.h /usr/include/sys/time.h /usr/include/time.h \
+ /usr/include/timebits.h /usr/include/sys/select.h \
+ /usr/include/selectbits.h all.h ../../include/tcx.h \
+ /usr/include/sys/types.h /usr/include/netinet/in.h \
+ /usr/include/sys/socket.h /usr/include/socketbits.h \
+ /usr/include/sockaddrcom.h /usr/include/asm/socket.h \
+ /usr/include/asm/sockios.h ../../include/tcxP.h /usr/include/malloc.h \
+ ../../include/robot_specifications.h ../../include/imagesize.h \
+ ../../include/BASE-messages.h ../../include/SONAR-messages.h \
+ ../../include/LASER-messages.h ../../include/IR-messages.h \
+ ../../include/COLLI-messages.h ../../include/PANTILT-messages.h \
+ ../../include/pantiltClient.h ../../include/MAP-messages.h \
+ ../../include/PLAN-messages.h ../../include/CAMERA-messages.h \
+ ../../include/SIMULATOR-messages.h ../../include/BUTTONS-messages.h \
+ ../../include/bUtils.h /usr/include/termios.h /usr/include/termbits.h \
+ /usr/include/sys/ttydefaults.h ../../include/bNetwork.h main.h \
+ ../../include/o-graphics.h ../../include/EZX11.h \
+ /usr/include/stdlib.h /usr/include/alloca.h /usr/include/strings.h \
+ /usr/include/string.h /usr/X11R6/include/X11/Xlib.h \
+ /usr/X11R6/include/X11/X.h /usr/X11R6/include/X11/Xfuncproto.h \
+ /usr/X11R6/include/X11/Xosdefs.h /usr/X11R6/include/X11/Xatom.h \
+ /usr/X11R6/include/X11/Xutil.h graphics.h mouse.h init.h action.h \
+ corr.h file.h tour.h
+obj/tour.o: tour.c /usr/include/ctype.h /usr/include/features.h \
+ /usr/include/sys/cdefs.h /usr/include/gnu/stubs.h \
+ /usr/include/endian.h /usr/include/bytesex.h /usr/include/math.h \
+ /usr/include/huge_val.h /usr/include/mathcalls.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/float.h \
+ /usr/include/__math.h /usr/include/stdio.h /usr/include/libio.h \
+ /usr/include/_G_config.h /usr/include/gnu/types.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stddef.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stdarg.h \
+ /usr/include/stdio_lim.h /usr/include/sys/time.h /usr/include/time.h \
+ /usr/include/timebits.h /usr/include/sys/select.h \
+ /usr/include/selectbits.h all.h ../../include/tcx.h \
+ /usr/include/sys/types.h /usr/include/netinet/in.h \
+ /usr/include/sys/socket.h /usr/include/socketbits.h \
+ /usr/include/sockaddrcom.h /usr/include/asm/socket.h \
+ /usr/include/asm/sockios.h ../../include/tcxP.h /usr/include/malloc.h \
+ ../../include/robot_specifications.h ../../include/imagesize.h \
+ ../../include/BASE-messages.h ../../include/SONAR-messages.h \
+ ../../include/LASER-messages.h ../../include/IR-messages.h \
+ ../../include/COLLI-messages.h ../../include/PANTILT-messages.h \
+ ../../include/pantiltClient.h ../../include/MAP-messages.h \
+ ../../include/PLAN-messages.h ../../include/CAMERA-messages.h \
+ ../../include/SIMULATOR-messages.h ../../include/BUTTONS-messages.h \
+ ../../include/bUtils.h /usr/include/termios.h /usr/include/termbits.h \
+ /usr/include/sys/ttydefaults.h ../../include/bNetwork.h main.h \
+ ../../include/o-graphics.h ../../include/EZX11.h \
+ /usr/include/stdlib.h /usr/include/alloca.h /usr/include/strings.h \
+ /usr/include/string.h /usr/X11R6/include/X11/Xlib.h \
+ /usr/X11R6/include/X11/X.h /usr/X11R6/include/X11/Xfuncproto.h \
+ /usr/X11R6/include/X11/Xosdefs.h /usr/X11R6/include/X11/Xatom.h \
+ /usr/X11R6/include/X11/Xutil.h graphics.h mouse.h init.h action.h \
+ corr.h file.h tour.h

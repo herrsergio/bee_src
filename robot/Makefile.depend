@@ -1,0 +1,130 @@
+obj/LIB-math.o: LIB-math.c /usr/include/stdio.h /usr/include/libio.h \
+ /usr/include/features.h /usr/include/sys/cdefs.h \
+ /usr/include/gnu/stubs.h /usr/include/_G_config.h \
+ /usr/include/gnu/types.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stddef.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stdarg.h \
+ /usr/include/stdio_lim.h /usr/include/stdlib.h \
+ /usr/include/sys/types.h /usr/include/time.h /usr/include/endian.h \
+ /usr/include/bytesex.h /usr/include/sys/select.h \
+ /usr/include/selectbits.h /usr/include/alloca.h /usr/include/math.h \
+ /usr/include/huge_val.h /usr/include/mathcalls.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/float.h \
+ /usr/include/__math.h Common.h beeSoftVersion.h
+obj/Learn.o: Learn.c /usr/include/math.h /usr/include/features.h \
+ /usr/include/sys/cdefs.h /usr/include/gnu/stubs.h \
+ /usr/include/huge_val.h /usr/include/mathcalls.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/float.h \
+ /usr/include/__math.h /usr/include/stdio.h /usr/include/libio.h \
+ /usr/include/_G_config.h /usr/include/gnu/types.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stddef.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stdarg.h \
+ /usr/include/stdio_lim.h /usr/include/sys/time.h /usr/include/time.h \
+ /usr/include/timebits.h /usr/include/sys/select.h \
+ /usr/include/selectbits.h Application.h Net.h
+obj/block3.o: block3.c /usr/include/stdio.h /usr/include/libio.h \
+ /usr/include/features.h /usr/include/sys/cdefs.h \
+ /usr/include/gnu/stubs.h /usr/include/_G_config.h \
+ /usr/include/gnu/types.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stddef.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stdarg.h \
+ /usr/include/stdio_lim.h /usr/include/signal.h /usr/include/sigset.h \
+ /usr/include/signum.h /usr/include/sigaction.h \
+ /usr/include/sigcontext.h /usr/include/asm/sigcontext.h \
+ /usr/include/sigstack.h /usr/include/errno.h /usr/include/errnos.h \
+ /usr/include/linux/errno.h /usr/include/asm/errno.h \
+ /usr/include/sys/types.h /usr/include/time.h /usr/include/endian.h \
+ /usr/include/bytesex.h /usr/include/sys/select.h \
+ /usr/include/selectbits.h /usr/include/sys/time.h \
+ /usr/include/timebits.h /usr/X11R6/include/X11/Xlib.h \
+ /usr/X11R6/include/X11/X.h /usr/X11R6/include/X11/Xfuncproto.h \
+ /usr/X11R6/include/X11/Xosdefs.h ../../include/tcx.h \
+ /usr/include/netinet/in.h /usr/include/sys/socket.h \
+ /usr/include/socketbits.h /usr/include/sockaddrcom.h \
+ /usr/include/asm/socket.h /usr/include/asm/sockios.h \
+ ../../include/tcxP.h /usr/include/malloc.h ../../include/global.h \
+ /usr/include/ctype.h /usr/include/sys/timeb.h \
+ /usr/include/netinet/tcp.h /usr/include/netdb.h \
+ /usr/include/rpc/netdb.h ../../include/hash.h ../../include/lex.h \
+ ../../include/list.h ../../include/formatters.h ../../include/EZX11.h \
+ /usr/include/stdlib.h /usr/include/alloca.h /usr/include/strings.h \
+ /usr/include/string.h /usr/X11R6/include/X11/Xatom.h \
+ /usr/X11R6/include/X11/Xutil.h devUtils.h Common.h devNames.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/limits.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/syslimits.h \
+ /usr/include/limits.h /usr/include/posix1_lim.h \
+ /usr/include/local_lim.h /usr/include/linux/limits.h \
+ /usr/include/posix2_lim.h
+obj/devUtils.o: devUtils.c /usr/include/sys/types.h \
+ /usr/include/features.h /usr/include/sys/cdefs.h \
+ /usr/include/gnu/stubs.h /usr/include/gnu/types.h /usr/include/time.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stddef.h \
+ /usr/include/endian.h /usr/include/bytesex.h \
+ /usr/include/sys/select.h /usr/include/selectbits.h \
+ /usr/include/termios.h /usr/include/termbits.h \
+ /usr/include/sys/ttydefaults.h /usr/include/stdio.h \
+ /usr/include/libio.h /usr/include/_G_config.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stdarg.h \
+ /usr/include/stdio_lim.h /usr/include/stdlib.h /usr/include/alloca.h \
+ /usr/include/math.h /usr/include/huge_val.h /usr/include/mathcalls.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/float.h \
+ /usr/include/__math.h /usr/include/string.h /usr/include/sys/errno.h \
+ /usr/include/errno.h /usr/include/errnos.h /usr/include/linux/errno.h \
+ /usr/include/asm/errno.h /usr/include/sys/ioctl.h \
+ /usr/include/ioctls.h /usr/include/asm/ioctls.h \
+ /usr/include/asm/ioctl.h /usr/include/ioctl-types.h \
+ /usr/include/sys/file.h /usr/include/fcntl.h /usr/include/fcntlbits.h \
+ /usr/include/sys/time.h /usr/include/timebits.h \
+ /usr/include/sys/timeb.h /usr/include/sys/socket.h \
+ /usr/include/socketbits.h /usr/include/sockaddrcom.h \
+ /usr/include/asm/socket.h /usr/include/asm/sockios.h \
+ /usr/include/netinet/in.h /usr/include/netdb.h \
+ /usr/include/rpc/netdb.h /usr/include/signal.h /usr/include/sigset.h \
+ /usr/include/signum.h /usr/include/sigaction.h \
+ /usr/include/sigcontext.h /usr/include/asm/sigcontext.h \
+ /usr/include/sigstack.h Common.h handlers.h devUtils.h devNames.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/limits.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/syslimits.h \
+ /usr/include/limits.h /usr/include/posix1_lim.h \
+ /usr/include/local_lim.h /usr/include/linux/limits.h \
+ /usr/include/posix2_lim.h /usr/include/unistd.h \
+ /usr/include/posix_opt.h /usr/include/confname.h \
+ robot_specifications.h ../../include/tcx.h ../../include/tcxP.h \
+ /usr/include/malloc.h ../../include/global.h /usr/include/ctype.h \
+ /usr/include/netinet/tcp.h ../../include/hash.h ../../include/lex.h \
+ ../../include/list.h ../../include/formatters.h
+obj/gettimeofday.o: gettimeofday.c
+obj/handlers.o: handlers.c /usr/include/stdio.h /usr/include/libio.h \
+ /usr/include/features.h /usr/include/sys/cdefs.h \
+ /usr/include/gnu/stubs.h /usr/include/_G_config.h \
+ /usr/include/gnu/types.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stddef.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stdarg.h \
+ /usr/include/stdio_lim.h /usr/include/stdlib.h \
+ /usr/include/sys/types.h /usr/include/time.h /usr/include/endian.h \
+ /usr/include/bytesex.h /usr/include/sys/select.h \
+ /usr/include/selectbits.h /usr/include/alloca.h Common.h libc.h \
+ /usr/include/strings.h /usr/include/string.h /usr/include/sys/time.h \
+ /usr/include/timebits.h /usr/include/sys/socket.h \
+ /usr/include/socketbits.h /usr/include/sockaddrcom.h \
+ /usr/include/asm/socket.h /usr/include/asm/sockios.h \
+ /usr/include/sys/timeb.h handlers.h
+obj/librobot.o: librobot.c beeSoftVersion.h
+obj/sample.o: sample.c /usr/include/stdio.h /usr/include/libio.h \
+ /usr/include/features.h /usr/include/sys/cdefs.h \
+ /usr/include/gnu/stubs.h /usr/include/_G_config.h \
+ /usr/include/gnu/types.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stddef.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stdarg.h \
+ /usr/include/stdio_lim.h /usr/include/stdlib.h \
+ /usr/include/sys/types.h /usr/include/time.h /usr/include/endian.h \
+ /usr/include/bytesex.h /usr/include/sys/select.h \
+ /usr/include/selectbits.h /usr/include/alloca.h /usr/include/math.h \
+ /usr/include/huge_val.h /usr/include/mathcalls.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/float.h \
+ /usr/include/__math.h struct.h workbone.h
+obj/ualarm.o: ualarm.c /usr/include/sys/time.h /usr/include/features.h \
+ /usr/include/sys/cdefs.h /usr/include/gnu/stubs.h /usr/include/time.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stddef.h \
+ /usr/include/timebits.h /usr/include/gnu/types.h \
+ /usr/include/sys/select.h /usr/include/selectbits.h

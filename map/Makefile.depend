@@ -1,0 +1,134 @@
+obj/MAP.o: MAP.c /usr/include/ctype.h /usr/include/features.h \
+ /usr/include/sys/cdefs.h /usr/include/gnu/stubs.h \
+ /usr/include/endian.h /usr/include/bytesex.h /usr/include/math.h \
+ /usr/include/huge_val.h /usr/include/mathcalls.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/float.h \
+ /usr/include/__math.h /usr/include/stdio.h /usr/include/libio.h \
+ /usr/include/_G_config.h /usr/include/gnu/types.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stddef.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stdarg.h \
+ /usr/include/stdio_lim.h /usr/include/sys/time.h /usr/include/time.h \
+ /usr/include/timebits.h /usr/include/sys/select.h \
+ /usr/include/selectbits.h ../../include/tcx.h \
+ /usr/include/sys/types.h /usr/include/netinet/in.h \
+ /usr/include/sys/socket.h /usr/include/socketbits.h \
+ /usr/include/sockaddrcom.h /usr/include/asm/socket.h \
+ /usr/include/asm/sockios.h ../../include/tcxP.h /usr/include/malloc.h \
+ ../../include/global.h /usr/include/signal.h /usr/include/sigset.h \
+ /usr/include/signum.h /usr/include/sigaction.h \
+ /usr/include/sigcontext.h /usr/include/asm/sigcontext.h \
+ /usr/include/sigstack.h /usr/include/sys/timeb.h \
+ /usr/include/netinet/tcp.h /usr/include/netdb.h \
+ /usr/include/rpc/netdb.h /usr/include/errno.h /usr/include/errnos.h \
+ /usr/include/linux/errno.h /usr/include/asm/errno.h \
+ ../../include/hash.h ../../include/lex.h ../../include/list.h \
+ ../../include/formatters.h ../../include/EZX11.h \
+ /usr/include/stdlib.h /usr/include/alloca.h /usr/include/strings.h \
+ /usr/include/string.h /usr/X11R6/include/X11/Xlib.h \
+ /usr/X11R6/include/X11/X.h /usr/X11R6/include/X11/Xfuncproto.h \
+ /usr/X11R6/include/X11/Xosdefs.h /usr/X11R6/include/X11/Xatom.h \
+ /usr/X11R6/include/X11/Xutil.h ../../include/o-graphics.h \
+ MAP-messages.h ../../include/SONAR-messages.h \
+ ../../include/BASE-messages.h MAP.h ../../include/bUtils.h \
+ /usr/include/termios.h /usr/include/termbits.h \
+ /usr/include/sys/ttydefaults.h ../../include/bNetwork.h
+obj/file.o: file.c /usr/include/ctype.h /usr/include/features.h \
+ /usr/include/sys/cdefs.h /usr/include/gnu/stubs.h \
+ /usr/include/endian.h /usr/include/bytesex.h /usr/include/math.h \
+ /usr/include/huge_val.h /usr/include/mathcalls.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/float.h \
+ /usr/include/__math.h /usr/include/stdio.h /usr/include/libio.h \
+ /usr/include/_G_config.h /usr/include/gnu/types.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stddef.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stdarg.h \
+ /usr/include/stdio_lim.h /usr/include/sys/time.h /usr/include/time.h \
+ /usr/include/timebits.h /usr/include/sys/select.h \
+ /usr/include/selectbits.h ../../include/tcx.h \
+ /usr/include/sys/types.h /usr/include/netinet/in.h \
+ /usr/include/sys/socket.h /usr/include/socketbits.h \
+ /usr/include/sockaddrcom.h /usr/include/asm/socket.h \
+ /usr/include/asm/sockios.h ../../include/tcxP.h /usr/include/malloc.h \
+ MAP-messages.h ../../include/SONAR-messages.h \
+ ../../include/BASE-messages.h MAP.h ../../include/EZX11.h \
+ /usr/include/stdlib.h /usr/include/alloca.h /usr/include/strings.h \
+ /usr/include/string.h /usr/X11R6/include/X11/Xlib.h \
+ /usr/X11R6/include/X11/X.h /usr/X11R6/include/X11/Xfuncproto.h \
+ /usr/X11R6/include/X11/Xosdefs.h /usr/X11R6/include/X11/Xatom.h \
+ /usr/X11R6/include/X11/Xutil.h ../../include/o-graphics.h \
+ ../../include/bUtils.h /usr/include/termios.h /usr/include/termbits.h \
+ /usr/include/sys/ttydefaults.h ../../include/bNetwork.h \
+ ../../include/gd.h
+obj/handlers.o: handlers.c /usr/include/ctype.h /usr/include/features.h \
+ /usr/include/sys/cdefs.h /usr/include/gnu/stubs.h \
+ /usr/include/endian.h /usr/include/bytesex.h /usr/include/math.h \
+ /usr/include/huge_val.h /usr/include/mathcalls.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/float.h \
+ /usr/include/__math.h /usr/include/stdio.h /usr/include/libio.h \
+ /usr/include/_G_config.h /usr/include/gnu/types.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stddef.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stdarg.h \
+ /usr/include/stdio_lim.h /usr/include/sys/time.h /usr/include/time.h \
+ /usr/include/timebits.h /usr/include/sys/select.h \
+ /usr/include/selectbits.h ../../include/tcx.h \
+ /usr/include/sys/types.h /usr/include/netinet/in.h \
+ /usr/include/sys/socket.h /usr/include/socketbits.h \
+ /usr/include/sockaddrcom.h /usr/include/asm/socket.h \
+ /usr/include/asm/sockios.h ../../include/tcxP.h /usr/include/malloc.h \
+ ../../include/EZX11.h /usr/include/stdlib.h /usr/include/alloca.h \
+ /usr/include/strings.h /usr/include/string.h \
+ /usr/X11R6/include/X11/Xlib.h /usr/X11R6/include/X11/X.h \
+ /usr/X11R6/include/X11/Xfuncproto.h /usr/X11R6/include/X11/Xosdefs.h \
+ /usr/X11R6/include/X11/Xatom.h /usr/X11R6/include/X11/Xutil.h \
+ ../../include/o-graphics.h ../../include/bUtils.h \
+ /usr/include/termios.h /usr/include/termbits.h \
+ /usr/include/sys/ttydefaults.h ../../include/bNetwork.h \
+ MAP-messages.h ../../include/SONAR-messages.h \
+ ../../include/LASER-messages.h ../../include/BASE-messages.h MAP.h \
+ beeSoftVersion.h ../../include/libbUtils.h ../../include/librobot.h \
+ ../../include/libezx.h
+obj/init.o: init.c /usr/include/ctype.h /usr/include/features.h \
+ /usr/include/sys/cdefs.h /usr/include/gnu/stubs.h \
+ /usr/include/endian.h /usr/include/bytesex.h /usr/include/math.h \
+ /usr/include/huge_val.h /usr/include/mathcalls.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/float.h \
+ /usr/include/__math.h /usr/include/stdio.h /usr/include/libio.h \
+ /usr/include/_G_config.h /usr/include/gnu/types.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stddef.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stdarg.h \
+ /usr/include/stdio_lim.h /usr/include/sys/time.h /usr/include/time.h \
+ /usr/include/timebits.h /usr/include/sys/select.h \
+ /usr/include/selectbits.h ../../include/tcx.h \
+ /usr/include/sys/types.h /usr/include/netinet/in.h \
+ /usr/include/sys/socket.h /usr/include/socketbits.h \
+ /usr/include/sockaddrcom.h /usr/include/asm/socket.h \
+ /usr/include/asm/sockios.h ../../include/tcxP.h /usr/include/malloc.h \
+ ../../include/EZX11.h /usr/include/stdlib.h /usr/include/alloca.h \
+ /usr/include/strings.h /usr/include/string.h \
+ /usr/X11R6/include/X11/Xlib.h /usr/X11R6/include/X11/X.h \
+ /usr/X11R6/include/X11/Xfuncproto.h /usr/X11R6/include/X11/Xosdefs.h \
+ /usr/X11R6/include/X11/Xatom.h /usr/X11R6/include/X11/Xutil.h \
+ ../../include/o-graphics.h MAP-messages.h \
+ ../../include/SONAR-messages.h ../../include/BASE-messages.h MAP.h
+obj/map-graphics.o: map-graphics.c /usr/include/ctype.h \
+ /usr/include/features.h /usr/include/sys/cdefs.h \
+ /usr/include/gnu/stubs.h /usr/include/endian.h /usr/include/bytesex.h \
+ /usr/include/math.h /usr/include/huge_val.h /usr/include/mathcalls.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/float.h \
+ /usr/include/__math.h /usr/include/stdio.h /usr/include/libio.h \
+ /usr/include/_G_config.h /usr/include/gnu/types.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stddef.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stdarg.h \
+ /usr/include/stdio_lim.h /usr/include/sys/time.h /usr/include/time.h \
+ /usr/include/timebits.h /usr/include/sys/select.h \
+ /usr/include/selectbits.h ../../include/tcx.h \
+ /usr/include/sys/types.h /usr/include/netinet/in.h \
+ /usr/include/sys/socket.h /usr/include/socketbits.h \
+ /usr/include/sockaddrcom.h /usr/include/asm/socket.h \
+ /usr/include/asm/sockios.h ../../include/tcxP.h /usr/include/malloc.h \
+ MAP-messages.h ../../include/SONAR-messages.h \
+ ../../include/BASE-messages.h MAP.h ../../include/EZX11.h \
+ /usr/include/stdlib.h /usr/include/alloca.h /usr/include/strings.h \
+ /usr/include/string.h /usr/X11R6/include/X11/Xlib.h \
+ /usr/X11R6/include/X11/X.h /usr/X11R6/include/X11/Xfuncproto.h \
+ /usr/X11R6/include/X11/Xosdefs.h /usr/X11R6/include/X11/Xatom.h \
+ /usr/X11R6/include/X11/Xutil.h ../../include/o-graphics.h

@@ -1,0 +1,98 @@
+obj/abterm.o: abterm.c /usr/include/stdlib.h /usr/include/features.h \
+ /usr/include/sys/cdefs.h /usr/include/gnu/stubs.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stddef.h \
+ /usr/include/sys/types.h /usr/include/gnu/types.h /usr/include/time.h \
+ /usr/include/endian.h /usr/include/bytesex.h \
+ /usr/include/sys/select.h /usr/include/selectbits.h \
+ /usr/include/alloca.h /usr/include/stdio.h /usr/include/libio.h \
+ /usr/include/_G_config.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stdarg.h \
+ /usr/include/stdio_lim.h /usr/include/string.h /usr/include/ctype.h \
+ /usr/include/sys/time.h /usr/include/timebits.h /usr/include/fcntl.h \
+ /usr/include/fcntlbits.h /usr/include/unistd.h \
+ /usr/include/posix_opt.h /usr/include/confname.h \
+ /usr/include/signal.h /usr/include/sigset.h /usr/include/signum.h \
+ /usr/include/sigaction.h /usr/include/sigcontext.h \
+ /usr/include/asm/sigcontext.h /usr/include/sigstack.h \
+ /usr/include/termios.h /usr/include/termbits.h \
+ /usr/include/sys/ttydefaults.h curses.h \
+ /usr/include/ncurses/termcap.h abterm.h msputils.h \
+ ../../include/acb/global.h version.h mspterm.h
+obj/msp.o: msp.c /usr/include/stdio.h /usr/include/libio.h \
+ /usr/include/features.h /usr/include/sys/cdefs.h \
+ /usr/include/gnu/stubs.h /usr/include/_G_config.h \
+ /usr/include/gnu/types.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stddef.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stdarg.h \
+ /usr/include/stdio_lim.h /usr/include/unistd.h \
+ /usr/include/posix_opt.h /usr/include/confname.h \
+ /usr/include/stdlib.h /usr/include/sys/types.h /usr/include/time.h \
+ /usr/include/endian.h /usr/include/bytesex.h \
+ /usr/include/sys/select.h /usr/include/selectbits.h \
+ /usr/include/alloca.h /usr/include/string.h /usr/include/fcntl.h \
+ /usr/include/fcntlbits.h /usr/include/netinet/in.h \
+ /usr/include/sys/socket.h /usr/include/socketbits.h \
+ /usr/include/sockaddrcom.h /usr/include/asm/socket.h \
+ /usr/include/asm/sockios.h ../../include/acb/global.h \
+ ../../include/acb/rwiab.h ../../include/acb/abus.h msp.h \
+ ../../include/mspMessages.h
+obj/mspmodule.o: mspmodule.c /usr/include/unistd.h /usr/include/features.h \
+ /usr/include/sys/cdefs.h /usr/include/gnu/stubs.h \
+ /usr/include/posix_opt.h /usr/include/gnu/types.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stddef.h \
+ /usr/include/confname.h /usr/include/stdio.h /usr/include/libio.h \
+ /usr/include/_G_config.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stdarg.h \
+ /usr/include/stdio_lim.h /usr/include/stdlib.h \
+ /usr/include/sys/types.h /usr/include/time.h /usr/include/endian.h \
+ /usr/include/bytesex.h /usr/include/sys/select.h \
+ /usr/include/selectbits.h /usr/include/alloca.h /usr/include/string.h \
+ /usr/include/netinet/in.h /usr/include/sys/socket.h \
+ /usr/include/socketbits.h /usr/include/sockaddrcom.h \
+ /usr/include/asm/socket.h /usr/include/asm/sockios.h \
+ ../../include/bUtils.h /usr/include/termios.h /usr/include/termbits.h \
+ /usr/include/sys/ttydefaults.h ../../include/bNetwork.h \
+ ../../include/rai.h /usr/include/sys/time.h /usr/include/timebits.h \
+ /usr/include/fcntl.h /usr/include/fcntlbits.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/limits.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/syslimits.h \
+ /usr/include/limits.h /usr/include/posix1_lim.h \
+ /usr/include/local_lim.h /usr/include/linux/limits.h \
+ /usr/include/posix2_lim.h ../../include/utils.h \
+ ../../include/lockNames.h mspmodule.h ../../include/sonarClient.h \
+ ../../include/tactileClient.h ../../include/irClient.h \
+ ../../include/acb/abus.h ../../include/acb/global.h msp.h
+obj/mspterm.o: mspterm.c /usr/include/stdio.h /usr/include/libio.h \
+ /usr/include/features.h /usr/include/sys/cdefs.h \
+ /usr/include/gnu/stubs.h /usr/include/_G_config.h \
+ /usr/include/gnu/types.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stddef.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stdarg.h \
+ /usr/include/stdio_lim.h /usr/include/unistd.h \
+ /usr/include/posix_opt.h /usr/include/confname.h \
+ /usr/include/stdlib.h /usr/include/sys/types.h /usr/include/time.h \
+ /usr/include/endian.h /usr/include/bytesex.h \
+ /usr/include/sys/select.h /usr/include/selectbits.h \
+ /usr/include/alloca.h /usr/include/string.h /usr/include/fcntl.h \
+ /usr/include/fcntlbits.h /usr/include/termios.h \
+ /usr/include/termbits.h /usr/include/sys/ttydefaults.h curses.h \
+ /usr/include/ncurses/termcap.h /usr/include/netinet/in.h \
+ /usr/include/sys/socket.h /usr/include/socketbits.h \
+ /usr/include/sockaddrcom.h /usr/include/asm/socket.h \
+ /usr/include/asm/sockios.h ../../include/acb/abus.h \
+ ../../include/acb/global.h abterm.h msputils.h msp.h
+obj/utils.o: utils.c /usr/include/stdio.h /usr/include/libio.h \
+ /usr/include/features.h /usr/include/sys/cdefs.h \
+ /usr/include/gnu/stubs.h /usr/include/_G_config.h \
+ /usr/include/gnu/types.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stddef.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stdarg.h \
+ /usr/include/stdio_lim.h /usr/include/stdlib.h \
+ /usr/include/sys/types.h /usr/include/time.h /usr/include/endian.h \
+ /usr/include/bytesex.h /usr/include/sys/select.h \
+ /usr/include/selectbits.h /usr/include/alloca.h /usr/include/string.h \
+ /usr/include/ctype.h /usr/include/sys/stat.h /usr/include/statbuf.h \
+ /usr/include/fcntl.h /usr/include/fcntlbits.h /usr/include/termios.h \
+ /usr/include/termbits.h /usr/include/sys/ttydefaults.h curses.h \
+ /usr/include/ncurses/termcap.h abterm.h msputils.h \
+ ../../include/acb/global.h

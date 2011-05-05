@@ -1,0 +1,25 @@
+This is V2.0 of the RHINO simulator (early alpha stage).
+
+The simulator has been rewritten nearly from scratch.
+Changes since last release:
+
+- The Display is implemeted using Athena-Widgets plus a Drawing-Widget,
+  instead of Easy-X.
+- You can navigate through the playground using scrollbars.
+- Playground dimensions are given in cm
+  (absolute position of lower left and upper right point).
+  No more distance calculations in pixels !
+- We allow negative coordinates. This makes conversion of VRML scenes
+  into a simulator map easier.
+- Additional command line option -view.
+  This starts the simulator as a pure viewer,
+  displaying the robots track given by BASE.
+  (Using this mode the simulator connects to BASE as "VIEWER")
+
+Things missing from the last release:
+
+- Sonar simulation is not yet complete.
+  The simulator always gives the exact distances and
+  doesen't respect total reflections.
+- No Help message yet.
+- No save method yet.

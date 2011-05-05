@@ -1,0 +1,4 @@
+LIBOBJS	= Cache.o Drawing.o Figure.o Public.o
+
+NormalLibraryTarget(Xdw,Cache.o Drawing.o Figure.o Public.o)
+NormalProgramTarget(demo,demo.o,XawClientDepLibs,libXdw.a XawClientLibs,-lm)

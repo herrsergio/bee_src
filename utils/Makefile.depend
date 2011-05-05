@@ -1,0 +1,68 @@
+obj/bUtils.o: bUtils.c /usr/include/unistd.h /usr/include/features.h \
+ /usr/include/sys/cdefs.h /usr/include/gnu/stubs.h \
+ /usr/include/posix_opt.h /usr/include/gnu/types.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stddef.h \
+ /usr/include/confname.h /usr/include/stdlib.h \
+ /usr/include/sys/types.h /usr/include/time.h /usr/include/endian.h \
+ /usr/include/bytesex.h /usr/include/sys/select.h \
+ /usr/include/selectbits.h /usr/include/alloca.h /usr/include/stdio.h \
+ /usr/include/libio.h /usr/include/_G_config.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stdarg.h \
+ /usr/include/stdio_lim.h /usr/include/ctype.h /usr/include/string.h \
+ /usr/include/pwd.h /usr/include/fcntl.h /usr/include/fcntlbits.h \
+ /usr/include/sys/stat.h /usr/include/statbuf.h /usr/include/termios.h \
+ /usr/include/termbits.h /usr/include/sys/ttydefaults.h \
+ /usr/include/errno.h /usr/include/errnos.h /usr/include/linux/errno.h \
+ /usr/include/asm/errno.h bUtils.h bNetwork.h \
+ /usr/include/netinet/in.h /usr/include/sys/socket.h \
+ /usr/include/socketbits.h /usr/include/sockaddrcom.h \
+ /usr/include/asm/socket.h /usr/include/asm/sockios.h
+obj/bUtilsTest.o: bUtilsTest.c /usr/include/stdio.h /usr/include/libio.h \
+ /usr/include/features.h /usr/include/sys/cdefs.h \
+ /usr/include/gnu/stubs.h /usr/include/_G_config.h \
+ /usr/include/gnu/types.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stddef.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stdarg.h \
+ /usr/include/stdio_lim.h /usr/include/unistd.h \
+ /usr/include/posix_opt.h /usr/include/confname.h \
+ /usr/include/stdlib.h /usr/include/sys/types.h /usr/include/time.h \
+ /usr/include/endian.h /usr/include/bytesex.h \
+ /usr/include/sys/select.h /usr/include/selectbits.h \
+ /usr/include/alloca.h bUtils.h /usr/include/termios.h \
+ /usr/include/termbits.h /usr/include/sys/ttydefaults.h bNetwork.h \
+ /usr/include/netinet/in.h /usr/include/sys/socket.h \
+ /usr/include/socketbits.h /usr/include/sockaddrcom.h \
+ /usr/include/asm/socket.h /usr/include/asm/sockios.h
+obj/itrig.o: itrig.c \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/limits.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/syslimits.h \
+ /usr/include/limits.h /usr/include/features.h \
+ /usr/include/sys/cdefs.h /usr/include/gnu/stubs.h \
+ /usr/include/posix1_lim.h /usr/include/local_lim.h \
+ /usr/include/linux/limits.h /usr/include/posix2_lim.h itrig.h \
+ /usr/include/math.h /usr/include/huge_val.h /usr/include/mathcalls.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/float.h \
+ /usr/include/__math.h
+obj/libbUtils.o: libbUtils.c beeSoftVersion.h
+obj/libutils.o: libutils.c beeSoftVersion.h
+obj/utils.o: utils.c /usr/include/unistd.h /usr/include/features.h \
+ /usr/include/sys/cdefs.h /usr/include/gnu/stubs.h \
+ /usr/include/posix_opt.h /usr/include/gnu/types.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stddef.h \
+ /usr/include/confname.h /usr/include/stdlib.h \
+ /usr/include/sys/types.h /usr/include/time.h /usr/include/endian.h \
+ /usr/include/bytesex.h /usr/include/sys/select.h \
+ /usr/include/selectbits.h /usr/include/alloca.h /usr/include/string.h \
+ /usr/include/termios.h /usr/include/termbits.h \
+ /usr/include/sys/ttydefaults.h /usr/include/sys/file.h \
+ /usr/include/fcntl.h /usr/include/fcntlbits.h /usr/include/sys/stat.h \
+ /usr/include/statbuf.h /usr/include/pwd.h /usr/include/stdio.h \
+ /usr/include/libio.h /usr/include/_G_config.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stdarg.h \
+ /usr/include/stdio_lim.h ../../include/rai.h /usr/include/sys/time.h \
+ /usr/include/timebits.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/limits.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/syslimits.h \
+ /usr/include/limits.h /usr/include/posix1_lim.h \
+ /usr/include/local_lim.h /usr/include/linux/limits.h \
+ /usr/include/posix2_lim.h utils.h lockNames.h

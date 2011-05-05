@@ -1,0 +1,273 @@
+;
+;Driver for 4X16 LC Display
+;
+;
+;Global Entry Points
+;
+                PUBLIC  LCD_INIT
+                PUBLIC  LCD_CLEAR
+                PUBLIC  SET_CURSOR
+                PUBLIC  DISP_BYTE
+                PUBLIC  DISP_IRAM
+                PUBLIC  DISP_XRAM
+                PUBLIC  DISP_PROM
+;
+;External References
+;
+                EXTERN  Xmit_I2C_Byte
+;                
+;Defined I/O
+;
+LCD_PORT	EQU	42H
+DEN             EQU     ACC.5
+DRS             EQU     ACC.4
+;
+;Internal Data
+;  
+                RSEG    DATA
+LCD_CURSOR      DS      1
+;
+;Assemble Into Code Segment 
+;
+                RSEG    CODE
+;        
+;WRITE TO LCD COMMAND REGISTER
+;INPUT: CHARACTER TO WRITE IN ACC
+;
+LCD_COMM_WR: 
+                PUSH    ACC
+                ANL     A,#0F0H
+                SWAP    A
+                CLR     DRS
+                SETB    DEN
+                CALL    LCD_OUT
+                CLR     DEN
+                CALL    LCD_OUT
+
+                POP     ACC
+                ANL     A,#0FH
+                CLR     DRS
+                SETB    DEN
+                CALL    LCD_OUT
+                CLR     DEN
+                CALL    LCD_OUT
+                RET
+;
+;WRITE TO LCD DATA REGISTER
+;INPUT: CHARACTER TO WRITE IN ACC
+;
+LCD_DATA_WR: 
+                PUSH    ACC
+                ANL     A,#0F0H
+                SWAP    A
+                SETB    DRS
+                SETB    DEN
+                CALL    LCD_OUT
+                CLR     DEN
+                CALL    LCD_OUT
+
+                POP     ACC
+                ANL     A,#0FH
+                SETB    DRS
+                SETB    DEN
+                CALL    LCD_OUT
+                CLR     DEN
+                CALL    LCD_OUT
+                RET
+;
+;SYNCHRONIZE WITH LCD AND TRACK CURSOR POSITION
+;
+LCD_WAIT:
+                PUSH    ACC
+                MOV     A,LCD_CURSOR
+
+                CJNE    A,#16,LW1       ;AT END OF 1ST LINE?
+                MOV     A,#64+10000000B
+                CALL    LCD_COMM_WR
+                SJMP    LW3
+LW1:
+                CJNE    A,#32,LW2       ;AT END OF 2ND LINE?
+                MOV     A,#16+10000000B
+                CALL    LCD_COMM_WR
+                SJMP    LW3
+LW2:
+                CJNE    A,#48,LW3       ;AT END OF 3RD LINE?
+                MOV     A,#80+10000000B
+                CALL    LCD_COMM_WR
+LW3:
+                POP     ACC
+                RET
+;
+;SET LCD CURSOR POSITION
+;INPUT: ACC CONTAINS CURSOR POSITION
+;
+SET_CURSOR:  
+                MOV     LCD_CURSOR,A
+
+                CJNE    A,#48,$+3
+                JC      SC1
+                ANL     A,#0FH
+                ADD     A,#80+10000000B         ;LINE 4
+                CALL    LCD_COMM_WR
+                SJMP    SC4
+SC1:
+                CJNE    A,#32,$+3
+                JC      SC2
+                ANL     A,#0FH
+                ADD     A,#16+10000000B         ;LINE 3
+                CALL    LCD_COMM_WR
+                SJMP    SC4
+SC2:
+                CJNE    A,#16,$+3
+                JC      SC3
+                ANL     A,#0FH
+                ADD     A,#64+10000000B         ;LINE 2
+                CALL    LCD_COMM_WR
+                SJMP    SC4
+SC3:
+                ADD     A,#00+10000000B         ;LINE 1
+                CALL    LCD_COMM_WR
+SC4:
+                RET
+;
+;CLEAR LCD
+;
+LCD_CLEAR:   
+                MOV     A,#1
+                CALL    LCD_COMM_WR
+                MOV     LCD_CURSOR,#0
+                MOV     R0,#5
+                CALL    DELAY
+                RET
+;
+;DISPLAY A CHARACTER
+;INPUT: ACC CONTAINS CHARACTER
+;
+DISP_BYTE:   
+                CALL    LCD_WAIT
+                CLR     ACC.7
+                CALL    LCD_DATA_WR
+                INC     LCD_CURSOR
+                RET
+;
+;DISPLAY IRAM DATA
+;INPUT: R1 POINTS TO DATA
+;       R0 CONTAINS BYTE COUNT
+;
+DISP_IRAM:   
+                MOV     A,@R1
+                CALL    DISP_BYTE
+                INC     R1
+                DJNZ    R0,DISP_IRAM
+                RET
+;
+;DISPLAY XRAM DATA
+;INPUT: DPTR POINTS TO DATA
+;       R0 CONTAINS BYTE COUNT
+;
+DISP_XRAM:   
+                MOVX    A,@DPTR
+                CALL    DISP_BYTE
+                INC     DPTR    
+                DJNZ    R0,DISP_XRAM
+                RET
+;
+;DISPLAY PROM DATA
+;INPUT: DPTR POINTS TO DATA
+;       R0 CONTAINS BYTE COUNT
+;
+DISP_PROM:   
+                CLR     A
+                MOVC    A,@A+DPTR
+                CALL    DISP_BYTE
+                INC     DPTR    
+                DJNZ    R0,DISP_PROM
+                RET
+;
+;INITIALIZE LCD
+;
+LCD_INIT:    
+                MOV     R0,#20
+                CALL    DELAY           ;INITIAL DELAY
+
+                MOV     A,#0011B        ;PUT LSI IN KNOWN STATE
+                SETB    DEN
+                CALL    LCD_OUT
+                CLR     DEN
+                CALL    LCD_OUT
+                MOV     R0,#5
+                CALL    DELAY
+ 
+                MOV     A,#0011B        ;AGAIN  
+                SETB    DEN
+                CALL    LCD_OUT
+                CLR     DEN
+                CALL    LCD_OUT
+                MOV     R0,#5
+                CALL    DELAY
+
+                MOV     A,#0011B        ;AGAIN
+                SETB    DEN
+                CALL    LCD_OUT
+                CLR     DEN
+                CALL    LCD_OUT
+                MOV     R0,#5
+                CALL    DELAY
+
+                MOV     A,#0010B        ;4 BIT MODE
+                SETB    DEN
+                CALL    LCD_OUT
+                CLR     DEN
+                CALL    LCD_OUT
+                MOV     R0,#5
+                CALL    DELAY
+
+                MOV     A,#00101100B    ;4 BIT, 2 LINE, 4X7 MATRIX
+                CALL    LCD_COMM_WR      
+                MOV     R0,#5
+                CALL    DELAY
+
+                MOV     A,#00001100B    ;DISPLAY ON, CURSOR OFF 
+                CALL    LCD_COMM_WR
+                MOV     R0,#5
+                CALL    DELAY
+
+                MOV     A,#00000110B    ;AUTO INCREMENT, SHIFT RIGHT
+                CALL    LCD_COMM_WR
+                MOV     R0,#5
+                CALL    DELAY
+
+                CALL    LCD_CLEAR       ;CLEAR DISPLAY
+                RET
+;
+;OUTPUT A BYTE TO THE I2C LCD PORT
+;INPUT: ACC CONTAINS BYTE TO OUTPUT
+;       VALUE OF ACC IS RETAINED ON EXIT
+;
+LCD_OUT:
+                PUSH    ACC
+                PUSH    0
+                PUSH    1
+
+                MOV     B,A
+                MOV     A,#LCD_PORT
+                CALL    Xmit_I2C_Byte
+
+                POP     1
+                POP     0
+                POP     ACC
+                RET
+;
+;GENERAL DELAY ROUTINE
+;INPUT: R0 CONTAINS DELAY IN MSEC'S
+;
+DELAY:      
+                MOV     R1,#2
+DELAY1:
+                MOV     R2,#0F8H
+                DJNZ    R2,$
+                DJNZ    R1,DELAY1
+                DJNZ    R0,DELAY
+                RET
+            
+                END

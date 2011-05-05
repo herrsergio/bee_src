@@ -1,0 +1,248 @@
+%
+% $Id: console.tex,v 1.5 1998/02/09 22:59:30 swa Exp $
+%
+\NeedsTeXFormat{LaTeX2e}
+
+\documentclass{article}
+
+\addtolength{\parskip}{1ex plus0.5ex minus0.2ex}
+
+\addtolength{\textwidth}{2cm}
+
+\begin{document}
+
+\section{The console program}
+
+Version of this document is
+\begin{verbatim}
+$Id: console.tex,v 1.5 1998/02/09 22:59:30 swa Exp $
+\end{verbatim}
+
+\subsection{What is console?}
+
+Suppose you want to run a couple of programs on several machines. You would
+then log into one machine, start one program, log into another machine, start
+another program and so forth. You would start various xterms and clobber your
+screen with a lot of windows. Well, this is very time consuming and there is a
+solution. With console you can start multiple programs on remote machines and
+display the output in one window. Console can even take care of dependencies
+between these programs. For example, if program A must be started before
+program B, console will automatically launch program A, once you started
+program B.
+
+\subsection{Requirements}
+
+Console is a C program that has a Tcl/Tk front end. Thus you need to install
+Tcl/Tk and some additional software to run the console program. Fortunately,
+installing has become quite easy these days, so it shouldn't be too difficult.
+Console was developed and tested with the following RedHat packages:
+
+\begin{enumerate}
+\item \texttt{tcl-7.6pl2-3.i386.rpm}
+\item \texttt{tk-4.2pl2-3.i386.rpm}
+\item \texttt{tix-4.1.0rel-3.i386.rpm}
+\item \texttt{blt-2.3-1.i386.rpm}
+\end{enumerate}
+
+If you don't have a RedHat system, get the stuff from these locations:
+
+\begin{enumerate}
+\item \texttt{http://sunscript.sun.com/}
+\item \texttt{http://www.xpi.com/tix/}
+\item \texttt{http://www.tcltk.com/blt/index.html}
+\end{enumerate}
+
+Make sure, that you download the appropriate versions corresponding to the
+RedHat packages I used.
+
+Console starts programs on remote hosts. One way to do this (there are other
+ways, e.g. rsh) is with \texttt{ssh}, which I use in the example.  Both rsh
+and ssh typically don't require the user to enter his username and password;
+they use different means for authentication. For that to work, check out ssh's
+or rsh's man page; in particular you need for rsh
+
+\begin{itemize}
+\item on every remote host a file \texttt{\~{}/.rhosts}, which lists the
+  machines (one per line) that have access to the remote host thru rsh.
+\item \texttt{\~{}/.rhosts} must be world-readable.
+\end{itemize}
+
+and for ssh (which I highly recommend)
+
+\begin{itemize}
+  
+\item Get it and install it as root with 
+  \begin{center}
+    \small
+    \texttt{rpm -Uvh
+      ftp://ftp.replay.com/pub/replay/pub/redhat/i386/ssh-1.2.20-4i.i386.rpm}
+  \end{center}
+  and 
+  \begin{center}
+    \small
+    \texttt{rpm -Uvh
+      ftp://ftp.replay.com/pub/replay/pub/redhat/i386/ssh-clients-1.2.20-4i.i386.rpm}.
+  \end{center}
+  Or retrieve the latest version that can be found at
+  \begin{center}
+    \texttt{http://www.replay.com/redhat/}
+  \end{center}
+\item Read the documentation at
+  \begin{center}
+    \texttt{http://www.cs.hut.fi/ssh/}
+  \end{center}
+  in particular
+  \begin{center}
+    \texttt{http://www.tac.nyc.ny.us/\~{}kim/ssh/}
+  \end{center}
+\end{itemize}
+
+\subsection{How the console program works}
+
+Initially, the program parses the file \texttt{beeSoft.ini} which defines
+various parameters and dependencies among beeSoft's modules. If you have
+written your own program that interacts with these modules, you would define
+it's parameters and dependencies in the file \texttt{console.ini}.
+
+Once you started console, it will display all programs that you defined with
+the variable \texttt{myPrograms} in \texttt{console.ini}. Console will also
+include all the other programs that might be required to run the programs
+defined by \texttt{myPrograms}.
+
+Clicking on one button will start the program and all it's dependent programs.
+Once the program is running, the button changes to a `Stop' button. If you
+click the `Stop' button it will kill only this program and \emph{none} of it's
+dependent programs. However, killing for example the tcxServer will likely
+bring down all other programs.
+
+There are some menu points, that you might want to try out.
+\texttt{Options|Display parsed data...} shows the data, that console got from
+\texttt{beeSoft.ini} and \texttt{console.ini}. \texttt{Help|About...} and
+\texttt{File|Quit} do what they promise.
+
+\subsection{How to use console}
+
+First of all, you have to modify \texttt{beeSoft.ini} to reflect your setup of
+machines.
+
+\begin{enumerate}
+\item Check on a shell, if you can use ssh/rsh to execute programs on a remote
+  machine.
+\item For each program in \texttt{beeSoft.ini}, change the entry
+  \texttt{programOnHost} to the appropriate machine. If console finds a
+  \texttt{***} in \texttt{programOnHost}, it will try to pick the \texttt{host}
+  entry from the hardware device.
+  
+  Example: you want to configure the camera server: its \texttt{programOnHost}
+  contains \texttt{***} --- so far so good.  Now look for
+  \texttt{framegrabber} in the \texttt{[robot]} section.  It should say
+  \texttt{matrox}. To find the host on which console would run the camera
+  server, look at the \texttt{host} entry in the section
+  \texttt{[matrox.framegrabber]}. I'm sure you get the point.
+
+\item Do not change anything else. It took me a fairly long and painful time
+  to figure out the right combination of commands, pipes and ampersands.
+\end{enumerate}
+
+Now for your own program (let's call it gestureServer), write a
+\texttt{console.ini} file. If console cannot find a \texttt{console.ini}, it
+will exit. To be precise: If console cannot find the entry
+\texttt{pathToMyPrograms} which it is supposed to find in
+\texttt{console.ini}, it will exit. Here is the syntax of the file:
+
+\begin{description}
+  
+\item \texttt{[bParamFile]}
+  
+  This must be the first line of the file, so that console can identify the
+  file as an initialization file.
+
+\item \texttt{myPrograms}
+  
+  Is a comma separated list of programs that the console program will use. For
+  each item in this list, it will also use it's dependent programs. Example:
+  \begin{center}
+    \texttt{ myPrograms \{ gestureServer, recognizeServer \} }
+  \end{center}
+  will use \texttt{gestureServer} and \texttt{recognizeServer}.
+  
+\item \texttt{pathToMyPrograms} 
+  
+  Is a list of paths where the console program looks for beeSoft's and your
+  programs. Example:
+  \begin{center}
+    \texttt{ pathToMyPrograms /home/swa/bee/bin:/home/bee/bin }
+  \end{center}
+  will look for programs first in \texttt{/home/swa/bee/bin} and then in
+  \texttt{/home/bee/bin}. Listing two entries here comes in handy if you
+  prefer your local binary over the global one.
+
+\item \texttt{scrollauto}
+  
+  If set to \texttt{1} will automatically scroll to the end of each log
+  window.
+
+\item \texttt{[gestureServer]}
+  
+  Is the start of gestureServer's definition.
+  
+\item \texttt{name}
+  
+  Is a symbolic name of the program. In this case we use \texttt{gesture},
+  simply because it's shorter and more convenient than \texttt{gestureServer}.
+
+\item \texttt{programOnHost}
+
+  Defines the host, on which we run the program \texttt{gestureServer}. Don't
+  use \texttt{***} here, because console will likely not find a definition in 
+  \texttt{beeSoft.ini}.
+
+\item \texttt{howStart1, howStart2, howStart3}
+  
+  Defines how to start the program on the remote machine. In the case of the
+  gesture server, we use
+
+\begin{verbatim}
+howStart1       /usr/bin/ssh
+howStart2       -n
+howStart3       gestureServer
+\end{verbatim}
+  
+  It's generally not a good idea to change these parameters. There are a lot
+  of ways in which \texttt{stdout} or \texttt{stderr} might not get
+  transmitted back to our machine, etc. Just change \texttt{gestureServer} to
+  the name of your program. The program will be picked out of
+  \texttt{pathToMyPrograms}
+  and started with 
+  \begin{center}
+    \small
+    \texttt{/bin/sh -c 'PATH=/home/swa/bee/bin:/home/bee/bin gestureServer 2>\&1'}
+  \end{center}
+
+
+\item \texttt{howKill1, howKill2, howKill3}
+
+  Defines how to kill the program on the remote machine. In the case of the
+  gesture server, we use
+
+\begin{verbatim}
+howKill1        /usr/bin/ssh
+howKill2        -n
+howKill3        /bin/sh -c 'killall gestureServer 2>&1'
+\end{verbatim}
+
+  Again, don't change these parameters, just change \texttt{gestureServer} to
+  the name of your program.
+
+\item \texttt{dep}
+
+  Is a comma separated list of programs that must be started before this
+  program can proceed. Example:
+  \begin{center}
+    \texttt{ dep \{ tcxServer, cameraServer \} }
+  \end{center}
+  will use the definition of \texttt{tcxServer} and \texttt{cameraServer}.
+
+\end{description}
+
+\end{document}

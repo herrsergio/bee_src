@@ -1,0 +1,28 @@
+#! /bin/sh
+
+LIST=`ps ax | fgrep -v portmap | fgrep -v imapd | fgrep -v grep | grep -F "\
+Server
+sonarint
+map
+plan
+commander
+simulator
+armTest
+colliTest
+consoleTest
+irTest
+pantiltTest
+simple
+sonarTest
+square
+tactileTest
+wander
+wiggle
+"`
+
+echo bCheck: `hostname` 
+echo
+
+cat <<EOF
+$LIST
+EOF

@@ -1,0 +1,326 @@
+
+                               The camera server
+                                       
+   Version of this document is
+$Id: README,v 1.9 1998/01/13 00:35:12 swa Exp $
+
+How the camera server works
+
+   We assume that you have at least one Matrox Meteor frame grabber and a
+   working driver for this card. If the driver is not installed, read the
+   latest BeeSoft-README file for installing the driver.
+   
+   Once you start the camera server, it will open one or more devices as
+   specified in beeSoft.ini. You will find out more about beeSoft.ini in
+   a later section.
+   
+   The size of the frame (ROWS and COLS) is set in
+   ~bee/src/cameraServer/imagesize.h, by default 240 rows by 320 columns.
+   We set the frame size at compile time for performance and simplicity
+   reasons. Each frame consists of ROWS*COLS pixel, each pixel of 4 bytes
+   (B, G, R - the 4th byte per pixel is only used to obey word boundaries
+   and can be omitted).
+   
+   The camera server will store the frame in a shared memory segment. To
+   access the frame from your program, you have two options.
+   
+    1. Thru TCX, which means that the images are sent (maybe sub-sampled)
+       over the network to whatever machine you like. This method has the
+       advantage, that you know exactly _when_ the frame grabber has
+       finished grabbing an image. However, the camera server sends the
+       images over the network, which is very slow.
+    2. Thru a shared memory segment. This requires that you program runs
+       on the same computer (we have to share the same memory, that's why
+       it's called shared memory). The shared memory segment is
+       identified by an ID, which your program needs to access this
+       segment. The major advantage of this method is it's speed. The
+       catch however is, that you don't know when the frame grabber has
+       finished grabbing a particular frame. The camera server keeps
+       updating the shared memory segment at roughly 30 frames per
+       second. Is is highly unlikely, that your program will also process
+       frames 30 times per second.
+       
+   In the following section we will give a brief overview over the
+   shared-memory-segment method. The other method is left as an exercise
+   to the reader (it's too simple and too slow anyway).
+   
+   A program dealing with the camera server typically has six steps (take
+   a look at
+   
+                      ~bee/src/cameraServer/mainatt.c
+                                      
+   for an example):
+   
+    1. cameraRegister( );
+       Registers all new commands that we need for dealing with the
+       camera server.
+    2. cameraConnect( 1 );
+       Waits until we have connected to the camera server.
+    3. registerCameraShmIdCallback( myCameraShmIdCallback );
+       Registers the function myCameraShmIdCallback, which is called once
+       we receive the ID of the shared memory segment. Remember, we
+       cannot access the shared memory segment and thus the image without
+       the ID.
+    4. cameraRequestShmId( int numGrabber );
+       Requests the ID for frame grabber numGrabber. The camera server
+       (once it has connected to that frame grabber and established the
+       shared memory segment) will call myCameraShmIdCallback with the ID
+       and the number of the frame grabber as parameters.
+    5. We wait until myCameraShmIdCallback is called and if it is called,
+       attach to the shared memory segment.
+    6. Process the shared memory segment.
+       
+   If you want to use the camera server, follow the above six steps,
+   include cameraClient.h in your source and link with -lcameraClient.
+   
+Commands for the camera server
+
+   
+          void cameraRegister( );
+          
+          Registers the camera server.
+          
+   
+          int cameraConnect( int wait_till_established );
+          
+          Connects to the camera server. If wait_till_established is 1,
+          we wait until connection with the camera server has been
+          established. Otherwise we proceed.
+          
+   
+          void registerCameraImageCallback( cameraImageCallbackType fcn
+          );
+          
+          Registers a function fcn. The camera server calls this function
+          every time it receives a new frame from one of the frame
+          grabbers. Keep in mind that these frames are sent to the
+          requesting program via TCX.
+          
+   
+          void registerCameraShmIdCallback( cameraShmIdCallbackType fcn
+          );
+          
+          Registers a function fcn. The camera server calls this function
+          once it has established it's shared memory segment with one or
+          more of the frame grabbers.
+          
+   
+          void registerCameraFileCallback( cameraFileCallbackType fcn );
+          
+          Registers a function fcn. The camera server calls this function
+          every time it has finished a file operation. Not yet
+          implemented.
+          
+   
+          void cameraRequestShmId( int numGrabber );
+          
+          Requests the ID of the shared memory segment for frame grabber
+          numGrabber.
+          
+   
+          void cameraRequestImage( int numGrabber, int xsize, int ysize
+          );
+          
+          Requests a frame of size xsize times ysize pixel from frame
+          grabber numGrabber. The size may not exceed ROWS and COLS as
+          defined in ~bee/src/cameraServer/imagesize.h. This frame will
+          be sent to the requesting module via TCX, i. e. the camera
+          server calls the function, that you have registered with
+          registerCameraImageCallback.
+          
+   
+          void cameraSubscribeImage( int numGrabber, int number, int
+          xsize, int ysize );
+          
+          If number is not zero, subscribe to every number-th frame from
+          the the camera server. If number is zero, unsubscribe. This
+          frame from frame grabber numGrabber will be sent to the
+          requesting module via TCX, i. e. the camera server calls the
+          function, that you have registered with
+          registerCameraImageCallback.
+          
+   
+          void cameraStartSaving( int numGrabber, char *filename );
+          
+          Start saving continuously to file filename from frame grabber
+          numGrabber. The file will be written on the machine that runs
+          the camera server.
+          
+   
+          void cameraStopSaving( int numGrabber );
+          
+          Stop the saving process of frame grabber numGrabber.
+          
+   
+          void cameraSaveFile( int numGrabber, char *filename, int num );
+          
+          Start saving num frames from frame grabber numGrabber to file
+          filename. The file will be written on the machine that runs the
+          camera server.
+          
+   
+          void cameraLoadFile( int numGrabber, char *filename );
+          
+          Loads file filename on the machine that runs the camera server.
+          The camera server treats the images from the file as if they
+          were received by frame grabber numGrabber.
+          
+   
+          void cameraRestartGrabber( int numGrabber );
+          
+          Restarts frame grabber numGrabber after a stop.
+          
+   
+          void cameraStopGrabber( int numGrabber );
+          
+          Stops frame grabber numGrabber from continously grabbing
+          images.
+          
+Parameters for the camera server
+
+   The parameters display and color work for one and two frame grabbers.
+   
+   
+          -display=0
+          
+          Do not display the camera image. This is the default.
+          
+   
+          -display=1
+          
+          Open a window and display the current image. If you use more
+          than one frame grabber, setting -display=1 can have strange
+          effects. Your X server is probably not able to display the
+          images as fast as they come in. It's not a bad idea, to set
+          -display=0 when using more than one frame grabber.
+          
+   
+          -tcx=1
+          
+          Use TCX. This is the default.
+          
+   
+          -tcx=0
+          
+          Do not use TCX. Used only for testing the frame grabber.
+          
+   
+          -color=0
+          
+          Display the image in gray scale on an 8 bit display. This is
+          the default.
+          
+   
+          -color=1
+          
+          Display the image in color on an 8 bit display. Although we
+          grab images at 24 bit depth, we display them in 8 bit depth.
+          Thus the colors in the image are only approximations of the
+          `real' colors.
+          
+beeSoft.ini and the camera server
+
+   The file beeSoft.ini contains some configuration for the camera
+   server. In the section [robot] you find an entry framegrabber which
+   should either say matrox or none. Currently, the Matrox Meteor is the
+   only supported frame grabber.
+   
+   In case you want to use the camera server on a machine which does not
+   have a frame grabber, say none. However, you can still use the camera
+   server to load images from disk.
+   
+   If you have a Matrox Meteor, specify `framegrabber matrox' and look at
+   the section [matrox.framegrabber]. The type entry should say
+   matrox-meteor.
+   
+   The entry usegrabber specifies which frame grabber the camera server
+   will use. If you say 0, no frame grabber will be used -- however, you
+   can still use the camera server to load images from disk. 1 uses the
+   first frame grabber, 2 uses the second frame grabber and 3 uses both
+   frame grabbers.
+   
+   Last but not least, you can specify, which devices the camera server
+   should use to access the frame grabbers. Typically dev1 is
+   /dev/mmetfgrab0 and dev2 is /dev/mmetfgrab1.
+   
+The example program cameraAttachExample
+
+   Start tcxServer and cameraServer (the camera server of course on the
+   machine that has the frame grabber). Now start the program
+   cameraAttachExample on the same machine (we share the same memory) as
+   the camera server.
+   
+   If you run your X server in 8 bit mode, the program should simply
+   display a window with the current camera image. In case you told the
+   camera server to use more than one frame grabber (in beeSoft.ini), it
+   will display both camera images.
+   
+   If you press the left mouse button within that window, the program
+   will write the current camera image to a file image-00.ppm or
+   image-01.ppm, depending on the source. You can use for example xv to
+   display image-{00|01}.ppm (or use xv to convert image{00|01}.ppm into
+   whatever format you like).
+   
+The program cameraControl
+
+   Start tcxServer and cameraServer (the camera server of course on the
+   machine that has the frame grabber or grabbers). Now start the program
+   cameraControl.
+   
+   cameraControl is a C program with a Tcl/Tk user interface that
+   remotely controls the camera server. You can use cameraControl to save
+   or load frames to and from hard disk. You can easily access more than
+   one frame grabber. The program should be self-explanatory.
+   
+   cameraControl requires Tcl/Tk libraries. If you don't have Tcl/Tk
+   libraries installed, you will get errors while compiling
+   cameraControl. However, this has no effect on the camera server.
+   
+MPEG support
+
+   MPEG is a standard (not to say _the_ standard) for recording video
+   data. Read more about MPEG at http://www/mpeg.org/.
+   
+   Recording videos involves three steps:
+   
+    1. Save the frames either with cameraControl or cameraSaveFile( ) to
+       a file. Let's assume this file is called frames.raw.
+    2. Extract each frame from frames.raw into a separate file, say
+       frame-0.raw to frame-N.raw. The little script
+       ~bee/src/cameraServer/raw2ppm takes care of extracting each frame
+       from frames.raw. You have to edit raw2ppm to suit your task.
+    3. Encode frames frame-0.raw to frame-N.raw with an MPEG encoder to
+       an mpeg video file. Get the MPEG encoder/decoder mpeg2v12.zip from
+       
+                     ftp://ftp.mpeg.org/pub/mpeg/mssg/
+                                      
+       and install it. A simple make should do. You will also need a
+       parameter file. Copy one of the supplied parameter files, e. g.
+       MPEG-1.par and modify it to your needs. Usually, you change
+          + the comment in the MPEG file (first line in the .par file)
+          + the name of the source file
+          + the number of frames
+          + the image size (width and height)
+       Take a look at MPEG-example.par and/or read the manual in mpeg's
+       doc/ directory.
+       
+   Then use
+   
+                mpeg2encode my-parameter-file.par video.mpeg
+                                      
+   to encode the frames. There are certain requirements:
+   
+    1. A lot of disk space. Remember that you have one .raw file and the
+       same equivalent in frame-i.raw files. Plus: you need some
+       temporary space for the MPEG encoding. Example: raw file is about
+       200 MB, you need an additional 200 MB for each extracted frame and
+       roughly 50 MB for encoding.
+    2. The MPEG encoder (see above).
+    3. xanim or Netscape to display the .mpeg videos.
+       
+   
+     _________________________________________________________________
+                                      
+   
+    _Stefan Waldherr
+    Mon Jan 12 19:33:30 EST 1998_

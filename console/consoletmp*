@@ -1,0 +1,4 @@
+#!/usr/bin/wish
+load /usr/local/lib/libBLT.so.2.3
+package require Tix
+source console.tcl

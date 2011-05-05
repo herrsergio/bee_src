@@ -1,0 +1,137 @@
+obj/colorx.o: colorx.c EZX11.h /usr/include/stdio.h /usr/include/libio.h \
+ /usr/include/features.h /usr/include/sys/cdefs.h \
+ /usr/include/gnu/stubs.h /usr/include/_G_config.h \
+ /usr/include/gnu/types.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stddef.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stdarg.h \
+ /usr/include/stdio_lim.h /usr/include/stdlib.h \
+ /usr/include/sys/types.h /usr/include/time.h /usr/include/endian.h \
+ /usr/include/bytesex.h /usr/include/sys/select.h \
+ /usr/include/selectbits.h /usr/include/alloca.h \
+ /usr/include/sys/time.h /usr/include/timebits.h \
+ /usr/include/strings.h /usr/include/string.h \
+ /usr/X11R6/include/X11/Xlib.h /usr/X11R6/include/X11/X.h \
+ /usr/X11R6/include/X11/Xfuncproto.h /usr/X11R6/include/X11/Xosdefs.h \
+ /usr/X11R6/include/X11/Xatom.h /usr/X11R6/include/X11/Xutil.h
+obj/cursorx.o: cursorx.c EZX11.h /usr/include/stdio.h /usr/include/libio.h \
+ /usr/include/features.h /usr/include/sys/cdefs.h \
+ /usr/include/gnu/stubs.h /usr/include/_G_config.h \
+ /usr/include/gnu/types.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stddef.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stdarg.h \
+ /usr/include/stdio_lim.h /usr/include/stdlib.h \
+ /usr/include/sys/types.h /usr/include/time.h /usr/include/endian.h \
+ /usr/include/bytesex.h /usr/include/sys/select.h \
+ /usr/include/selectbits.h /usr/include/alloca.h \
+ /usr/include/sys/time.h /usr/include/timebits.h \
+ /usr/include/strings.h /usr/include/string.h \
+ /usr/X11R6/include/X11/Xlib.h /usr/X11R6/include/X11/X.h \
+ /usr/X11R6/include/X11/Xfuncproto.h /usr/X11R6/include/X11/Xosdefs.h \
+ /usr/X11R6/include/X11/Xatom.h /usr/X11R6/include/X11/Xutil.h
+obj/drawx.o: drawx.c EZX11.h /usr/include/stdio.h /usr/include/libio.h \
+ /usr/include/features.h /usr/include/sys/cdefs.h \
+ /usr/include/gnu/stubs.h /usr/include/_G_config.h \
+ /usr/include/gnu/types.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stddef.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stdarg.h \
+ /usr/include/stdio_lim.h /usr/include/stdlib.h \
+ /usr/include/sys/types.h /usr/include/time.h /usr/include/endian.h \
+ /usr/include/bytesex.h /usr/include/sys/select.h \
+ /usr/include/selectbits.h /usr/include/alloca.h \
+ /usr/include/sys/time.h /usr/include/timebits.h \
+ /usr/include/strings.h /usr/include/string.h \
+ /usr/X11R6/include/X11/Xlib.h /usr/X11R6/include/X11/X.h \
+ /usr/X11R6/include/X11/Xfuncproto.h /usr/X11R6/include/X11/Xosdefs.h \
+ /usr/X11R6/include/X11/Xatom.h /usr/X11R6/include/X11/Xutil.h
+obj/grey.o: grey.c EZX11.h /usr/include/stdio.h /usr/include/libio.h \
+ /usr/include/features.h /usr/include/sys/cdefs.h \
+ /usr/include/gnu/stubs.h /usr/include/_G_config.h \
+ /usr/include/gnu/types.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stddef.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stdarg.h \
+ /usr/include/stdio_lim.h /usr/include/stdlib.h \
+ /usr/include/sys/types.h /usr/include/time.h /usr/include/endian.h \
+ /usr/include/bytesex.h /usr/include/sys/select.h \
+ /usr/include/selectbits.h /usr/include/alloca.h \
+ /usr/include/sys/time.h /usr/include/timebits.h \
+ /usr/include/strings.h /usr/include/string.h \
+ /usr/X11R6/include/X11/Xlib.h /usr/X11R6/include/X11/X.h \
+ /usr/X11R6/include/X11/Xfuncproto.h /usr/X11R6/include/X11/Xosdefs.h \
+ /usr/X11R6/include/X11/Xatom.h /usr/X11R6/include/X11/Xutil.h
+obj/initx.o: initx.c /usr/include/stdlib.h /usr/include/features.h \
+ /usr/include/sys/cdefs.h /usr/include/gnu/stubs.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stddef.h \
+ /usr/include/sys/types.h /usr/include/gnu/types.h /usr/include/time.h \
+ /usr/include/endian.h /usr/include/bytesex.h \
+ /usr/include/sys/select.h /usr/include/selectbits.h \
+ /usr/include/alloca.h EZX11.h /usr/include/stdio.h \
+ /usr/include/libio.h /usr/include/_G_config.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stdarg.h \
+ /usr/include/stdio_lim.h /usr/include/sys/time.h \
+ /usr/include/timebits.h /usr/include/strings.h /usr/include/string.h \
+ /usr/X11R6/include/X11/Xlib.h /usr/X11R6/include/X11/X.h \
+ /usr/X11R6/include/X11/Xfuncproto.h /usr/X11R6/include/X11/Xosdefs.h \
+ /usr/X11R6/include/X11/Xatom.h /usr/X11R6/include/X11/Xutil.h
+obj/libezx.o: libezx.c beeSoftVersion.h
+obj/o-graphics.o: o-graphics.c /usr/include/ctype.h \
+ /usr/include/features.h /usr/include/sys/cdefs.h \
+ /usr/include/gnu/stubs.h /usr/include/endian.h /usr/include/bytesex.h \
+ /usr/include/math.h /usr/include/huge_val.h /usr/include/mathcalls.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/float.h \
+ /usr/include/__math.h /usr/include/stdio.h /usr/include/libio.h \
+ /usr/include/_G_config.h /usr/include/gnu/types.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stddef.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stdarg.h \
+ /usr/include/stdio_lim.h o-graphics.h EZX11.h /usr/include/stdlib.h \
+ /usr/include/sys/types.h /usr/include/time.h \
+ /usr/include/sys/select.h /usr/include/selectbits.h \
+ /usr/include/alloca.h /usr/include/sys/time.h /usr/include/timebits.h \
+ /usr/include/strings.h /usr/include/string.h \
+ /usr/X11R6/include/X11/Xlib.h /usr/X11R6/include/X11/X.h \
+ /usr/X11R6/include/X11/Xfuncproto.h /usr/X11R6/include/X11/Xosdefs.h \
+ /usr/X11R6/include/X11/Xatom.h /usr/X11R6/include/X11/Xutil.h
+obj/textx.o: textx.c EZX11.h /usr/include/stdio.h /usr/include/libio.h \
+ /usr/include/features.h /usr/include/sys/cdefs.h \
+ /usr/include/gnu/stubs.h /usr/include/_G_config.h \
+ /usr/include/gnu/types.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stddef.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stdarg.h \
+ /usr/include/stdio_lim.h /usr/include/stdlib.h \
+ /usr/include/sys/types.h /usr/include/time.h /usr/include/endian.h \
+ /usr/include/bytesex.h /usr/include/sys/select.h \
+ /usr/include/selectbits.h /usr/include/alloca.h \
+ /usr/include/sys/time.h /usr/include/timebits.h \
+ /usr/include/strings.h /usr/include/string.h \
+ /usr/X11R6/include/X11/Xlib.h /usr/X11R6/include/X11/X.h \
+ /usr/X11R6/include/X11/Xfuncproto.h /usr/X11R6/include/X11/Xosdefs.h \
+ /usr/X11R6/include/X11/Xatom.h /usr/X11R6/include/X11/Xutil.h
+obj/tst2.o: tst2.c EZX11.h /usr/include/stdio.h /usr/include/libio.h \
+ /usr/include/features.h /usr/include/sys/cdefs.h \
+ /usr/include/gnu/stubs.h /usr/include/_G_config.h \
+ /usr/include/gnu/types.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stddef.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stdarg.h \
+ /usr/include/stdio_lim.h /usr/include/stdlib.h \
+ /usr/include/sys/types.h /usr/include/time.h /usr/include/endian.h \
+ /usr/include/bytesex.h /usr/include/sys/select.h \
+ /usr/include/selectbits.h /usr/include/alloca.h \
+ /usr/include/sys/time.h /usr/include/timebits.h \
+ /usr/include/strings.h /usr/include/string.h \
+ /usr/X11R6/include/X11/Xlib.h /usr/X11R6/include/X11/X.h \
+ /usr/X11R6/include/X11/Xfuncproto.h /usr/X11R6/include/X11/Xosdefs.h \
+ /usr/X11R6/include/X11/Xatom.h /usr/X11R6/include/X11/Xutil.h
+obj/windowx.o: windowx.c EZX11.h /usr/include/stdio.h /usr/include/libio.h \
+ /usr/include/features.h /usr/include/sys/cdefs.h \
+ /usr/include/gnu/stubs.h /usr/include/_G_config.h \
+ /usr/include/gnu/types.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stddef.h \
+ /usr/lib/gcc-lib/i386-redhat-linux/2.7.2.3/include/stdarg.h \
+ /usr/include/stdio_lim.h /usr/include/stdlib.h \
+ /usr/include/sys/types.h /usr/include/time.h /usr/include/endian.h \
+ /usr/include/bytesex.h /usr/include/sys/select.h \
+ /usr/include/selectbits.h /usr/include/alloca.h \
+ /usr/include/sys/time.h /usr/include/timebits.h \
+ /usr/include/strings.h /usr/include/string.h \
+ /usr/X11R6/include/X11/Xlib.h /usr/X11R6/include/X11/X.h \
+ /usr/X11R6/include/X11/Xfuncproto.h /usr/X11R6/include/X11/Xosdefs.h \
+ /usr/X11R6/include/X11/Xatom.h /usr/X11R6/include/X11/Xutil.h

@@ -1,0 +1,10 @@
+$Id: TODO,v 1.2 1997/08/02 18:50:53 swa Exp $
+
+July, 1997 -- Comments, questions -> Stefan Waldherr <swa@cs.cmu.edu>
+
+o maybe a save_reply when n frames where finished saving?
+  we could use CameraFileCallback and the dummy variable to
+  indicate that either one (save or load) finished. Should be easy.
+
+o integrate mpeg conversion into the Tcl GUI. Make it a simple
+  button click.
